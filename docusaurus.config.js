@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Gyeeta',
-  tagline: 'Your Global Infrastructure Monitor',
+  tagline: "A Non-Intrusive, Free and 100% Open Source Global Infrastructure, Services and Process Monitor",
   url: 'https://gyeeta.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -34,17 +34,21 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/gyeeta/website/tree/main/',
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/gyeeta/website/tree/main/',
+	  feedOptions: {
+            type: 'rss',
+	    title: 'Gyeeta Blog Posts',
+	    description: 'A Blog describing planned features, usecases of Gyeeta and monitoring in general',
+	    copyright: 'Exact Solutions, Inc.',
+	    language: 'en-US',
+          }		  
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -56,6 +60,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },	    
       navbar: {
         title: 'Gyeeta',
         logo: {
@@ -65,13 +74,13 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'introduction',
             position: 'left',
             label: 'Documentation',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/gyeeta',
+            href: 'https://github.com/gyeeta/gyeeta',
             label: 'GitHub',
             position: 'right',
           },
@@ -84,8 +93,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Documentation',
-                to: '/docs/intro',
+                label: 'Introduction',
+                to: '/docs/',
               },
             ],
           },
@@ -93,16 +102,12 @@ const config = {
             title: 'Community',
             items: [
               {
+                label: 'Github Discussions',
+                href: 'https://github.com/orgs/Gyeeta/discussions',
+              },
+              {
                 label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://stackoverflow.com/questions/tagged/gyeeta',
               },
             ],
           },
@@ -115,11 +120,21 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/gyeeta',
+                href: 'https://github.com/gyeeta/gyeeta',
+              },
+              {
+                label: 'Youtube',
+                href: 'https://www.youtube.com/channel/UC6V9TpGjyLJTi9fHh-_9ZSw',
               },
             ],
           },
         ],
+      logo: {
+        alt: 'Gyeeta Logo',
+        src: 'img/logo.png',
+        width: 72,
+        height: 72,
+      },	
         copyright: `Copyright © ${new Date().getFullYear()} Exact Solutions, Inc.`,
       },
       prism: {

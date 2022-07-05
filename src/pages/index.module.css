@@ -21,3 +21,9 @@
   align-items: center;
   justify-content: center;
 }
+
+.bgLogo {
+  background-image: url("/static/img/gyeeta.png");
+  background-position: center;
+  position: relative;  
+}	
