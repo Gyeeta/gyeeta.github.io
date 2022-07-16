@@ -9,6 +9,8 @@ description: Gyeeta Search Showcase
 Some examples of how Gyeeta Search can be used for querying are shown below. Each example
 includes a Video showing the Web UI Search. The corresponding Search using REST APIs is also shown.
 
+All the showed Search examples can also be used as Alert conditions.
+
 Please read the [Query Data Types & Filters](./querying/datatypes) link prior to reading this section.
 
 ## Search for a Service with HTTP 5xx Server Errors or Persistent Higher Response (Latency) than usual 
