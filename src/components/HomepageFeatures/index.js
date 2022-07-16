@@ -13,7 +13,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Non-intrusive with eBPF',
+    title: 'Non-intrusive Monitoring with eBPF',
     description: (
       <>
         Gyeeta uses eBPF and Kernel Statistics and is 100% non-intrusive. 
@@ -23,7 +23,7 @@ const FeatureList = [
     ),
   },
   {
-    title: '100% Service Activity',
+    title: '100% Service Activity Monitoring',
     description: (
       <>
         Gyeeta reports statistics for 100% of your Services. 
