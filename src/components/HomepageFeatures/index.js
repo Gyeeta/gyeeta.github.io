@@ -16,17 +16,17 @@ const FeatureList = [
     title: 'Non-intrusive Monitoring with eBPF',
     description: (
       <>
-        Gyeeta uses eBPF and Kernel Statistics and is 100% non-intrusive. 
+        Uses eBPF and Kernel Statistics and is 100% non-intrusive. 
 	Monitor On-Prem or Cloud. Kubernetes or Openshift.
 	No tracing, No instrumentation, No crashes, No slowdowns.
       </>
     ),
   },
   {
-    title: '100% Service Activity Monitoring',
+    title: '100% Service Activity',
     description: (
       <>
-        Gyeeta reports statistics for 100% of your Services. 
+        Statistics for 100% of your Services. 
 	And not just HTTP based services. Any Stack. Get Query Counts, Response Times,
 	Network Flows, Service Maps, Anomalies, Contention all in one place.
       </>
@@ -36,9 +36,9 @@ const FeatureList = [
     title: 'Lightweight & Highly Scalable',
     description: (
       <>
-        Gyeeta supports monitoring thousands of servers.
-	Monitor Hosts with tens of thousands of Queries/sec or
-	thousands of connections all under 10% of one CPU core.
+        Monitor Thousands of servers.
+	Monitor Hosts with tens of Thousands of Queries/sec or
+	Thousands of connections all under 10% of one CPU core.
       </>
     ),
   },
@@ -62,6 +62,27 @@ function Feature({Svg, title, description}) {
 export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
+    <div 
+      style={{  
+	  backgroundImage: "url(" + "/img/graph2.jpg" + ")",
+	  backgroundPosition: 'center',
+	  backgroundSize: 'cover',
+	  backgroundRepeat: 'no-repeat',
+	  borderRadius : '10%', 
+	  display: 'flex',
+	  flexWrap: 'wrap',
+	  justifyContent : 'center',
+	  alignItems : 'end',
+	  maxWidth : 300,
+	  minHeight : 400,
+	  margin : 30,
+	}} >	    
+      <div style={{ marginLeft : 10, marginBottom : 20, display : 'flex', flexWrap : 'wrap', justifyContent : 'center' }}>
+      <span style={{ fontSize : 20, color : '#16113f' }}><strong><em> Monitor your Infrastructure, </em></strong></span>
+      <span style={{ fontSize : 20, color : '#16113f' }}><strong><em>Services and Processes.</em></strong></span>
+      </div>
+      </div>
+
       <div className="container">
         <div className="row">
           {FeatureList.map((props, idx) => (

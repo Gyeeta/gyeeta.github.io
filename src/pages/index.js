@@ -40,11 +40,11 @@ function HomepageHeader() {
 		}} >	    
 	<img style={{ borderRadius : "50%" }} src="/img/logo.png" alt="Gyeeta Logo" width="50" height="50" />
 	<span style={{ marginRight : 10 }}> </span>
-	<span style={{ fontSize : 50, color : '#c193c3e6' }}><strong><em>G</em></strong></span><span style={{ fontSize : 40, color : '#8288b0' }}><strong><em>yeeta</em></strong></span>
+	<span style={{ fontSize : 50, color : '#d48585' }}><strong><em>G</em></strong></span><span style={{ fontSize : 40, color : '#8288b0' }}><strong><em>yeeta</em></strong></span>
 	</div>
 
 	<div style={{ marginTop : 20 }} />
-	<span style={{ fontSize : 20, color : '#ddd' }}><strong>{siteConfig.tagline}</strong></span>
+	<span style={{ fontSize : 20, marginLeft : 30, color : '#82b0a6' }}><strong>{siteConfig.tagline}</strong></span>
 	<div style={{ marginTop : 20 }} />
 
 	      <div style={{ marginTop : 20 }} />
