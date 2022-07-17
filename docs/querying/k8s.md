@@ -64,12 +64,12 @@ directly, but uses them internaly.
 
 ## CPU and Memory Limits
 
-Gyeeta shows the show the Kubernetes CPU Limits and Memory Limits as a percentage of max allowed within the Process State or Process Info statistics.
+Gyeeta shows the Kubernetes CPU Limits and Memory Limits as a percentage of max allowed within the Process State or Process Info statistics.
 Gyeeta will display whether the process is a CPU Throttled Process or a Memory Limited Process depending on whether Limits are set or not.
 
 Gyeeta will also show the current Process cgroup CPU and Memory Utilization as a percentage value based on the Max CPU / Memory Allowed.
 
-Gyeeta will also report the CPU Delays experienced by the process. If the process is a CPU Throttled process
-(CPU Limits specified) and if CPU Delays are being experienced by the process, it could imply either CPU throttling because of cgroup limits
-or overall system CPU contention or the process is taking up all CPU cores.
+Gyeeta will also report the CPU Delays experienced by the process. If the process is a CPU Throttled process (CPU Limits specified) and 
+if CPU Delays are being experienced by the process, it could imply either CPU throttling because of cgroup limits or overall 
+system CPU contention or the process is taking up all CPU cores.
 

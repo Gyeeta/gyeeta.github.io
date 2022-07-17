@@ -10,7 +10,7 @@ Service Maps refer to the realtime Visual representation of the Network Traffic 
 
 ## Querying Network Flows
 
-Gyeeta separates the Network Flows inound to a Service from the Network Flows outbound from a Client Application.
+Gyeeta separates the Network Flows inbound to a Service from the Network Flows outbound from a Client Application.
 
 The Inbound Network Flows to any Service is available from either the *activeconn* or *extactiveconn* subsystems.
 The Outbound Network Flows from any Client Application is available from either the *clientconn* or *extclientconn* subsystems.
