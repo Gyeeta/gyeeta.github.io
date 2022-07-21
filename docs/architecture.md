@@ -58,7 +58,7 @@ activity can be monitored.
 - Monitors all queries. Does not use sampling.
 - Interacts with a single Intermediate Server (`madhava`) assigned to it and sends all monitor statistics over TCP
 - No local disk storage is needed as all data is sent to the Intermediate server
-- Very lightweight and uses ***max*** *10% of one CPU core (p99 4% of one core)* and ***max*** *250 MB RSS Memory*
+- Lightweight with ***max*** *10% of one CPU core* (***p99*** *4% of one core*) (averaged over a 5 sec interval) and *250 MB RSS Memory*
 
 *Learn more from links below* :
 
