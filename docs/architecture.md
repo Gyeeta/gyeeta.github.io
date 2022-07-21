@@ -9,9 +9,9 @@ keywords:
 
 # Gyeeta Architecture
 
-*Gyeeta* is a Linux based Monitoring product. It utilizes [eBPF](https://ebpf.io/) to monitor individual Linux hosts.
+*Gyeeta* is a Linux based Observability product based on [eBPF](https://ebpf.io/) non-intrusive monitoring.
 
-*Gyeeta* is a completely free, open source (GPLv3) product and not a SaaS product. This implies that there is a need for more initial
+*Gyeeta* is free, 100% open source (GPLv3) product and not a SaaS product. This implies that there is a need for more initial
 setup steps compared to a normal SaaS product where only the Agent needs to be installed on monitored hosts. In return,
 users get a lightweight, highly optimized (`C++` based) monitoring product for free with complete control of all 
 monitored data and no external data transfers.

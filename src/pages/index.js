@@ -44,7 +44,7 @@ function HomepageHeader() {
 	</div>
 
 	<div style={{ marginTop : 20 }} />
-	<span style={{ fontSize : 20, marginLeft : 30, color : '#82b0a6' }}><strong>{siteConfig.tagline}</strong></span>
+	<span style={{ fontSize : 20, marginLeft : 30, color : '#bcdfd7' }}><strong>{siteConfig.tagline}</strong></span>
 	<div style={{ marginTop : 20 }} />
 
 	      <div style={{ marginTop : 20 }} />

@@ -7,13 +7,13 @@ const FeatureList = [
     title: '100% Free. 100% Open Source.',
     description: (
       <>
-        Gyeeta is 100% Free <i>forever</i>. 100% Open Source (C++). 
+        Gyeeta is 100% Free. 100% Open Source (C++). 
 	Not a SaaS Product. Your Infrastructure, Your Data.
       </>
     ),
   },
   {
-    title: 'Non-intrusive Monitoring with eBPF',
+    title: 'Non-intrusive Observability with eBPF',
     description: (
       <>
         Uses eBPF and Kernel Statistics and is 100% non-intrusive. 
@@ -23,7 +23,7 @@ const FeatureList = [
     ),
   },
   {
-    title: '100% Service Activity',
+    title: '100% Service Observability',
     description: (
       <>
         Statistics for 100% of your Services. 

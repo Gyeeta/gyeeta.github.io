@@ -17,14 +17,14 @@ slug: /
 - All Data In-House (On Prem). No external data transfer. 
 - Monitor Kubernetes and other Cloud Native Cluster orchestrators.
 
-## Key Monitoring Capabilities
+## Key Observability Capabilities
 
-1. Query Global Aggregated Statistics from multiple servers using Web UI or REST APIs.
-2. Self Learning Algorithms that can detect Anomalies, Contention or Degradation without any manual inputs. 
-3. Advanced Cluster, Service or Process Level Alerts.
-4. Service Level Statistics such as Queries/sec, Response Times (Latency) and HTTP Errors (if HTTP based) with no manual inputs or integrations.
+1. Service Level Statistics such as Queries/sec, Response Times (Latency) and HTTP Errors (if HTTP based) with no manual inputs or integrations.
    Monitors binary / proprietary network protocol or non HTTP Service statistics as well.
+2. Query Global Aggregated Statistics from multiple servers using Web UI or REST APIs.
+3. Self Learning Algorithms that can detect Anomalies, Contention or Degradation without any manual inputs. 
+4. Advanced Cluster, Service or Process Level Alerts.
 5. Detect Process Level *CPU starvation, Virtual Memory or IO Bottlenecks*. 
 6. Monitors all applications without any instrumentation or tapping irrespective of the programming language used.
-6. Auto Detect Service Dependencies and Service Network Flows (Service Maps).
+7. Auto Detect Service Dependencies and Service Network Flows (Service Maps).
 
