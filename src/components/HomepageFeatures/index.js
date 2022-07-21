@@ -36,9 +36,9 @@ const FeatureList = [
     title: 'Lightweight & Highly Scalable',
     description: (
       <>
-        Monitor Thousands of servers.
-	Monitor Hosts with tens of Thousands of Queries/sec or
-	Thousands of connections all under 10% of one CPU core.
+        Monitor thousands of servers.
+	Monitor Hosts with tens of thousands of Queries/sec or
+	thousands of connections all under 10% of one CPU core.
       </>
     ),
   },
