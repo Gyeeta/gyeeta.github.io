@@ -26,14 +26,14 @@ The Linux distributions which are supported include :
 
 | OS Distribution | Minimum version |
 | :-------------: | :-------------: |
-| Ubuntu | 16.04 |
-| Debian | 9 (stretch) |
-| RHEL | 8 |
-| CentOS | 8 |
+| Ubuntu | 16.04+ |
+| Debian | 9+ |
+| RHEL | 8+ |
+| CentOS | 8+ |
 | Amazon Linux 2 | All Versions |
 | Amazon Linux | Year 2017+ |
-| Fedora | 28 |
-| SuSE Linux | 12.5 |
+| Fedora | 28+ |
+| SuSE Linux | 12.5+ |
 
 Other Linux distributions based on RHEL or Debian/Ubuntu are supported as long as the base Linux Kernel is 4.4+
 
