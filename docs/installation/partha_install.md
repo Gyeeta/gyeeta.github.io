@@ -69,7 +69,7 @@ sudo yum -y install kernel-devel-$(uname -r)
 
 <TabItem value="fedora" label="Fedora Linux">
 <CodeBlock language="sh">
-sudo dnf install -y kernel-devel
+sudo dnf install -y kernel-devel-$(uname -r)
 </CodeBlock>
 </TabItem>
 
