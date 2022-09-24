@@ -51,11 +51,11 @@ activity can be monitored.
 
 **Features :**
 
-- Monitors Host and Processes Resource usage 
 - Monitors all Services and gathers statistics such as Queries/sec, Response Time (Latency), HTTP Errors (for HTTP services)
 - Monitors all Network Flows within host and across hosts as well and correlates them with `madhava`
+- Monitors Host and Processes Resource usage 
 - Auto detects any anomalies and flags any degradation in Host, Service or Process performance including CPU, Memory or IO Contention
-- Monitors all queries. Does not use sampling.
+- Monitors all services with statistics for all TCP traffic. Does not use sampling.
 - Interacts with a single Intermediate Server (`madhava`) assigned to it and sends all monitor statistics over TCP
 - No local disk storage is needed as all data is sent to the Intermediate server
 - Lightweight with ***max*** *10% of one CPU core* (***p99*** *4% of one core*) (averaged over a 5 sec interval) and *250 MB RSS Memory*
@@ -90,7 +90,7 @@ depends on the number of monitored hosts and Network Connectivity (adjacency) re
 
 **Features :**
 
-- Single `madhava` instance can handle upto 1000 Hosts (`partha`) interaction and monitoring
+- Single `madhava` instance can handle upto 500 Hosts (`partha`) interaction and monitoring
 - Coordinates with `shyama` and other `madhava` instances to resolve Network Flow Dependencies
 - Uses [Postgres DB](#postgres-database) as the datastore to store the data pertaining to the monitored hosts
 - Communicates with the [Webserver](#webserver) for query responses
@@ -98,9 +98,8 @@ depends on the number of monitored hosts and Network Connectivity (adjacency) re
 
 ## Postgres Database {#postgres-database}
 
-[PostgreSQL](https://www.postgresql.org/) is used as the datastore for `shyama` and `madhava` servers. Upto 5 `madhava` servers can share the same Postgres 
-instance as the datastore. As the number of madhava instances increase the requirement for additional Postgres instances will
-arise.
+[PostgreSQL](https://www.postgresql.org/) is used as the datastore for `shyama` and `madhava` servers. Upto 3 `madhava` servers can share the same Postgres 
+instance as the datastore. As the number of madhava instances increase the requirement for additional Postgres instances will arise.
 
 It is recommended to use a Postgres DB in the same Network Region/Zone as the `madhava` or `shyama` instance for better performance and lower costs.
 
