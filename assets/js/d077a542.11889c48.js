@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[3517],{9013:e=>{e.exports=JSON.parse('{"title":"Alerts Guide","slug":"/category/alerts-guide","permalink":"/docs/category/alerts-guide","navigation":{"previous":{"title":"Search Showcase","permalink":"/docs/searchshow"},"next":{"title":"Alerts Overview","permalink":"/docs/alerts/alertoverview"}}}')}}]);

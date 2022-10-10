@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[375],{9501:e=>{e.exports=JSON.parse('{"title":"Web UI","slug":"/category/web-ui","permalink":"/docs/category/web-ui","navigation":{"previous":{"title":"Kubernetes Analysis","permalink":"/docs/querying/k8s"},"next":{"title":"Web UI Overview","permalink":"/docs/monitor/uioverview"}}}')}}]);
