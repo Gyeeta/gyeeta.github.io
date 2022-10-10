@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Gyeeta',
   tagline: "A Non-Intrusive, Free and 100% Open Source Observability Product for your Infrastructure, Services and Processes",
-  url: 'https://gyeeta.io',
+  url: 'https://gyeeta.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -17,7 +17,9 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'gyeeta', // Usually your GitHub org/user name.
-  projectName: 'website', // Usually your repo name.
+  projectName: 'gyeeta.github.io', // Usually your repo name.
+  deploymentBranch: 'main',
+  trailingSlash: false,
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -35,13 +37,13 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/gyeeta/website/tree/main/',
+          editUrl: 'https://github.com/gyeeta/gyeeta.github.io/tree/main/',
           showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/gyeeta/website/tree/main/',
+          editUrl: 'https://github.com/gyeeta/gyeeta.github.io/tree/main/',
 	  feedOptions: {
             type: 'rss',
 	    title: 'Gyeeta Blog Posts',
