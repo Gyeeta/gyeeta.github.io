@@ -13,7 +13,7 @@ keywords:
 
 *Gyeeta* is free, 100% open source (GPLv3) product and not a SaaS product. This implies that there is a need for more initial
 setup steps compared to a normal SaaS product where only the Agent needs to be installed on monitored hosts. In return,
-users get a lightweight, highly optimized (`C++` based) monitoring product for free with complete control of all 
+users get a lightweight, optimized (`C++` based) monitoring product for free with complete control of all 
 monitored data and no external data transfers.
 
 ## Components in Gyeeta
@@ -32,6 +32,10 @@ the multiple monitored hosts
 - An [Alert Action Agent](#alert-action-agent) which interacts with `shyama` and executes the Alert Trigger Actions
 
 - One or more [Postgres DBs](#postgres-database) to be used as the datastore for `shyama` and `madhava` servers
+
+The image below shows the high level overview of how the different components interact with each other :
+
+![Gyeeta Architecture](/img/gyeeta_arch.jpg)
 
 ### Highly Scalable
 
