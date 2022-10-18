@@ -14,14 +14,20 @@ const sidebars = {
 		},
 		items: [
 			{
-				type: 'doc',
-				id: 'installation/partha_install',
-				label: 'Agent (partha) Installation',
+				type: 'category',
+				label: 'partha Agent Installation',
+				link: {
+					type: 'doc',
+					id: 'installation/partha_install',
+				},
+				items: [
+					'installation/partha_req',	
+				],
 			},
 			{
 				type: 'doc',
 				id: 'installation/partha_config',
-				label: 'Agent (partha) Configuration',
+				label: 'partha Agent Configuration',
 			},
 			{
 				type: 'doc',
