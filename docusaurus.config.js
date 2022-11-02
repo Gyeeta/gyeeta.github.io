@@ -126,7 +126,7 @@ const config = {
               },
               {
                 label: 'Youtube',
-                href: 'https://www.youtube.com/channel/UC6V9TpGjyLJTi9fHh-_9ZSw',
+                href: 'https://youtube.com/@gyeeta',
               },
             ],
           },
