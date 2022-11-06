@@ -15,9 +15,8 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'gyeeta', // Usually your GitHub org/user name.
-  projectName: 'gyeeta.github.io', // Usually your repo name.
+  organizationName: 'gyeeta', // GitHub org/user name.
+  projectName: 'gyeeta.github.io', // repo name.
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
 
@@ -37,17 +36,17 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/gyeeta/gyeeta.github.io/tree/main/',
+          editUrl: 'https://github.com/gyeeta.github.io/tree/main/',
           showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/gyeeta/gyeeta.github.io/tree/main/',
+          editUrl: 'https://github.com/gyeeta.github.io/tree/main/',
 	  feedOptions: {
             type: 'rss',
 	    title: 'Gyeeta Blog Posts',
-	    description: 'A Blog describing planned features, usecases of Gyeeta and monitoring in general',
+	    description: 'A Blog describing planned features, use cases of Gyeeta and monitoring in general',
 	    copyright: 'Exact Solutions, Inc.',
 	    language: 'en-US',
           }		  
