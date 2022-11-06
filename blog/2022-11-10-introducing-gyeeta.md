@@ -5,13 +5,13 @@ authors: [kvdevel]
 tags: [introduction, welcome]
 ---
 
-We (the team @ Exact Solutions, Inc.)  are very happy to introduce [Gyeeta](https://github.com/gyeeta) to help with 
-meeting your organization's Observability and Monitoring needs.
+We (the team @ Exact Solutions, Inc.)  are very happy to introduce [Gyeeta](https://github.com/gyeeta) 
+to help with meeting your organization's Observability and Monitoring needs.
 
 We felt the need for Gyeeta for the following reasons :
 
 - Few tools exist currently in the Free and Open source space which can be quickly deployed.
-  Tools such as [Prometheus](https://prometheus.io) and [Opentracing](https://opentracing.io)
+  Tools such as [Prometheus](https://prometheus.io) and frameworks such as [Opentracing](https://opentracing.io)
   exist, but require the applications to expose their metrics using exporters or require 
   specific Application stacks.
 
