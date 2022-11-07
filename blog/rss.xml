@@ -3,20 +3,29 @@
     <channel>
         <title>Gyeeta Blog Posts</title>
         <link>https://gyeeta.github.io/blog</link>
-        <description>A Blog describing planned features, usecases of Gyeeta and monitoring in general</description>
-        <lastBuildDate>Sat, 09 Jul 2022 00:00:00 GMT</lastBuildDate>
+        <description>A Blog describing planned features, use cases of Gyeeta and monitoring in general</description>
+        <lastBuildDate>Thu, 10 Nov 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en-US</language>
         <copyright>Exact Solutions, Inc.</copyright>
         <item>
-            <title><![CDATA[Welcome]]></title>
-            <link>https://gyeeta.github.io/blog/welcome</link>
-            <guid>welcome</guid>
-            <pubDate>Sat, 09 Jul 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[Docusaurus blogging features are powered by the blog plugin.]]></description>
-            <content:encoded><![CDATA[<p><a href="https://docusaurus.io/docs/blog" target="_blank" rel="noopener noreferrer">Docusaurus blogging features</a> are powered by the <a href="https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog" target="_blank" rel="noopener noreferrer">blog plugin</a>.</p><p>Simply add Markdown files (or folders) to the <code>blog</code> directory.</p><p>Regular blog authors can be added to <code>authors.yml</code>.</p><p>The blog post date can be extracted from filenames, such as:</p><ul><li><code>2019-05-30-welcome.md</code></li><li><code>2019-05-30-welcome/index.md</code></li></ul><p>The blog supports tags as well!</p><p><strong>And if you don't want a blog</strong>: just delete this directory, and use <code>blog: false</code> in your Docusaurus config.</p>]]></content:encoded>
+            <title><![CDATA[Introducing Gyeeta]]></title>
+            <link>https://gyeeta.github.io/blog/introducing-gyeeta</link>
+            <guid>introducing-gyeeta</guid>
+            <pubDate>Thu, 10 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[We (the team @ Exact Solutions, Inc.)  are very happy to introduce Gyeeta]]></description>
+            <content:encoded><![CDATA[<p>We (the team @ Exact Solutions, Inc.)  are very happy to introduce <a href="https://github.com/gyeeta" target="_blank" rel="noopener noreferrer">Gyeeta</a>
+to help with meeting your organization's Observability and Monitoring needs.</p><p>We felt the need for Gyeeta for the following reasons :</p><ul><li><p>Few tools exist currently in the Free and Open source space which can be quickly deployed.
+Tools such as <a href="https://prometheus.io" target="_blank" rel="noopener noreferrer">Prometheus</a> and frameworks such as <a href="https://opentracing.io" target="_blank" rel="noopener noreferrer">Opentracing</a>
+exist, but require the applications to expose their metrics using exporters or require
+specific Application stacks.</p></li><li><p>Commercial SaaS tools exist which utilize a combination of APM, Tracing, Kernel Monitors, eBPF
+to provide a rich variety of metrics but these products are expensive both in terms of costs as
+well as Host CPU, Memory and IO usage.</p></li></ul><p>We felt there was the need for a product which was Free, Open source and which organizations could
+use to monitor their Infrastructure 24x7 non-intrusively and without any application changes.</p><p>This requires a tool which would be very lightweight in terms of resource usage and importantly,
+provide quick Alerts or Search results to detect any anomaly or degradation.</p><p>We hope you try Gyeeta in your environment and find it a useful product.</p>]]></content:encoded>
             <category>introduction</category>
+            <category>welcome</category>
         </item>
     </channel>
 </rss>
