@@ -10,9 +10,25 @@ const sidebars = {
 		type: 'category',
 		label: 'Installation & Configuration',
 		link: {
-			type: 'generated-index',
+			type: 'doc',
+			id: 'installation/install_options',
 		},
 		items: [
+			{
+				type: 'doc',
+				id: 'installation/postgresdb_install',
+				label: 'PostgresDB Installation',
+			},
+			{
+				type: 'doc',
+				id: 'installation/shyama_config',
+				label: 'shyama Server Configuration',
+			},
+			{
+				type: 'doc',
+				id: 'installation/shyama_install',
+				label: 'shyama Server Installation',
+			},
 			{
 				type: 'category',
 				label: 'partha Agent Installation',
@@ -28,16 +44,6 @@ const sidebars = {
 				type: 'doc',
 				id: 'installation/partha_config',
 				label: 'partha Agent Configuration',
-			},
-			{
-				type: 'doc',
-				id: 'installation/shyama_install',
-				label: 'shyama Server Installation',
-			},
-			{
-				type: 'doc',
-				id: 'installation/shyama_config',
-				label: 'shyama Server Configuration',
 			},
 
 			{

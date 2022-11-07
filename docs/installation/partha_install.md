@@ -1,6 +1,6 @@
 ---
-title: Host Agent Installation
-description: Gyeeta Host Agent Installation
+title: Partha Agent Installation
+description: Gyeeta Partha Host Agent Installation
 ---
 
 # Host Agent (*partha*) Installation
