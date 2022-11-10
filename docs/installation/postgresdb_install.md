@@ -5,13 +5,14 @@ description: Gyeeta PostgresDB Installation
 
 # Gyeeta PostgresDB Installation
 
-Gyeeta Shyama and Madhava servers use PostgresDB as a data store. Depending on the number of Madhava instances,
-one or more Postgres DB instances may be needed.
+Gyeeta Shyama and Madhava servers use PostgresDB as a data store.
+
+A single instance of Postgres can support 1 Shyama server and upto 3 Madhava server instances.
 
 :::info
 
-Please ignore PostgresDB Install instructions in case of Kubernetes Helm based installs as for Helm charts, the PostgresDB
-container is installed as a sidecar automatically.
+For Kubernetes Helm Charts based installs, Postgres does not need to be installed separately, as the PostgresDB
+container is installed as a sidecar container automatically.
 
 :::
 
@@ -21,9 +22,9 @@ The PostgresDB instance to be used by Shyama will need about 10 GB of disk space
 
 ## Madhava Postgres Disk Space Requirement {#madhava-dbspace}
 
-Maximum 3 instances of Madhava can share a since PostgresDB instance.
+Maximum 3 instances of Madhava can share a single PostgresDB instance.
 
-The PostgresDB instance to be used by each Madhava will need about 0.5 GB /per day of free disk space for each monitored host.
+The PostgresDB instance to be used by each Madhava will need about 0.5 GB per day of free disk space per monitored host.
 
 As an example, lets say there are 200 hosts to be monitored in total and maximum 3 days of statistics history is needed. 
 
@@ -38,7 +39,7 @@ Shyama PostgresDB instances will need minimal CPU and Memory requirements :
 
 Madhava Postgres insatnces need more CPU and Memory requirements :
 
-> Max 100% of 1 core CPU and upto 32 GB RAM depending on the number of hosts each Madhava instance handles
+> Max 100% of 1 core CPU and memory ranging from 1 GB to 32 GB RAM depending on the number of hosts the Madhava instance handles
 
 
 ## Network Connectivity Requirements {#network}
@@ -47,21 +48,28 @@ Network connectivity to the PostgresDB instance will need to be provided to the 
 
 ## Installation Instructions
 
-### Install using Shell script 
+Different Install Options exist :
+
+- [Install using Shell Script](#shellscript)
+- [Running as a Docker container](#docker)
+- [Install using native rpm or deb packages](#rpm-deb)
+- [Manual Tar Package install](#tar-install)
+
+For Kubernetes, no separate Helm chart needs to be installed as Postgres is automatically installed along with Shyama and Madhava.
+
+### *Install using Shell script* {#shell-script}
 
 Users can download a shell script that takes care of the installation and configuration of the PostgresDB instance.
 
 ```bash
 curl -o /tmp/install-gyeeta-postgresdb.sh -s https://gyeeta.io/packages/install-gyeeta-postgresdb.sh
-```
 
-Then run the install script as : 
+# Then run the install script as : 
+# sudo bash /tmp/install-gyeeta-postgresdb.sh <Path to DB Data dir> <DB 'postgres' user Password> <Postgres Port to Listen on> <Optional DB Max Memory Shared buffers in MB>
 
-`sudo bash /tmp/install-gyeeta-postgresdb.sh <Path to DB Data dir> <DB 'postgres' user Password> <Postgres Port to Listen on> <Optional DB Max Memory Shared buffers in MB>`
+# The DB Data dir will be created if it does not exist. Please ensure that the DB Data dir has adequate Free Disk Space.
 
-The DB Data dir will be created if it does not exist.
-
-```bash title="Example Install Command"
+# Example Command with gyeetadbPassword as the password :
 
 sudo bash /tmp/install-gyeeta-postgresdb.sh /opt/gyeeta/postgresdb/data gyeetadbPassword 10040
 
@@ -69,31 +77,121 @@ sudo bash /tmp/install-gyeeta-postgresdb.sh /opt/gyeeta/postgresdb/data gyeetadb
 
 The install script SHA256 can be checked before installing. The SHA256 of the install script is available at [SHA256 file](https://gyeeta.io/packages/install-gyeeta-postgresdb.sh.sum)
 
-### Running as a Docker container {#docker}
+### *Running as a Docker container* {#docker}
 
 Running Postgres as a Docker container is a 2 step process. 
 
 1. A one time DB init is needed.
-2. Therafter, the docker container can be run multiple times.
+2. Therafter, the DB docker container can be run multiple times.
 
 The docker container needs the following inputs :
 
 - A Volume mount dir for storing the DB data
 - Init DB Password and Port number
 
+The docker container will only run under userid 1001 and groupid 1001. The volume mount dir needs to have its ownership
+changed to userid:groupid as 1001:1001.
+
 #### Run postgresdb DB init first (only once)
 
-```bash
+```bash title="Example Docker Init Command"
 
-docker run -td --rm --name gyeetaInitPostgres --read-only -v /opt/gyeeta/dbdata:/dbdata --env CFG_POSTGRES_PASSWORD=gyeetadbPassword --env CFG_POSTGRES_PORT=10040 ghcr.io/gyeeta/postgresdb --initdb
+docker run -td --rm --name gyeetaInitPostgres --read-only --user 1001:1001 -v /opt/gyeeta/dbdata:/dbdata --env CFG_POSTGRES_PASSWORD=gyeetadbPassword --env CFG_POSTGRES_PORT=10040 ghcr.io/gyeeta/postgresdb --initdb
 
 ```
 
 #### Run postgresdb after init
 
+```bash title="Example Docker Command After Init"
+
+docker run -td --rm --name gyeetaPostgres --read-only --user 1001:1001 -p 10040:10040 -v /opt/gyeeta/dbdata:/dbdata ghcr.io/gyeeta/postgresdb 
+
+```
+
+### *Install using native rpm or deb packages* {#rpm-deb}
+
+Gyeeta native rpm or deb packages are available. The install is to be followed by DB initialization and configuration.
+
+#### Debian/Ubuntu based deb package install
+
 ```bash
 
-docker run -td --rm --name gyeetaPostgres --read-only -p 10040:10040 -v /opt/gyeeta/dbdata:/dbdata ghcr.io/gyeeta/postgresdb 
+curl https://pkg.gyeeta.workers.dev/pgp-key.public | sudo gpg --yes --dearmor --output /usr/share/keyrings/gyeeta-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/gyeeta-keyring.gpg] https://pkg.gyeeta.workers.dev/apt-repo stable main" | sudo tee /etc/apt/sources.list.d/gyeeta.list
+sudo apt-get update
+sudo apt-get install -y gyeeta-postgresdb
+
+```
+
+#### Yum or dnf based rpm Installs
+
+For RHEL, Amazon Linux, CentOS, Rocky Linux, Fedora based distributions.
+
+```bash
+
+sudo rpm --import https://pkg.gyeeta.workers.dev/pgp-key.public
+sudo curl -s -o /etc/yum.repos.d/gyeeta.repo https://pkg.gyeeta.workers.dev/rpm-repo/gyeeta.repo
+
+if command -v yum > /dev/null; then 
+	sudo yum -y update
+	sudo yum install -y gyeeta-postgresdb
+else
+	sudo dnf -y update
+	sudo dnf install -y gyeeta-postgresdb
+fi	
+
+```
+
+#### OpenSUSE / SUSE Linux based rpm Installs
+
+```bash
+
+sudo rpm --import https://pkg.gyeeta.workers.dev/pgp-key.public
+sudo curl -s -o /etc/zypp/repos.d/gyeeta.repo https://pkg.gyeeta.workers.dev/rpm-repo/gyeeta.repo
+sudo zypper -q -n install gyeeta-postgresdb
+
+```
+
+
+#### PostgresDB Configuration post Installation
+
+After the deb or rpm package has been installed, a one time DB initialization is needed. The command to
+run the init is :
+
+`sudo -H -u gyeeta $INSTALLDIR/db_install.sh <DB Data directory path> <DB 'postgres' user Password> <Postgres Port to Listen on> <Optional DB Max Shared buffers in MB>`
+
+The DB Data dir will be created if it does not exist. Please ensure that the DB Data dir has adequate Free Disk Space.
+
+```bash title="Example Configure Command"
+
+sudo -H -u gyeeta /opt/gyeeta/postgresdb/db_install.sh /opt/gyeeta/postgresdb/data gyeetadbPassword 10040
+
+# Thereafter start the gyeeta-postgresdb 
+sudo systemctl start gyeeta-postgresdb
+sudo systemctl enable gyeeta-postgresdb
+
+```
+
+
+### *Manual Tar Package install* {#tar-install}
+
+If none of the above options can be used to install the Gyeeta PostgresDB component, a manual tarball extract and configure
+can be used to install.
+
+```bash title="Example Install Command"
+
+mkdir ~/gyeeta
+cd ~/gyeeta
+curl -L https://github.com/Gyeeta/postgresdb/releases/download/v0.1.0/postgresdb.tar.gz | tar xzf -
+cd ./postgresdb
+
+# Thereafter configure the DB
+# ./db_install.sh <DB Data directory> <DB 'postgres' user password> <Postgres Port to Listen on> <Optional DB Max Shared buffers in MB>
+
+./db_install.sh ./data dbPassword 10040
+
+# Then start the DB
+./rundb.sh start
 
 ```
 

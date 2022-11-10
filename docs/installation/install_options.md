@@ -1,28 +1,32 @@
 ---
-title: Install Options
-description: Gyeeta components Install Options
+title: Installation Options
+description: Gyeeta Install Options and Sequence
 keywords:
   - installation
 ---
 
-# Gyeeta Install Options
+# Gyeeta Installation Options and Sequence
 
-Gyeeta consists of the following main components :
+## Components to be installed
 
-- Partha Host Monitor Agent to be installed on each host
+To setup Gyeeta, users need to install the following minimal components :
+
 - One instance of Shyama Central Server 
 - One or more instances of Madhava Intermediate Servers
 - One or more instances of PostgresDB Servers
+- On each host to be monitored, a Partha Host Monitor Agent to be installed
 - One instance of Node Webserver
 - One instance of Alert Action Agent
 
 ## Install Options for Gyeeta components {#install-options}
 
-- Linux script based install
+Gyeeta components can be installed using any of the following methods :
+
+- Bash Script based Installation and Configuration
 - Kubernetes Helm Chart
-- Docker Container
-- rpm / deb Linux packages for dnf/yum or apt/dpkg based package managers
-- Manual Tar Package download
+- Docker Containers
+- rpm / deb based native packages for dnf/yum, apt-get or zypper
+- Manual Tar Package download and configure
 
 ## Recommended Install Sequence {#install-sequence}
 
@@ -35,8 +39,4 @@ The recommended sequence for installing various components include :
 5. Install the Node Webserver.
 6. Install the Alert Action Agent.
 
-Please refer to the following links for information on installing and configuring
-the different components :
-
-- [PostgresDB Install](./postgresdb_install)
 

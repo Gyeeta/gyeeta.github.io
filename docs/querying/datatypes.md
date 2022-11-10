@@ -61,7 +61,7 @@ Both these filters are to be specified as JSON Strings. A sample REST API query 
     "aggregate": true,
     "aggrsec": 18000,
     "aggroper": "sum",
-    "filter": "{ cluster ~ prod.* }",
+    "filter": "{ cluster ~ 'prod.*' }",
     "aggrfilter": "( { svcissue > 0 }  or  { sererr > 0 } )"
   }
 }
@@ -84,11 +84,11 @@ conditions.
 
 When a mix of *and* and *or* conditions is to be specified, the criteria need to be enclosed by parenthesis. For example :
 
-`( { name ~ \'^[mnp]+\' } and ( { nqry5s > 0 } or { cpudelus > 0 } ) )`
+`( { name ~ '^[mnp]+' } and ( { nqry5s > 0 } or { cpudelus > 0 } ) )`
 
 The filter above will be expanded by Gyeeta internally as :
 
-`( { name ~ \'^[mnp]+\' } and { nqry5s > 0 } ) or ( { name ~ \'^[mnp]+\' } and { cpudelus > 0 } )`
+`( { name ~ '^[mnp]+' } and { nqry5s > 0 } ) or ( { name ~ '^[mnp]+' } and { cpudelus > 0 } )`
 
 Even more advanced filters are possible with multiple *and* and *or* criteria. For example,
 
@@ -122,18 +122,15 @@ The filter field can have mathematical operators added for Numberic Field types.
 `{ numfield1 + numfield2 > 10 }`, or `{ numfield1 * 10 > 300 }` or `{ numfield1 % 3 > 1 }`
 
 The filter field can also be compared to another field within the same subsystem. This is valid for all Field Types. 
-No expresssions are allowed for the RHS (Right Hand Side) field though. 
 
 For example,
 
-`{ strfield != strfield2 }` or `{ numfield1 + numfield2 > numfield3 }`
+```
 
-As expressions are not allowed for RHS fields, users need to move the expression operator to LHS. For example,
-instead of the following :
+{ strfield != strfield2 } 
 
-`{ numfield1 > numfield2 + 10 }` 
+{ numfield1 + numfield2 > numfield3 }`
 
-move the `+ 10` to LHS as `- 10` :
+{ numfield1 > numfield2 * 10 }
 
-`{ numfield1 - 10 > numfield2 }` 
-
+```

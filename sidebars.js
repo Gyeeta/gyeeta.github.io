@@ -10,10 +10,14 @@ const sidebars = {
 		type: 'category',
 		label: 'Installation & Configuration',
 		link: {
-			type: 'doc',
-			id: 'installation/install_options',
+			type: 'generated-index',
 		},
 		items: [
+			{
+				type: 'doc',
+				id: 'installation/install_options',
+				label: 'Installation Options ',
+			},
 			{
 				type: 'doc',
 				id: 'installation/postgresdb_install',
@@ -28,6 +32,16 @@ const sidebars = {
 				type: 'doc',
 				id: 'installation/shyama_install',
 				label: 'shyama Server Installation',
+			},
+			{
+				type: 'doc',
+				id: 'installation/madhava_config',
+				label: 'madhava Server Configuration',
+			},
+			{
+				type: 'doc',
+				id: 'installation/madhava_install',
+				label: 'madhava Server Installation',
 			},
 			{
 				type: 'category',
@@ -45,7 +59,6 @@ const sidebars = {
 				id: 'installation/partha_config',
 				label: 'partha Agent Configuration',
 			},
-
 			{
 				type: 'doc',
 				id: 'installation/madhava_install',

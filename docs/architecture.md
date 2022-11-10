@@ -11,10 +11,11 @@ keywords:
 
 *Gyeeta* is an Observability product utilizing [eBPF](https://ebpf.io/) and Linux kernel statistics.
 
-*Gyeeta* is free, 100% open source (GPLv3) product and not a SaaS product. This requires some additional
-setup steps compared to a normal SaaS product.
+*Gyeeta* is free, 100% open source (GPLv3) product. This does entail some additional setup as the
+analytics servers need to be installed in the users environment.
 
-Currently, *Gyeeta* is available for `x86_64` processors only.
+Currently, *Gyeeta* is available for `x86_64`processors only and Linux Kernel versions 4.4.0 and higher.
+
 
 ## Components in Gyeeta
 
@@ -27,7 +28,7 @@ Currently, *Gyeeta* is available for `x86_64` processors only.
 - One or more Intermediate Servers (named [`madhava`](#intermediate-server-madhava)) handling statistics from
 the multiple monitored `partha` hosts
 
-- A [Webserver](#webserver) which interacts with the `shyama` and `madhava` servers 
+- A [NodeJS Webserver](#webserver) which interacts with the `shyama` and `madhava` servers 
 
 - An [Alert Action Agent](#alert-action-agent) which interacts with `shyama` and executes the Alert Trigger Actions
 
@@ -45,11 +46,11 @@ instances.
 The Host Agent `partha` can monitor heavy loads such as hosts with thousands of connections, hundreds of
 processes/sec, or tens of thousands of queries/sec, all with under 10% single core CPU utilzation.
 
-## Host Monitor Agent (*partha*) {#host-monitor-agent-partha}
+## *Partha* Host Monitor Agent {#host-monitor-agent-partha}
 
 The Gyeeta Host Monitor Agent (named `partha`) is a lightweight priviliged process using eBPF to monitor the activities on a host.
 It needs to be installed on every host that is to be monitored and preferably started at init (startup) so that all process
-activity can be monitored. Only Linux hosts are supported.
+activity can be monitored. 
 
 **Features :**
 
@@ -60,14 +61,14 @@ activity can be monitored. Only Linux hosts are supported.
 - Monitors all services with statistics for all TCP traffic. Does not use sampling.
 - Interacts with a single `shyama` assigned `madhava` Intermediate Server and sends all statistics over a TCP connection
 - No local disk storage is needed as all data is sent to the Intermediate server
-- Lightweight with ***max*** *10% of one CPU core* (***p99*** *4% of one core*) (averaged over a 5 sec interval) and *300 MB RSS Memory*
+- Lightweight with ***max*** *10% of one CPU core* (***p99*** *4% of one core*) (averaged over a 5 sec interval) and max *300 MB RSS Memory*
 
 *Learn more from links below* :
 
-[**Host Agent Installation and Host Requirements**](./installation/partha_install.md)  
-[**Host Agent Configuration**](./installation/partha_config.md)
+[**Partha Agent Installation and Host Requirements**](./installation/partha_install.md)  
+[**Partha Agent Configuration**](./installation/partha_config.md)
 
-## Central Server (*shyama*) {#central-server-shyama}
+## *Shyama* Central Server {#central-server-shyama}
 
 The `shyama` Central Server is the only component which interacts with all other components. A single `shyama` instance is needed to be
 installed on any Linux host with minimal CPU and RAM requirements. The `shyama` instance needs to have Network Connectivity with all
@@ -86,7 +87,7 @@ inter-region network communication if the `shyama` instance is in a separate reg
 - Communicates with the [Webserver](#webserver) for web query responses
 - Optional Redundancy in Active Passive modes with one active and one or more passive `shyama` instances
 
-## Intermediate Server (*madhava*) {#intermediate-server-madhava}
+## *Madhava* Intermediate Server {#intermediate-server-madhava}
 
 The `madhava` Intermediate Server interacts with `partha`, `shyama` and the webserver. The number of `madhava` instances to be installed
 depends on the number of monitored hosts and Network Connectivity (adjacency) requirements.
@@ -109,7 +110,7 @@ instance as the datastore. As the number of madhava instances increase the requi
 
 It is recommended to use a Postgres DB in the same Network Region/Zone as the `madhava` or `shyama` instance for better performance and lower costs.
 
-## Webserver
+## NodeJS Webserver
 
 The `nodejs` based webserver authenticates user queries and then forwards them to the `shyama` and `madhava` servers. A single instance of Webserver is needed
 to be installed on a host with Network Connectivity to `shyama` and all `madhava` instances.

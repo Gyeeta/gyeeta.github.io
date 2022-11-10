@@ -8,10 +8,14 @@ keywords:
 
 # Shyama Central Server Configuration
 
+Shyama is Gyeeta's Central Server interacting with all other componenets. In addition, it also acts as the Gyeeta Alert Manager.
+
+Shyama Server is the only component in Gyeeta which will interact with all other components.
+
 Shyama server reads its configuration from a [JSON](https://en.wikipedia.org/wiki/JSON) file or as environment variables.
 Environment variables will take precedence over the config file in case of a conflict.
 
-A sample Shyama JSON config file is available in `sample_shyama_main.json` file in Shyama install dir.
+A sample Shyama JSON config file is given [below](#sample-json).
 
 The list of Config options include :
 
@@ -29,7 +33,7 @@ to be used in PostgresDB.
 
 The JSON field name is `shyama_name` and corresponding environment variable is `CFG_SHYAMA_NAME`.
 
-This field is mandatory.
+This field is mandatory. 
 
 ## Shyama Secret {#shyama-secret}
 
@@ -45,6 +49,17 @@ This indicates the Domain Name or IP Address that other components will use to c
 
 In most instances this would be the Hostname of the Shyama server. But in cases where Virtual IP/Hostname/ NAT Translation is 
 applicable such as Kubernetes, this would be the Virtual IP or Service Hostname.
+
+:::note
+
+The Shyama instance must be accessible to all other Gyeeta components through this
+Service Hostname / IP. In case multiple Network Regions or Zones are active, it is mandatory that components
+in other Network Regions / Zones can connect to this Shyama instance.
+[VPC Network Peering](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) or some other 
+such mechanism can be used to enable this.
+
+:::
+
 
 The JSON field is `service_hostname` and environment variable is `CFG_SERVICE_HOSTNAME`.
 
@@ -110,9 +125,19 @@ such as Pagerduty or Slack.
 In case there is no external Reverse Proxy Webserver to used, this will then indicate the 
 Hostname or Domain Name of the gyeeta-nodewebserver component. 
 
+:::info
+
+At Shyama Config time, it is likely that the Node Webserver may not have been installed and
+in such cases, this field should contain the likely Hostname of the host where the 
+node webserver is to be installed or localhost if no other hosts available. 
+
+In case of changes, the Shyama config can be updated and restarted.
+
+:::
+
 The JSON field is `webserver_url` and environment variable is `CFG_WEBSERVER_URL`.
 
-This field is mandatory.
+This field is mandatory. Sample Usage : http://192.168.0.1:10039
 
 ## Minimum Madhava Instances {#min-madhava}
 
@@ -131,7 +156,7 @@ This field is optional and default minimum Madhava instances is 1.
 This field indicates the Cloud Operator this Shyama instance is running on. This is needed
 to get the Network Region and Zone.
 
-Currently supported Cloud Operator Metadata collection are : AWS, GCP and Azure. 
+Currently supported Cloud Operator Metadata collection are : aws, gcp and azure. 
 
 For other Cloud Operators or in case of own data centers, this field should be ignored.
 
@@ -157,9 +182,9 @@ The JSON field is `zone_name` and environment variable is `CFG_ZONE_NAME`.
 
 This field is optional.
 
-## Sample JSON Config file 
+## Sample JSON Config file {#sample-json}
 
-A sample JSON config file is provided below :
+A sample Shyama JSON config file is provided below :
 
 ```json
 {
@@ -177,12 +202,26 @@ A sample JSON config file is provided below :
 		"postgres_hostname"		:	"dbshyama1.local",
 		"postgres_port"			:	10040,
 		"postgres_user"			:	"postgres",
-		"postgres_password"		:	"gyeeta",
+		"postgres_password"		:	"dbPassword",
 		"postgres_storage_days"		:	3,
 
-		"webserver_url"			:	"http://gyeetaweb.local:10039"
+		"webserver_url"			:	"http://gyeetawebhost.local:10039"
 }	
 
 
 ```
+
+**Explanation of above sample config**
+
+In the above sample config, the Shyama server will listen on port 10037, with other Gyeeta componenets such 
+as Madhava servers, Partha Host Agents connecting to this Shyama instance at shyama1.local:10037.
+
+The Shyama instance will connect to remote Postgres DB dbshyama1.local:10040 as `postgres` user with password 
+as dbPassword and with max history of 3 days.
+
+Shyama servers will start accepting Partha Host Agents only after at least 1 Madhava server has connected to this
+Shyama instance (`min_madhava`).
+
+External Web Clients will connect to Gyeeta Webserver at http://gyeetawebhost.local:10039 to access the Web UI.
+
 
