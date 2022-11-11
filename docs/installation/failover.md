@@ -1,6 +1,6 @@
 ---
 title: Gyeeta Failover Handling
-description: Gyeeta Server components Failover Redundancy
+description: Server Components Failover Redundancy
 keywords:
   - failover
   - redundancy

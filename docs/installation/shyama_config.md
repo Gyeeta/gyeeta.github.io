@@ -33,7 +33,7 @@ to be used in PostgresDB.
 
 The JSON field name is `shyama_name` and corresponding environment variable is `CFG_SHYAMA_NAME`.
 
-This field is mandatory. 
+This field is mandatory and max shyama name length is 64 bytes. 
 
 ## Shyama Secret {#shyama-secret}
 
@@ -166,8 +166,8 @@ This field is optional.
 
 ## Network Region Name {#region-name}
 
-This field must be used only if the preceding Cloud Operator type is empty. This field
-indicats the Network Region Name this Shyama host is operating under. 
+This field must be used only if the preceding [Cloud Operator type](#cloud-type) is empty. This field
+indicates the Network Region Name this Shyama host is operating under. 
 
 The JSON field is `region_name` and environment variable is `CFG_REGION_NAME`.
 
@@ -175,8 +175,8 @@ This field is optional.
 
 ## Network Zone Name {#zone-name}
 
-This field must be used only if the preceding Cloud Operator type is empty. This field
-indicats the Network Zone Name this Shyama host is operating under. 
+This field must be used only if the preceding [Cloud Operator type](#cloud-type) is empty. This field
+indicates the Network Zone Name this Shyama host is operating under. 
 
 The JSON field is `zone_name` and environment variable is `CFG_ZONE_NAME`.
 

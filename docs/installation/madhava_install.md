@@ -1,21 +1,19 @@
 ---
-title: shyama Server Installation
-description: Shyama Central Server Installation
+title: madhava Server Installation
+description: Madhava Intermediate Server Installation
 keywords:
-  - shyama
+  - madhava
   - installation
 ---
 
-# Shyama Central Server Installation
-
-Shyama Server is the only component in Gyeeta which will interact with all other components.
+# Madhava Intermediate Server Installation
 
 ## Network Connectivity Requirements {#network}
 
-As Shyama will communicate with all other components, Shyama needs to be installed on a host that can be
-connected to by all other components and all Hosts that need to be monitored.
+Madhava Intermediate servers connect to Shyama Central server and also communicate with Partha Host Agents
+and Node Webserver.
 
-It is recommended that the Shyama server and its PostgresDB be in the same Network Regin and Zone to limit
+It is recommended that the Madhava server and its PostgresDB be in the same Network Regin and Zone to limit
 Network costs and for better performance.
 
 ## Installation Instructions
@@ -28,33 +26,34 @@ Different Install Options exist :
 - [Install using native rpm or deb packages](#rpm-deb)
 - [Manual Tar Package install](#tar-install)
 
-Except for Kubernetes installs, please ensure that the Postgres DB instance is installed and the Shyama Config
-file in JSON format is ready as per [Shyama Config](./shyama_config).
+Except for Kubernetes installs, please ensure that the Postgres DB instance is installed and the Madhava Config
+file in JSON format is ready as per [Madhava Config](./madhava_config).
 
 ### *Install using Shell script* {#shell-script} 
 
-Users can download a shell script that takes care of the installation and configuration of the Shyama instance.
+Users can download a shell script that takes care of the installation and configuration of the Madhava instance.
 
 :::note
 
-Before installing Shyama, users need to create a JSON config file as per the [Shyama Config](./shyama_config).
+Before installing Madhava, users need to create a JSON config file as per the [Madhava Config](./madhava_config).
 
 :::
 
 
 ```bash
-curl -o /tmp/install-gyeeta-shyama.sh -s https://gyeeta.io/packages/install-gyeeta-shyama.sh
+
+curl -o /tmp/install-gyeeta-madhava.sh -s https://gyeeta.io/packages/install-gyeeta-madhava.sh
 
 # Then run the install script as : 
-# sudo bash /tmp/install-gyeeta-shyama.sh <Path to Shyama Config fiel in JSON format>
+# sudo bash /tmp/install-gyeeta-madhava.sh <Path to Madhava Config file in JSON format>
 
-# Example Install Command (Please configure the /tmp/shyama.json config file first) :
+# Example Install Command (Please configure the /tmp/madhava.json config file first) :
 
-sudo bash /tmp/install-gyeeta-shyama.sh /tmp/shyama.json
+sudo bash /tmp/install-gyeeta-madhava.sh /tmp/madhava.json
 
 ```
 
-The install script SHA256 can be checked before installing. The SHA256 of the install script is available at [SHA256 file](https://gyeeta.io/packages/install-gyeeta-shyama.sh.sum)
+The install script SHA256 can be checked before installing. The SHA256 of the install script is available at [SHA256 file](https://gyeeta.io/packages/install-gyeeta-madhava.sh.sum)
 
 
 ### *Kubernetes Helm Chart* {#helm-chart}
@@ -69,32 +68,32 @@ A short explanation is shown below :
 ```bash
 
 helm repo add gyeeta https://gyeeta.io/helmcharts
-helm show values gyeeta/shyama > /tmp/shyama.yaml
+helm show values gyeeta/madhava > /tmp/madhava.yaml
 
-# Thereafter you can edit the /tmp/shyama.yaml file if you need to change any option. 
-# After editing the /tmp/shyama.yaml, install the Shyama Helm chart using :
+# Thereafter you can edit the /tmp/madhava.yaml file if you need to change any option. 
+# After editing the /tmp/madhava.yaml, install the Madhava Helm chart using :
 
-helm install --namespace gyeeta --create-namespace shyama1  gyeeta/shyama -f /tmp/shyama.yaml
+helm install --namespace gyeeta --create-namespace madhava1  gyeeta/madhava -f /tmp/madhava.yaml
 
 ```
 
 ### *Running as a Docker container* {#docker}
 
-A JSON config file needs to be created first as per [Shyama Config](./shyama_config)
+A JSON config file needs to be created first as per [Madhava Config](./madhava_config)
 
-In the example command below, /tmp/shyama.json config file has already been created on the main host.
+In the example command below, /tmp/madhava.json config file has already been created on the main host.
 
 The docker container will only run under userid 1001 and groupid 1001.
 
 ```bash
 
-docker run --rm -td --name shyama --read-only --user 1001:1001 -p 10037:10037 --env CFG_MAIN_JSON=/tmp/shyama.json -v /tmp/shyama.json:/tmp/shyama.json:ro ghcr.io/gyeeta/shyama start
+docker run --rm -td --name madhava --read-only --user 1001:1001 -p 10037:10037 --env CFG_MAIN_JSON=/tmp/madhava.json -v /tmp/madhava.json:/tmp/madhava.json:ro ghcr.io/gyeeta/madhava start
 
 ```
 
 ### *Install using native rpm or deb packages* {#rpm-deb}
 
-Gyeeta native rpm or deb packages are available. The install is to be followed by Shyama configuration.
+Gyeeta native rpm or deb packages are available. The install is to be followed by Madhava configuration.
 
 #### Debian/Ubuntu based deb package install
 
@@ -103,7 +102,7 @@ Gyeeta native rpm or deb packages are available. The install is to be followed b
 curl https://pkg.gyeeta.workers.dev/pgp-key.public | sudo gpg --yes --dearmor --output /usr/share/keyrings/gyeeta-keyring.gpg
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/gyeeta-keyring.gpg] https://pkg.gyeeta.workers.dev/apt-repo stable main" | sudo tee /etc/apt/sources.list.d/gyeeta.list
 sudo apt-get update
-sudo apt-get install -y gyeeta-shyama
+sudo apt-get install -y gyeeta-madhava
 
 ```
 
@@ -118,10 +117,10 @@ sudo curl -s -o /etc/yum.repos.d/gyeeta.repo https://pkg.gyeeta.workers.dev/rpm-
 
 if command -v yum > /dev/null; then 
 	sudo yum -y update
-	sudo yum install -y gyeeta-shyama
+	sudo yum install -y gyeeta-madhava
 else
 	sudo dnf -y update
-	sudo dnf install -y gyeeta-shyama
+	sudo dnf install -y gyeeta-madhava
 fi	
 
 ```
@@ -132,40 +131,40 @@ fi
 
 sudo rpm --import https://pkg.gyeeta.workers.dev/pgp-key.public
 sudo curl -s -o /etc/zypp/repos.d/gyeeta.repo https://pkg.gyeeta.workers.dev/rpm-repo/gyeeta.repo
-sudo zypper -q -n install gyeeta-shyama
+sudo zypper -q -n install gyeeta-madhava
 
 ```
 
 
-#### Shyama Configuration post Installation
+#### Madhava Configuration post Installation
 
-After the deb or rpm package has been installed, the Shyama config file `/opt/gyeeta/shyama/cfg/shyama_main.json` needs
-to be edited as per [Shyama Config](./shyama_config).
+After the deb or rpm package has been installed, the Madhava config file `/opt/gyeeta/madhava/cfg/madhava_main.json` needs
+to be edited as per [Madhava Config](./madhava_config).
 
-```bash title="Start Shyama after editing the shyama_main.json"
+```bash title="Start Madhava after editing the madhava_main.json"
 
-# After editing the /opt/gyeeta/shyama/cfg/shyama_main.json config file
-sudo systemctl start gyeeta-shyama
-sudo systemctl enable gyeeta-shyama
+# After editing the /opt/gyeeta/madhava/cfg/madhava_main.json config file
+sudo systemctl start gyeeta-madhava
+sudo systemctl enable gyeeta-madhava
 
 ```
 
 
 ### *Manual Tar Package install* {#tar-install}
 
-If none of the above options can be used to install the Gyeeta Shyama component, a manual tarball extract and configure
+If none of the above options can be used to install the Gyeeta Madhava component, a manual tarball extract and configure
 can be used to install.
 
 ```bash title="Example Install Command"
 
 mkdir ~/gyeeta
 cd ~/gyeeta
-curl -L https://github.com/Gyeeta/gyeeta/releases/download/v0.1.0/shyama.tar.gz | tar xzf -
-cd ./shyama
+curl -L https://github.com/Gyeeta/gyeeta/releases/download/v0.1.0/madhava.tar.gz | tar xzf -
+cd ./madhava
 
-# Thereafter create the cfg/shyama_main.json Shyama config file and then start the Shyama server as
+# Thereafter create the cfg/madhava_main.json Madhava config file and then start the Madhava server as
 
-./runshyama.sh start
+./runmadhava.sh start
 
 ```
 

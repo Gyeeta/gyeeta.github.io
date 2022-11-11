@@ -34,7 +34,7 @@ to be used in PostgresDB.
 
 The JSON field name is `madhava_name` and corresponding environment variable is `CFG_MADHAVA_NAME`.
 
-This field is mandatory. 
+This field is mandatory and max madhava name length is 64 bytes. 
 
 ## Shyama Hosts {#shyama-hosts}
 
@@ -120,7 +120,7 @@ This field is mandatory.
 
 ## Postgres Hostname {#postgres-hostname}
 
-This indicates the Domain or IP address of the Postgres DB to be used by this Shyama instance.
+This indicates the Domain or IP address of the Postgres DB to be used by this Madhava instance.
 
 The JSON field is `postgres_hostname` and environment variable is `CFG_POSTGRES_HOSTNAME`.
 
@@ -128,7 +128,7 @@ This field is mandatory.
 
 ## Postgres Port {#postgres-port}
 
-This indicates the TCP port of the Postgres DB to be used by this Shyama instance.
+This indicates the TCP port of the Postgres DB to be used by this Madhava instance.
 
 The JSON field is `postgres_port` and environment variable is `CFG_POSTGRES_PORT`.
 
@@ -136,7 +136,7 @@ This field is mandatory.
 
 ## Postgres User {#postgres-user}
 
-This indicates the Postgres Username to be used by this Shyama instance.
+This indicates the Postgres Username to be used by this Madhava instance.
 
 The JSON field is `postgres_user` and environment variable is `CFG_POSTGRES_USER`.
 
@@ -144,7 +144,7 @@ This field is mandatory.
 
 ## Postgres Password {#postgres-password}
 
-This indicates the Postgres User Password to be used by this Shyama instance.
+This indicates the Postgres User Password to be used by this Madhava instance.
 
 The JSON field is `postgres_password` and environment variable is `CFG_POSTGRES_PASSWORD`.
 
@@ -158,44 +158,9 @@ The JSON field is `postgres_storage_days` and environment variable is `CFG_POSTG
 
 This field is optional and default is 3 days.
 
-## Webserver URL {#webserver-url}
-
-This indicates the URL of the Gyeeta Webserver that external clients will use to connect. 
-This field is needed as Shyama uses this field to send Alert metadata to external Alert Handlers
-such as Pagerduty or Slack.
-
-In case there is no external Reverse Proxy Webserver to used, this will then indicate the 
-Hostname or Domain Name of the gyeeta-nodewebserver component. 
-
-:::info
-
-At Shyama Config time, it is likely that the Node Webserver may not have been installed and
-in such cases, this field should contain the likely Hostname of the host where the 
-node webserver is to be installed or localhost if no other hosts available. 
-
-In case of changes, the Shyama config can be updated and restarted.
-
-:::
-
-The JSON field is `webserver_url` and environment variable is `CFG_WEBSERVER_URL`.
-
-This field is mandatory. Sample Usage : http://192.168.0.1:10039
-
-## Minimum Madhava Instances {#min-madhava}
-
-This field indicates the minimum number of Madhava instances that should first register with this
-Shyama instance before Shyama server assigns a Madhava server to Partha Host Agent.
-
-If the number of mnimum Madhava instances have not connected to Shyama, no monitoring data will be
-collected.
-
-The JSON field is `min_madhava` and environment variable is `CFG_MIN_MADHAVA`.
-
-This field is optional and default minimum Madhava instances is 1.
-
 ## Cloud Operator Type {#cloud-type}
 
-This field indicates the Cloud Operator this Shyama instance is running on. This is needed
+This field indicates the Cloud Operator this Madhava instance is running on. This is needed
 to get the Network Region and Zone.
 
 Currently supported Cloud Operator Metadata collection are : aws, gcp and azure. 
@@ -208,8 +173,8 @@ This field is optional.
 
 ## Network Region Name {#region-name}
 
-This field must be used only if the preceding Cloud Operator type is empty. This field
-indicats the Network Region Name this Shyama host is operating under. 
+This field must be used only if the preceding [Cloud Operator type](#cloud-type) is empty. This field
+indicates the Network Region Name this Madhava host is operating under. 
 
 The JSON field is `region_name` and environment variable is `CFG_REGION_NAME`.
 
@@ -217,8 +182,8 @@ This field is optional.
 
 ## Network Zone Name {#zone-name}
 
-This field must be used only if the preceding Cloud Operator type is empty. This field
-indicats the Network Zone Name this Shyama host is operating under. 
+This field must be used only if the preceding [Cloud Operator type](#cloud-type) is empty. This field
+indicates the Network Zone Name this Madhava host is operating under. 
 
 The JSON field is `zone_name` and environment variable is `CFG_ZONE_NAME`.
 

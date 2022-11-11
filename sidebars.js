@@ -16,7 +16,7 @@ const sidebars = {
 			{
 				type: 'doc',
 				id: 'installation/install_options',
-				label: 'Installation Options ',
+				label: 'Install Planning and Options ',
 			},
 			{
 				type: 'doc',
@@ -44,30 +44,24 @@ const sidebars = {
 				label: 'madhava Server Installation',
 			},
 			{
-				type: 'category',
-				label: 'partha Agent Installation',
-				link: {
-					type: 'doc',
-					id: 'installation/partha_install',
-				},
-				items: [
-					'installation/partha_req',	
-				],
-			},
-			{
 				type: 'doc',
 				id: 'installation/partha_config',
 				label: 'partha Agent Configuration',
 			},
 			{
 				type: 'doc',
-				id: 'installation/madhava_install',
-				label: 'madhava Server Installation',
+				id: 'installation/partha_install',
+				label: 'partha Agent Installation',
 			},
 			{
 				type: 'doc',
-				id: 'installation/madhava_config',
-				label: 'madhava Server Configuration',
+				id: 'installation/k8s_helm',
+				label: 'Kubernetes Helm Charts',
+			},
+			{
+				type: 'doc',
+				id: 'installation/failover',
+				label: 'Failover (HA) Handling',
 			},
 
 		],

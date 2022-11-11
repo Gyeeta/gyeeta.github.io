@@ -46,7 +46,7 @@ Before installing Shyama, users need to create a JSON config file as per the [Sh
 curl -o /tmp/install-gyeeta-shyama.sh -s https://gyeeta.io/packages/install-gyeeta-shyama.sh
 
 # Then run the install script as : 
-# sudo bash /tmp/install-gyeeta-shyama.sh <Path to Shyama Config fiel in JSON format>
+# sudo bash /tmp/install-gyeeta-shyama.sh <Path to Shyama Config file in JSON format>
 
 # Example Install Command (Please configure the /tmp/shyama.json config file first) :
 
