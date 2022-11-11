@@ -21,6 +21,7 @@ function HomepageHeader() {
 		  backgroundSize: 'cover',
 		  backgroundRepeat: 'no-repeat',
 		  width : '100%',
+		  minWidth : 500,
 		  display: 'flex',
 		  flexWrap: 'wrap',
 		  flexDirection : 'column',
@@ -44,7 +45,7 @@ function HomepageHeader() {
 	</div>
 
 	<div style={{ marginTop : 20 }} />
-	<span style={{ fontSize : 20, marginLeft : 30, color : '#bcdfd7' }}><strong>{siteConfig.tagline}</strong></span>
+	<span style={{ fontSize : 20, margin : 30, color : '#bcdfd7' }}><strong>{siteConfig.tagline}</strong></span>
 	<div style={{ marginTop : 20 }} />
 
 	      <div style={{ marginTop : 20 }} />

@@ -62,7 +62,18 @@ function Feature({Svg, title, description}) {
 export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
-    <div 
+    <div
+      style={{
+	  display: 'flex',
+	  flexWrap: 'wrap',
+	  justifyContent : 'center',
+	  alignItems : 'end',
+	  minWidth : 500,
+	  minHeight : 400,
+	  margin : 10,
+      }} >
+
+      <div 
       style={{  
 	  backgroundImage: "url(" + "/img/graph2.jpg" + ")",
 	  backgroundPosition: 'center',
@@ -90,6 +101,7 @@ export default function HomepageFeatures() {
           ))}
         </div>
       </div>
+    </div>  
     </section>
   );
 }

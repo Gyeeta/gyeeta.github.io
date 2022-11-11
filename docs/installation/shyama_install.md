@@ -15,7 +15,7 @@ Shyama Server is the only component in Gyeeta which will interact with all other
 As Shyama will communicate with all other components, Shyama needs to be installed on a host that can be
 connected to by all other components and all Hosts that need to be monitored.
 
-It is recommended that the Shyama server and its PostgresDB be in the same Network Regin and Zone to limit
+It is recommended that the Shyama server and its PostgresDB be in the same Network Region and Zone to limit
 Network costs and for better performance.
 
 ## Installation Instructions
