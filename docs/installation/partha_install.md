@@ -1,6 +1,10 @@
 ---
 title: Partha Agent Installation
 description: Gyeeta Partha Host Agent Installation
+keywords:
+  - partha
+  - agent
+  - installation
 ---
 
 import Tabs from '@theme/Tabs';
