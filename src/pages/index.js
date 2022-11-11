@@ -36,8 +36,9 @@ function HomepageHeader() {
 		  flexWrap: 'wrap',
 		  justifyContent : 'center',
 		  alignItems : 'center',
-		  minWidth : 400,
+		  minWidth : 300,
 		  marginTop : 30,
+		  background : '#2b2f35',
 		}} >	    
 	<img style={{ borderRadius : "50%" }} src="/img/logo.png" alt="Gyeeta Logo" width="50" height="50" />
 	<span style={{ marginRight : 10 }}> </span>
@@ -45,7 +46,7 @@ function HomepageHeader() {
 	</div>
 
 	<div style={{ marginTop : 20 }} />
-	<span style={{ fontSize : 20, margin : 30, color : '#bcdfd7' }}><strong>{siteConfig.tagline}</strong></span>
+	<span style={{ fontSize : 20, margin : 30, color : '#bcdfd7', background : '#2b2f35', }}><strong>{siteConfig.tagline}</strong></span>
 	<div style={{ marginTop : 20 }} />
 
 	      <div style={{ marginTop : 20 }} />

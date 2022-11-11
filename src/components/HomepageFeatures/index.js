@@ -85,7 +85,7 @@ export default function HomepageFeatures() {
 	  justifyContent : 'center',
 	  alignItems : 'end',
 	  maxWidth : 300,
-	  minHeight : 400,
+	  minHeight : 300,
 	  margin : 30,
 	}} >	    
       <div style={{ marginLeft : 10, marginBottom : 20, display : 'flex', flexWrap : 'wrap', justifyContent : 'center' }}>
