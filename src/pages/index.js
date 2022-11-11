@@ -21,7 +21,7 @@ function HomepageHeader() {
 		  backgroundSize: 'cover',
 		  backgroundRepeat: 'no-repeat',
 		  width : '100%',
-		  minWidth : 500,
+		  minWidth : 550,
 		  display: 'flex',
 		  flexWrap: 'wrap',
 		  flexDirection : 'column',
@@ -38,7 +38,7 @@ function HomepageHeader() {
 		  alignItems : 'center',
 		  minWidth : 300,
 		  marginTop : 30,
-		  background : '#2b2f35',
+		  background : '#1b2635db',
 		}} >	    
 	<img style={{ borderRadius : "50%" }} src="/img/logo.png" alt="Gyeeta Logo" width="50" height="50" />
 	<span style={{ marginRight : 10 }}> </span>
@@ -46,7 +46,7 @@ function HomepageHeader() {
 	</div>
 
 	<div style={{ marginTop : 20 }} />
-	<span style={{ fontSize : 20, margin : 30, color : '#bcdfd7', background : '#2b2f35', }}><strong>{siteConfig.tagline}</strong></span>
+	<span style={{ fontSize : 20, margin : 30, color : '#bcdfd7', background : '#1b2635db', }}><strong>{siteConfig.tagline}</strong></span>
 	<div style={{ marginTop : 20 }} />
 
 	      <div style={{ marginTop : 20 }} />
