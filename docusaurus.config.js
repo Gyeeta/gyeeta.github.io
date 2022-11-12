@@ -46,7 +46,7 @@ const config = {
 	  feedOptions: {
             type: 'rss',
 	    title: 'Gyeeta Blog Posts',
-	    description: 'A Blog describing planned features, use cases of Gyeeta and monitoring in general',
+	    description: 'A Blog describing features, use cases of Gyeeta and monitoring in general',
 	    copyright: 'Exact Solutions, Inc.',
 	    language: 'en-US',
           }		  
@@ -104,7 +104,7 @@ const config = {
             items: [
               {
                 label: 'Github Discussions',
-                href: 'https://github.com/orgs/Gyeeta/discussions',
+                href: 'https://github.com/Gyeeta/gyeeta/discussions',
               },
               {
                 label: 'Stack Overflow',

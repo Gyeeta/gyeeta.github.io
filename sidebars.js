@@ -66,77 +66,69 @@ const sidebars = {
 
 		],
 	},
+
+	{
+		type: 'doc',
+		id: 'monitor/overview',
+		label: 'Monitoring Overview & Limitations',
+	},
+	{
+		type: 'doc',
+		id: 'monitor/termsused',
+		label: 'Technical Terms used',
+	},			
 	{
 		type: 'category',
-		label: 'Monitoring Guide',
+		label: 'Querying Architecture',
 		link: {
 			type: 'generated-index',
 		},
 		items: [
-			{
-				type: 'doc',
-				id: 'monitor/overview',
-				label: 'Overview & Limitations',
-			},
-			{
-				type: 'doc',
-				id: 'monitor/termsused',
-				label: 'Technical Terms used',
-			},			
-			{
-				type: 'category',
-				label: 'Querying Architecture',
-				link: {
-					type: 'generated-index',
-				},
-				items: [
-					'querying/queryoverview',
-					'querying/datatypes',
-					'querying/aggregation',
-					'querying/groupprocess',
-					'querying/netflows',
-					'querying/k8s',
-				],  
-			},
-			{
-				type: 'category',
-				label: 'Web UI',
-				link: {
-					type: 'generated-index',
-				},
-				items: [
-					'monitor/uioverview',
-					'monitor/clustdash',
-					'monitor/hostdash',
-					'monitor/servicedash',
-					'monitor/processdash',
-					'monitor/alertdash',
-				],  
-			},			
-			'searchshow',
-			{
-				type: 'category',
-				label: 'Alerts Guide',
-				link: {
-					type: 'generated-index',
-				},
-				items: [
-					'alerts/alertoverview',
-					'alerts/alertwalkthru',
-				],  
-			},
-			{
-				type: 'category',
-				label: 'Developer APIs',
-				link: {
-					type: 'generated-index',
-				},
-				items: [
-					'restapi/restoverview',
-				],  
-			},
+			'querying/queryoverview',
+			'querying/datatypes',
+			'querying/aggregation',
+			'querying/groupprocess',
+			'querying/netflows',
+			'querying/k8s',
 		],  
-	},	
+	},
+	{
+		type: 'category',
+		label: 'Web UI',
+		link: {
+			type: 'generated-index',
+		},
+		items: [
+			'monitor/uioverview',
+			'monitor/clustdash',
+			'monitor/hostdash',
+			'monitor/servicedash',
+			'monitor/processdash',
+			'monitor/alertdash',
+		],  
+	},			
+	'searchshow',
+	{
+		type: 'category',
+		label: 'Alerts Guide',
+		link: {
+			type: 'generated-index',
+		},
+		items: [
+			'alerts/alertoverview',
+			'alerts/alertwalkthru',
+		],  
+	},
+	{
+		type: 'category',
+		label: 'Developer APIs',
+		link: {
+			type: 'generated-index',
+		},
+		items: [
+			'restapi/restoverview',
+		],  
+	},
   ],
 
 };
