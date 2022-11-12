@@ -16,7 +16,12 @@ const sidebars = {
 			{
 				type: 'doc',
 				id: 'installation/install_options',
-				label: 'Install Planning and Options ',
+				label: 'Install Planning and Options',
+			},
+			{
+				type: 'doc',
+				id: 'installation/tldr_quick_install',
+				label: 'Quick Single Command Install',
 			},
 			{
 				type: 'doc',
@@ -52,6 +57,26 @@ const sidebars = {
 				type: 'doc',
 				id: 'installation/partha_install',
 				label: 'partha Agent Installation',
+			},
+			{
+				type: 'doc',
+				id: 'installation/nodewebserver_config',
+				label: 'Node Webserver Configuration',
+			},
+			{
+				type: 'doc',
+				id: 'installation/nodewebserver_install',
+				label: 'Node Webserver Installation',
+			},
+			{
+				type: 'doc',
+				id: 'installation/alertaction_config',
+				label: 'Alert Agent Configuration',
+			},
+			{
+				type: 'doc',
+				id: 'installation/alertaction_install',
+				label: 'Alert Agent Installation',
 			},
 			{
 				type: 'doc',

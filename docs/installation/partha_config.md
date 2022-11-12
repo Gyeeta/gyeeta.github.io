@@ -131,14 +131,14 @@ A sample Madhava JSON config file is provided below :
 ```json
 
 	{
-		"cluster_name"			:	"cluster1",
-		"cloud_type"			:	"aws",
+		"cluster_name"				:	"cluster1",
+		"cloud_type"				:	"aws",
 
-		"shyama_hosts" 			:	[ "shyama1.local" ],
-		"shyama_ports"			:	[ 10037 ],
+		"shyama_hosts" 				:	[ "shyama1.local" ],
+		"shyama_ports"				:	[ 10037 ],
 
 		"response_sampling_percent"	:	100,
-		"is_kubernetes"			:	true
+		"is_kubernetes"				:	true
 	}
 
 ```

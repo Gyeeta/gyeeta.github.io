@@ -20,17 +20,12 @@ Gyeeta components can be installed using any of the following methods :
 Installing using Kubernetes Helm Charts in a single Cluster is the quickest way to deploy the various Gyeeta
 components.
 
-## Host Limitations
+## Host Requirements
 
 ### CPU Architectures Supported
 
 Gyeeta currently supports only `x86_64` processors. Also, only Intel/AMD processors released after 2012 are supported as Gyeeta is 
 compiled with `avx` instruction support.
-
-### Minimum Linux Kernel Versions
-
-Gyeeta components support only hosts with Linux Kernel 4.4 or higher (Linux 4.4 was released in 2016).
-
 
 ### Serverless monitoring not supported
 
@@ -38,7 +33,26 @@ Currently Gyeeta does not support monitoring of Serverless environments such as 
 
 ### GKE Support
 
-Gyeeta supports Google Kubernetes Engine (Standard) mode only. GKE Autopilot is not supported.
+Gyeeta supports Google Kubernetes Engine (GKE) - Standard mode only. GKE Autopilot is not supported.
+
+### Minimum Linux Kernel Versions
+
+Gyeeta components support only hosts with Linux Kernel 4.4 or higher (Linux 4.4 was released in 2016).
+
+### Supported Linux Distributions
+
+| OS Distribution | Supported Versions |
+| :-------------: | :-------------: |
+| Ubuntu | 16 & higher |
+| Debian | 9 & higher |
+| RHEL, CentOS, Rocky Linux, Oracle Linux | 8 & higher |
+| Amazon Linux 2 | All Versions |
+| Amazon Linux | Year 2017+ |
+| Google Container OS (COS) | Linux Kernel 4.14 & Higher |
+| Fedora | 28 & higher |
+| OpenSUSE, SUSE Linux | 15 & higher |
+
+Other Linux distributions based on Debian/Ubuntu or RHEL are supported as long as the base Linux Kernel is 4.4+
 
 
 ## Planning the Gyeeta Deployment
@@ -52,11 +66,13 @@ To setup Gyeeta, users need to install the following minimal components :
 5. One instance of Node Webserver
 6. One instance of Alert Action Agent responsible for executing Alert Actions (Notifications)
 
+### Number of Madhava Servers needed {#num-madhava}
+
 The number of Madhava Intermediate servers that are needed depends on the max number of monitored hosts and Network Locality of 
 the monitored hosts with the Madhava servers.
 
 The maximum number of monitored hosts a single Madhava server instance can handle depends on the Madhava host CPU and RAM specs and
-can range from 50 monitored hosts for a small Madhava host with 2 CPU cores and 4 GB RAM to 500 monitored hosts for a server with 16 cores
+can range from *50 monitored hosts* for a small Madhava host with 2 CPU cores and 4 GB RAM to *500 monitored hosts* for a server with 16 cores
 and 64 GB RAM.
 
 Also, it is recommended that the monitored hosts and the Madhava server reside in the same Network Zone for better performance
@@ -72,7 +88,15 @@ The Shyama server, all the Madhava Intermediate servers and the Node Webserver a
 network. So in case of multi-region/multi-zone deployments, the Shyama server, the Madhava servers and Node Webserver need to be able
 to connect to each other.
 
-### Recommended Install Sequence {#install-sequence}
+## TL;DR Quick Single Command Install
+
+In case you need to quickly install and try out Gyeeta in your environment, please refer to
+[Quick Single Command Install](./tldr_quick_install) link.
+
+This will install all Server components (One Postgres DB, One Shyama, one Madhava, Node Webserver) and Alert Agent on a single host 
+using a single command. Users will then need to install additional Partha Agents on all hosts which need to be monitored.
+
+## Recommended Install Sequence {#install-sequence}
 
 The recommended sequence for installing various components include :
 

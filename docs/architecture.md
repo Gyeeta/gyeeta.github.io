@@ -11,8 +11,7 @@ keywords:
 
 *Gyeeta* is an Observability product utilizing [eBPF](https://ebpf.io/) and Linux kernel statistics.
 
-*Gyeeta* is free, 100% open source (GPLv3) product. This does entail some additional setup as the
-analytics servers need to be installed in the users environment.
+*Gyeeta* is free, 100% open source (GPLv3) product. 
 
 Currently, *Gyeeta* is available for `x86_64`processors only and Linux Kernel versions 4.4.0 and higher.
 
@@ -30,7 +29,7 @@ the multiple monitored `partha` hosts
 
 - A [NodeJS Webserver](#webserver) which interacts with the `shyama` and `madhava` servers 
 
-- An [Alert Action Agent](#alert-action-agent) which interacts with `shyama` and executes the Alert Trigger Actions
+- An [Alert Action Agent](#alert-action-agent) which interacts with `shyama` and executes the Alert Trigger Actions (Notifications)
 
 - One or more [Postgres DBs](#postgres-database) to be used as the datastore for `shyama` and `madhava` servers
 
@@ -65,8 +64,10 @@ activity can be monitored.
 
 *Learn more from links below* :
 
-[**Partha Agent Installation and Host Requirements**](./installation/partha_install.md)  
-[**Partha Agent Configuration**](./installation/partha_config.md)
+[**Partha Agent Configuration**](./installation/partha_config) 
+
+[**Partha Agent Installation and Host Requirements**](./installation/partha_install)  
+
 
 ## *Shyama* Central Server {#central-server-shyama}
 
@@ -87,6 +88,13 @@ inter-region network communication if the `shyama` instance is in a separate reg
 - Communicates with the [Webserver](#webserver) for web query responses
 - Optional Redundancy in Active Passive modes with one active and one or more passive `shyama` instances
 
+*Learn more from links below* :
+
+[**Shyama Server Configuration**](./installation/shyama_config)
+
+[**Shyama Server Installation**](./installation/shyama_install)  
+
+
 ## *Madhava* Intermediate Server {#intermediate-server-madhava}
 
 The `madhava` Intermediate Server interacts with `partha`, `shyama` and the webserver. The number of `madhava` instances to be installed
@@ -101,7 +109,14 @@ depends on the number of monitored hosts and Network Connectivity (adjacency) re
 - Optional Redundancy in Active Passive modes with one active and one or more passive `madhava` instances
 
 It is recommended that at least one `madhava` server be installed in each Monitored Host Network zone to limit inter-zone or 
-inter-region Network costs.
+inter-region Network egress costs.
+
+*Learn more from links below* :
+
+[**Madhava Server Configuration**](./installation/madhava_config)
+
+[**Madhava Server Installation**](./installation/madhava_install)  
+
 
 ## Postgres Database {#postgres-database}
 
@@ -109,6 +124,10 @@ inter-region Network costs.
 instance as the datastore. As the number of madhava instances increase the requirement for additional Postgres instances will arise.
 
 It is recommended to use a Postgres DB in the same Network Region/Zone as the `madhava` or `shyama` instance for better performance and lower costs.
+
+*Learn more from link below* :
+
+[**Postgres DB Installation**](./installation/postgresdb_install)
 
 ## NodeJS Webserver
 
@@ -125,6 +144,13 @@ based Authentication and Authorization using OIDC / OAuth2 is planned for a late
 - Maintains persistent connections with the `shyama` and all the `madhava` servers
 - Multiple Webserver instances can be started for redundancy purposes
 
+*Learn more from links below* :
+
+[**Node Webserver Configuration**](./installation/nodewebserver_config)
+
+[**Node Webserver Installation**](./installation/nodewebserver_install)  
+
+
 ## Alert Action Agent {#alert-action-agent}
 
 The Alert Action Agent is involved in executing the Alert Actions (Notifications) as per the configured Alert rules. A single instance of the Alert agent is needed
@@ -136,4 +162,12 @@ the Alert Action Host must have external Network Connectivity as well.
 - Currently *Gyeeta* supports Email, Slack, PagerDuty, Webhooks as the Alert Action (Notification)
 - Maintains persistent connections with the `shyama` server (`shyama` also acts as the Alert Manager)
 - Multiple Alert Action Agents can be started for redundancy purposes
+
+*Learn more from links below* :
+
+[**Alert Agent Configuration**](./installation/alertaction_config)
+
+[**Alert Agent Installation**](./installation/alertaction_install)  
+
+
 

@@ -22,21 +22,6 @@ The Agent is a lightweight process and uses max 10% of one CPU core and about 20
 
 The agent `partha` can be installed on Linux hosts with minimum kernel version 4.4 as it uses eBPF to monitor the host. 
 
-The Linux distributions which are supported include :
-
-| OS Distribution | Minimum version |
-| :-------------: | :-------------: |
-| Ubuntu | 16.04+ |
-| Debian | 9+ |
-| RHEL, CentOS, Rocky Linux | 8+ |
-| Amazon Linux 2 | All Versions |
-| Amazon Linux | Year 2017+ |
-| Google Container OS (COS) | Linux Kernel 4.14+ |
-| Fedora | 28+ |
-| SuSE Linux | 12.5+ |
-
-Other Linux distributions based on RHEL or Debian/Ubuntu are supported as long as the base Linux Kernel is 4.4+
-
 ### CPU Architectures Supported 
 
 Gyeeta currently supports only *x86_64* processors. Also, only *Intel/AMD* processors released after 2012 are supported as

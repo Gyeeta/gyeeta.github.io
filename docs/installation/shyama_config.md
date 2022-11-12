@@ -203,7 +203,7 @@ A sample Shyama JSON config file is provided below :
 		"postgres_port"			:	10040,
 		"postgres_user"			:	"postgres",
 		"postgres_password"		:	"dbPassword",
-		"postgres_storage_days"		:	3,
+		"postgres_storage_days"	:	3,
 
 		"webserver_url"			:	"http://gyeetawebhost.local:10039"
 }	
