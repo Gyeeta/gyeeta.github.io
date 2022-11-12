@@ -52,6 +52,8 @@ any of the supported [Partha Install mechanisms](./partha_install).
 The TLDR Quick Install script will also create a sample Partha Config file which can be used as an input Config file for the 
 Partha installs.
 
+Users can skip all subsequent sections pertaining to Installation of Gyeeta Server components and Alert Agent.
+
 :::
 
 
@@ -68,6 +70,9 @@ Madhava (port 10038) and the Webserver will be connected to from Browsers to acc
 
 Also, the Hostname of the host on which the TLDR script is run will need to be resolved from external hosts. In other words,
 the hostname needs to be a cluster wide valid hostname.
+
+If Alert Actions (Notifications) need to access an external Server on the Internet, say a PagerDuty or Slack server, then Internet
+access will be needed from this Install Host as well.
 
 ## Max Number of Monitored Hosts
 

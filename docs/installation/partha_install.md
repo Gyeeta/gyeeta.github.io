@@ -113,6 +113,9 @@ Users can download a shell script that takes care of the installation and config
 
 Before installing Partha, users need to create a JSON config file as per the [Partha Config](./partha_config).
 
+Also, although this install script will try installing the Kernel Headers, if not present, users are advised to first
+install the Linux Kernel Headers before running this script. Please refer to [Kernel Headers](#kernel-headers).
+
 :::
 
 
@@ -152,6 +155,12 @@ helm show values gyeeta/partha > /tmp/partha.yaml
 helm install --namespace gyeeta --create-namespace partha1  gyeeta/partha -f /tmp/partha.yaml
 
 ```
+:::note
+
+Users are required to first install the Linux Kernel Headers before running the Partha Helm Chart. Please refer to [Kernel Headers](#kernel-headers).
+
+:::
+
 
 ### *Running as a Docker container* {#docker}
 
@@ -218,6 +227,13 @@ sudo curl -s -o /etc/zypp/repos.d/gyeeta.repo https://pkg.gyeeta.workers.dev/rpm
 sudo zypper -q -n install gyeeta-partha
 
 ```
+
+:::note
+
+Although this install package will try installing the Kernel Headers, if not present, users are advised to first
+install the Linux Kernel Headers before installing the package. Please refer to [Kernel Headers](#kernel-headers).
+
+:::
 
 
 #### partha Configuration post Installation

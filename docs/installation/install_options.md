@@ -7,6 +7,8 @@ keywords:
 
 # Gyeeta Install Planning and Options
 
+Users are advised to read the [Gyeeta Architecture](../architecture) link before reading this section.
+
 ## Install Options for Gyeeta components {#install-options}
 
 Gyeeta components can be installed using any of the following methods :
@@ -84,9 +86,26 @@ availability.
 A maximum of 3 Madhava servers can share a single Postgres DB instance. This implies that as the number of Madhava servers
 increases, the number of Postgres DB instances will also increase.
 
-The Shyama server, all the Madhava Intermediate servers and the Node Webserver are all connected to each other in a mesh style
+### Network Connectivity & Firewall Considerations
+
+The Partha Monitor Agent does not open any TCP port. No incoming connections will be made to any Partha agent. The Partha agent will
+need to connect externally to the Shyama server and Shyama assigned Madhava servers though.
+
+The Shyama server, the Madhava Intermediate servers and the Node Webserver are all connected to each other in a mesh style
 network. So in case of multi-region/multi-zone deployments, the Shyama server, the Madhava servers and Node Webserver need to be able
 to connect to each other.
+
+The Shyama Server needs to be accessable to all the Monitored Hosts as well as to other Gyeeta components (Postgres DB, Madhava,
+Webserver, Alert Agent).
+
+The Madhava Server needs to be accessable to a subset of the Monitored Hosts (same Network Zone/Region), to the Shyama server,
+other Madhava server instances, the Postgres DB and Webserver. 
+
+The Webserver needs to connect to the Shyama server and all Madhava instances. The Webserver will not connect to any Monitored
+Hosts.
+
+The Alert Agent needs to connect to the Shyama Server only. If external Alert Actions (Notifications) are setup such as a Slack or
+Pagerduty Notification, the Alert Agent will need to access the Internet in such cases.
 
 ## TL;DR Quick Single Command Install
 
@@ -95,6 +114,9 @@ In case you need to quickly install and try out Gyeeta in your environment, plea
 
 This will install all Server components (One Postgres DB, One Shyama, one Madhava, Node Webserver) and Alert Agent on a single host 
 using a single command. Users will then need to install additional Partha Agents on all hosts which need to be monitored.
+
+If using the TLDR Quick Install, users can skip all subsequent sections pertaining to Installation of Gyeeta Server components and
+Alert Agent.
 
 ## Recommended Install Sequence {#install-sequence}
 
