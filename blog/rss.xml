@@ -3,7 +3,7 @@
     <channel>
         <title>Gyeeta Blog Posts</title>
         <link>https://gyeeta.github.io/blog</link>
-        <description>A Blog describing planned features, use cases of Gyeeta and monitoring in general</description>
+        <description>A Blog describing features, use cases of Gyeeta and monitoring in general</description>
         <lastBuildDate>Thu, 10 Nov 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
