@@ -16,13 +16,12 @@
             <pubDate>Thu, 10 Nov 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[We (the team @ Exact Solutions, Inc.)  are very happy to introduce Gyeeta]]></description>
             <content:encoded><![CDATA[<p>We (the team @ Exact Solutions, Inc.)  are very happy to introduce <a href="https://github.com/gyeeta" target="_blank" rel="noopener noreferrer">Gyeeta</a>
-to help with meeting your organization's Observability and Monitoring needs.</p><p>We felt the need for Gyeeta for the following reasons :</p><ul><li><p>Few tools exist currently in the Free and Open source space which can be quickly deployed.
-Tools such as <a href="https://prometheus.io" target="_blank" rel="noopener noreferrer">Prometheus</a> and frameworks such as <a href="https://opentracing.io" target="_blank" rel="noopener noreferrer">Opentracing</a>
-exist, but require the applications to expose their metrics using exporters or require
-specific Application stacks.</p></li><li><p>Commercial SaaS tools exist which utilize a combination of APM, Tracing, Kernel Monitors, eBPF
+to help with meeting your organization's Observability and Monitoring needs.</p><p>We felt the need for Gyeeta for the following reasons :</p><ul><li><p>Few tools exist currently in the Free and Open source space which can be quickly deployed
+without application changes and without any manual configuration.</p></li><li><p>Commercial SaaS tools exist which utilize a combination of APM, Tracing, Kernel Monitors, eBPF
 to provide a rich variety of metrics but these products are expensive both in terms of costs as
-well as Host CPU, Memory and IO usage.</p></li></ul><p>We felt there was the need for a product which was Free, Open source and which organizations could
-use to monitor their Infrastructure 24x7 non-intrusively and without any application changes.</p><p>This requires a tool which would be very lightweight in terms of resource usage and importantly,
+well as Host CPU, Memory and IO usage and require manual configuration in many cases as well.</p></li></ul><p>We felt there was the need for a product which was Free, Open source and which organizations could
+use to monitor their Infrastructure 24x7 non-intrusively, without any application changes and which
+would not ned any manual configuration.</p><p>This requires a tool which would be very lightweight in terms of resource usage and importantly,
 provide quick Alerts or Search results to detect any anomaly or degradation.</p><p>We hope you try Gyeeta in your environment and find it a useful product.</p>]]></content:encoded>
             <category>introduction</category>
             <category>welcome</category>
