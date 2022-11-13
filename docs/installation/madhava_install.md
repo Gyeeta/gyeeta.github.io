@@ -13,8 +13,10 @@ keywords:
 Madhava Intermediate servers connect to Shyama Central server and also communicate with Partha Host Agents
 and Node Webserver.
 
-It is recommended that the Madhava server and its PostgresDB be in the same Network Regin and Zone to limit
+It is recommended that the Madhava server and its PostgresDB be in the same Network Region and Zone to limit
 Network costs and for better performance.
+
+Firewall rules must allow inbound access to the Madhava server on the configured Madhava port (default port is 10038).
 
 ## Installation Instructions
 

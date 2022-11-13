@@ -16,11 +16,11 @@ import {getsusecmd} from '../utils.js';
 # Partha Host Agent Installation
 
 The Gyeeta Host Agent (named `partha`) has to be installed on each Linux host that needs to be monitored. 
-The Agent is a lightweight process and uses max 10% of one CPU core and about 200 MB Memory RSS.
+The Agent is a lightweight process and uses max 10% of one CPU core and less than 300 MB Memory RSS.
 
 ## Host Requirements to install partha
 
-The agent `partha` can be installed on Linux hosts with minimum kernel version 4.4 as it uses eBPF to monitor the host. 
+The agent `partha` can be installed on Linux hosts with minimum kernel version 4.4. 
 
 ### CPU Architectures Supported 
 
@@ -88,8 +88,8 @@ Gyeeta supports Google Kubernetes Engine (Standard) mode only. GKE Autopilot is 
 
 ### Network Connectivity Requirements
 
-The `partha` Host Agent needs to connect to Central `shyama` server and a `shyama` assigned Intermediate `madhava` server. The Host Agent will 
-not listen on any external port and no extra incoming connection firewall rules need to be set. It will just act as a TCP client and connect 
+The `partha` Host Agent needs to connect to `shyama` Central server and a `shyama` assigned `madhava` Intermediate server. The `partha` Agent will 
+not listen on any port and no incoming connection firewall rules need to be set. It will just act as a TCP client and connect 
 to remote `shyama` and `madhava` servers.
 
 

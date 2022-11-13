@@ -18,6 +18,8 @@ connected to by all other components and all Hosts that need to be monitored.
 It is recommended that the Shyama server and its PostgresDB be in the same Network Region and Zone to limit
 Network costs and for better performance.
 
+Firewall rules must allow inbound access to the Shyama server on the configured Shyama port (default port is 10037).
+
 ## Installation Instructions
 
 Different Install Options exist :

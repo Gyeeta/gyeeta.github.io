@@ -44,7 +44,8 @@ Madhava Postgres insatnces need more CPU and Memory requirements :
 
 ## Network Connectivity Requirements {#network}
 
-Network connectivity to the PostgresDB instance will need to be provided to the Shyama or Madhava instances using that DB.
+Network connectivity to the PostgresDB instance will need to be provided to the Shyama or Madhava instances using that DB. Firewall rules
+must allow inbound access to the Postgres DB on the configured Postgres port (default port is 10040).
 
 ## Installation Instructions
 
@@ -194,4 +195,12 @@ cd ./postgresdb
 ./rundb.sh start
 
 ```
+
+## Using a non Gyeeta based Postgres DB install
+
+We recommend only using Gyeeta's Postgres DB as the Gyeeta Postgres install also includes various utilities and functions needed by
+the Madhava and Shyama servers. 
+
+Using other Postgres installs or Postgres compliant DBs is currently not supported.
+
 

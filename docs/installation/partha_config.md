@@ -3,6 +3,7 @@ title: Partha Agent Configuration
 description: Partha Host Agent Configuration
 keywords:
   - partha
+  - agent
   - configuration
 ---
 
@@ -21,8 +22,10 @@ The list of Config options include :
 ## Cluster Name {#cluster-name}
 
 Each Monitored host is assumed to be part of a Cluster. This field indicates the Cluster name this host
-is part of. Cluster names are symbolic and are used internally by Madhava servers to detect Network
-Flow dependencies.
+is part of. Cluster names are symbolic and are used internally by Madhava servers to detect Service Dependencies.
+
+It is recommended to club related hosts with the same Cluster Name for better querying. For example,
+specifying Cluster Name as `prod1_useast1a` to club all prod hosts in US East 1a zone.
 
 The JSON field name is `cluster_name` and corresponding environment variable is `CFG_CLUSTER_NAME`.
 
@@ -47,8 +50,11 @@ This field is mandatory.
 The Hostnames or IP Addresses mentioned in this option must be same as the
 [Shyama Server Service Hostname](./shyama_config#service-hostname).
 
-Example usage : [ "shyama1.local", "192.168.0.2" ] : Here 2 instances of Shyama are running in
-Active Passive mode.
+Example usages : 
+
+[ "shyamahost1.local" ] : Here a single instance of Shyama is specified.
+
+[ "shyama1.local", "192.168.0.2" ] : Here 2 instances of Shyama are running in Active Passive mode.
 
 ## Shyama Ports {#shyama-ports}
 
@@ -66,7 +72,11 @@ This field is mandatory.
 The TCP Ports mentioned in this option must be same as the 
 [Shyama Server Service Port](./shyama_config#service-port).
 
-Example usage : [ 10037, 10037 ] : Here 2 instances of Shyama are running in Active Passive mode.
+Example usages : 
+
+[ 10037 ] : Here a single instance of Shyama is specified.
+
+[ 10037, 10037 ] : Here 2 instances of Shyama are running in Active Passive mode.
 
 
 ## Is Kubernetes {#is-kubernetes}
@@ -83,24 +93,27 @@ This field is optional and can contain values of either `true` or `false`.
 
 ## Service Response Sampling Percent {#sampling-percent}
 
-The Partha Agent will collect Queries/sec and Response Time (Latency) for each TCP Listener (Service).
+The Partha Agent will collect Queries/sec (QPS) and Response Time (Latency) for each TCP Listener (Service).
 This field indicates what percent of the Queries should be checked for calculating the statistics.
 
-The default percent is 100% (No sampling). Users can specify minimum of 10%.
+The default value is 100 (100% or No sampling). Specifying a value of 0 will disable all Service QPS and Response statistics.
 
 The JSON field name is `response_sampling_percent` and corresponding environment variable is `CFG_RESPONSE_SAMPLING_PERCENT`.
 
-This field is optional and can contain integer values from 10 to 100.
+This field is optional and can contain integer values from 0 to 100.
 
 
 ## Cloud Operator Type {#cloud-type}
 
-This field indicates the Cloud Operator this Madhava instance is running on. This is needed
-to get the Network Region and Zone.
+This field indicates the Cloud Operator this Host is running on. This is needed to get the Network Region and Zone which will be used 
+by the Shyama server to allocate a nearby Madhava server for this host. Also, the Host Instance ID will also be obtained for a
+supported Cloud OPerator Type.
 
 Currently supported Cloud Operator Metadata collection are : aws, gcp and azure. 
 
-For other Cloud Operators or in case of own data centers, this field should be ignored.
+For other Cloud Operators or in case of own data centers, this field should be empty. In such cases, users can explicitly 
+specify the Network Region and Zone in the fields mentioned below [Region Name](#region-name) and [Zone Name](#zone-name)
+so that the Shyama server will assign a nearby Madhava server.
 
 The JSON field is `cloud_type` and environment variable is `CFG_CLOUD_TYPE`.
 
@@ -109,7 +122,7 @@ This field is optional.
 ## Network Region Name {#region-name}
 
 This field must be used only if the preceding [Cloud Operator type](#cloud-type) is empty. This field
-indicates the Network Region Name this Madhava host is operating under. 
+indicates the Network Region Name this host is operating under. 
 
 The JSON field is `region_name` and environment variable is `CFG_REGION_NAME`.
 
@@ -118,7 +131,7 @@ This field is optional.
 ## Network Zone Name {#zone-name}
 
 This field must be used only if the preceding [Cloud Operator type](#cloud-type) is empty. This field
-indicates the Network Zone Name this Madhava host is operating under. 
+indicates the Network Zone Name this host is operating under. 
 
 The JSON field is `zone_name` and environment variable is `CFG_ZONE_NAME`.
 
@@ -126,7 +139,7 @@ This field is optional.
 
 ## Sample JSON Config file {#sample-json}
 
-A sample Madhava JSON config file is provided below :
+A sample Partha JSON config file is provided below :
 
 ```json
 
@@ -142,4 +155,7 @@ A sample Madhava JSON config file is provided below :
 	}
 
 ```
+
+The above sample config specifies the Cluster Name as `cluster1` and Cloud Operator as `aws`. Also, only
+1 Shyama server is installed and is located at shyama1.local:10037.
 

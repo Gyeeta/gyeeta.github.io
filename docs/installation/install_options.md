@@ -19,7 +19,7 @@ Gyeeta components can be installed using any of the following methods :
 - rpm / deb based native packages for dnf/yum, apt-get or zypper
 - Manual Tar Package download and configure
 
-Installing using Kubernetes Helm Charts in a single Cluster is the quickest way to deploy the various Gyeeta
+Installing using either the Bash Script or Kubernetes Helm Charts are the easiest ways to deploy the various Gyeeta
 components.
 
 ## Host Requirements
@@ -110,7 +110,7 @@ Pagerduty Notification, the Alert Agent will need to access the Internet in such
 ## TL;DR Quick Single Command Install
 
 In case you need to quickly install and try out Gyeeta in your environment, please refer to
-[Quick Single Command Install](./tldr_quick_install) link.
+[TLDR Quick Server Install](./tldr_quick_install) link.
 
 This will install all Server components (One Postgres DB, One Shyama, one Madhava, Node Webserver) and Alert Agent on a single host 
 using a single command. Users will then need to install additional Partha Agents on all hosts which need to be monitored.

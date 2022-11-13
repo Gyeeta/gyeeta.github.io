@@ -21,7 +21,7 @@ const sidebars = {
 			{
 				type: 'doc',
 				id: 'installation/tldr_quick_install',
-				label: 'Quick Single Command Install',
+				label: 'TLDR Quick Server Install',
 			},
 			{
 				type: 'doc',
