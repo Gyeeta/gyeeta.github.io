@@ -54,8 +54,11 @@ This field is mandatory.
 The Hostnames or IP Addresses mentioned in this option must be same as the
 [Shyama Server Service Hostname](./shyama_config#service-hostname).
 
-Example usage : [ "shyama1.local", "192.168.0.2" ] : Here 2 instances of Shyama are running in
-Active Passive mode.
+Example usages : 
+
+[ "shyamahost1.local" ] : Here a single instance of Shyama is specified.
+
+[ "shyama1.local", "192.168.0.2" ] : Here 2 instances of Shyama are running in Active Passive mode.
 
 ## Shyama Ports {#shyama-ports}
 
@@ -73,7 +76,11 @@ This field is mandatory.
 The TCP Ports mentioned in this option must be same as the 
 [Shyama Server Service Port](./shyama_config#service-port).
 
-Example usage : [ 10037, 10037 ] : Here 2 instances of Shyama are running in Active Passive mode.
+Example usages : 
+
+[ 10037 ] : Here a single instance of Shyama is specified.
+
+[ 10037, 10037 ] : Here 2 instances of Shyama are running in Active Passive mode.
 
 ## Shyama Secret {#shyama-secret}
 

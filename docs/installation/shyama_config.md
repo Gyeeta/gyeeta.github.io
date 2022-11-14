@@ -37,7 +37,7 @@ This field is mandatory and max shyama name length is 64 bytes.
 
 ## Shyama Secret {#shyama-secret}
 
-This is a secret phrase to be used to authenticate connecting Madhava and Node Webserver instances.
+This is a secret phrase to be used to authenticate connecting Madhava instances.
 
 The JSON field name is `shyama_secret` and corresponding environment variable is `CFG_SHYAMA_SECRET`.
 
