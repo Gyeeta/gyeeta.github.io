@@ -50,7 +50,8 @@ function HomepageHeader() {
 	<div style={{ marginTop : 20 }} />
 
 	      <div style={{ marginTop : 20 }} />
-		<iframe width="500px" height="300px" src="https://www.youtube.com/embed/SubYfXe1mk4?rel=0" title="Gyeeta YouTube video player" frameBorder="0" hd="1" allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+		<img src="https://pkg.gyeeta.workers.dev/Gyeeta720p.gif" alt="Gyeeta Overview"  width="500px" height="300px" />
+￼ Run code snippet
 	      <div style={{ marginTop : 10, marginBottom : 30 }} />
 
 	      <div style={{ minWidth : 500, marginBottom : 50 }}>
