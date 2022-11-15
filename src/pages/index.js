@@ -50,10 +50,12 @@ function HomepageHeader() {
 	<div style={{ marginTop : 20 }} />
 
 	      <div style={{ marginTop : 20 }} />
+	        <a href="/docs">
 		<picture>
 		<source srcSet="https://pkg.gyeeta.workers.dev/Gyeeta720p.gif" media="(min-width: 1000px)" width="900px" height="500" />
 		<img src="https://pkg.gyeeta.workers.dev/Gyeeta720p.gif" alt="Gyeeta Overview"  width="500px" height="350px" />
 		</picture>	      
+		</a>
 ￼ Run code snippet
 	      <div style={{ marginTop : 10, marginBottom : 30 }} />
 
