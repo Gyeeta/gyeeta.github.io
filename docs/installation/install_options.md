@@ -70,7 +70,7 @@ To setup Gyeeta, users need to install the following minimal components :
 
 The image below shows the high level overview of how the different components interact with each other :
 
-![Gyeeta Architecture](/img/gyeeta_arch.jpg)
+![Gyeeta Architecture](/img/gyeeta_arch2.png)
 
 
 ### Number of Madhava Servers needed {#num-madhava}

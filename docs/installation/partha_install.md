@@ -134,6 +134,51 @@ sudo bash /tmp/install-gyeeta-partha.sh /tmp/partha.json
 
 The install script SHA256 can be checked before installing. The SHA256 of the install script is available at [SHA256 file](https://gyeeta.io/packages/install-gyeeta-partha.sh.sum)
 
+#### Stopping/Starting/Uninstalling the Partha Agent
+
+```bash title="Command to stop the Partha Agent"
+
+sudo systemctl stop gyeeta-partha
+
+```
+
+```bash title="Command to start the Partha Agent"
+
+sudo systemctl start gyeeta-partha
+
+```
+
+**Command to uninstall Partha Agent**
+
+
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-partha; sudo apt-get remove gyeeta-partha
+</CodeBlock>
+</TabItem>
+
+<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-partha; sudo yum erase gyeeta-partha
+</CodeBlock>
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-partha; sudo zypper remove gyeeta-partha
+</CodeBlock>
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-partha; sudo dnf remove gyeeta-partha
+</CodeBlock>
+</TabItem>
+
+</Tabs>
+
+
 
 ### *Kubernetes Helm Chart* {#helm-chart}
 
@@ -248,6 +293,50 @@ sudo systemctl start gyeeta-partha
 sudo systemctl enable gyeeta-partha
 
 ```
+
+#### Stopping/Starting/Uninstalling the Partha Agent
+
+```bash title="Command to stop the Partha Agent"
+
+sudo systemctl stop gyeeta-partha
+
+```
+
+```bash title="Command to start the Partha Agent"
+
+sudo systemctl start gyeeta-partha
+
+```
+
+**Command to uninstall Partha Agent**
+
+
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-partha; sudo apt-get remove gyeeta-partha
+</CodeBlock>
+</TabItem>
+
+<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-partha; sudo yum erase gyeeta-partha
+</CodeBlock>
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-partha; sudo zypper remove gyeeta-partha
+</CodeBlock>
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-partha; sudo dnf remove gyeeta-partha
+</CodeBlock>
+</TabItem>
+
+</Tabs>
 
 
 ### *Manual Tar Package install* {#tar-install}

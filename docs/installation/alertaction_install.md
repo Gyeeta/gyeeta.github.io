@@ -7,6 +7,11 @@ keywords:
   - installation
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
+
 # Alert Action Agent Installation
 
 ## Network Connectivity Requirements {#network}
@@ -54,6 +59,51 @@ sudo bash /tmp/install-gyeeta-alertaction.sh /tmp/alertaction.env
 ```
 
 The install script SHA256 can be checked before installing. The SHA256 of the install script is available at [SHA256 file](https://gyeeta.io/packages/install-gyeeta-alertaction.sh.sum)
+
+#### Stopping/Starting/Uninstalling the Alert Agent
+
+```bash title="Command to stop the Alert Agent"
+
+sudo systemctl stop gyeeta-alertaction
+
+```
+
+```bash title="Command to start the Alert Agent"
+
+sudo systemctl start gyeeta-alertaction
+
+```
+
+**Command to uninstall Alert Agent**
+
+
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-alertaction; sudo apt-get remove gyeeta-alertaction
+</CodeBlock>
+</TabItem>
+
+<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-alertaction; sudo yum erase gyeeta-alertaction
+</CodeBlock>
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-alertaction; sudo zypper remove gyeeta-alertaction
+</CodeBlock>
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-alertaction; sudo dnf remove gyeeta-alertaction
+</CodeBlock>
+</TabItem>
+
+</Tabs>
+
 
 
 ### *Kubernetes Helm Chart* {#helm-chart}
@@ -149,6 +199,51 @@ sudo systemctl start gyeeta-alertaction
 sudo systemctl enable gyeeta-alertaction
 
 ```
+
+#### Stopping/Starting/Uninstalling the Alert Agent
+
+```bash title="Command to stop the Alert Agent"
+
+sudo systemctl stop gyeeta-alertaction
+
+```
+
+```bash title="Command to start the Alert Agent"
+
+sudo systemctl start gyeeta-alertaction
+
+```
+
+**Command to uninstall Alert Agent**
+
+
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-alertaction; sudo apt-get remove gyeeta-alertaction
+</CodeBlock>
+</TabItem>
+
+<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-alertaction; sudo yum erase gyeeta-alertaction
+</CodeBlock>
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-alertaction; sudo zypper remove gyeeta-alertaction
+</CodeBlock>
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-alertaction; sudo dnf remove gyeeta-alertaction
+</CodeBlock>
+</TabItem>
+
+</Tabs>
+
 
 
 ### *Manual Tar Package install* {#tar-install}

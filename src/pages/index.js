@@ -56,7 +56,7 @@ function HomepageHeader() {
 		<img src="https://pkg.gyeeta.workers.dev/Gyeeta720p.gif" alt="Gyeeta Overview"  width="500px" height="350px" />
 		</picture>	      
 		</a>
-￼ Run code snippet
+
 	      <div style={{ marginTop : 10, marginBottom : 30 }} />
 
 	      <div style={{ minWidth : 500, marginBottom : 50 }}>

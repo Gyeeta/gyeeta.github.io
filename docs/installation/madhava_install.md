@@ -6,6 +6,11 @@ keywords:
   - installation
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
+
 # Madhava Intermediate Server Installation
 
 ## Network Connectivity Requirements {#network}
@@ -56,6 +61,50 @@ sudo bash /tmp/install-gyeeta-madhava.sh /tmp/madhava.json
 ```
 
 The install script SHA256 can be checked before installing. The SHA256 of the install script is available at [SHA256 file](https://gyeeta.io/packages/install-gyeeta-madhava.sh.sum)
+
+#### Stopping/Starting/Uninstalling the Madhava Server
+
+```bash title="Command to stop the Madhava Server"
+
+sudo systemctl stop gyeeta-madhava
+
+```
+
+```bash title="Command to start the Madhava Server"
+
+sudo systemctl start gyeeta-madhava
+
+```
+
+**Command to uninstall Madhava Server**
+
+
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-madhava; sudo apt-get remove gyeeta-madhava
+</CodeBlock>
+</TabItem>
+
+<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-madhava; sudo yum erase gyeeta-madhava
+</CodeBlock>
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-madhava; sudo zypper remove gyeeta-madhava
+</CodeBlock>
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-madhava; sudo dnf remove gyeeta-madhava
+</CodeBlock>
+</TabItem>
+
+</Tabs>
 
 
 ### *Kubernetes Helm Chart* {#helm-chart}
@@ -150,6 +199,51 @@ sudo systemctl start gyeeta-madhava
 sudo systemctl enable gyeeta-madhava
 
 ```
+
+#### Stopping/Starting/Uninstalling the Madhava Server
+
+```bash title="Command to stop the Madhava Server"
+
+sudo systemctl stop gyeeta-madhava
+
+```
+
+```bash title="Command to start the Madhava Server"
+
+sudo systemctl start gyeeta-madhava
+
+```
+
+**Command to uninstall Madhava Server**
+
+
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-madhava; sudo apt-get remove gyeeta-madhava
+</CodeBlock>
+</TabItem>
+
+<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-madhava; sudo yum erase gyeeta-madhava
+</CodeBlock>
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-madhava; sudo zypper remove gyeeta-madhava
+</CodeBlock>
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-madhava; sudo dnf remove gyeeta-madhava
+</CodeBlock>
+</TabItem>
+
+</Tabs>
+
 
 
 ### *Manual Tar Package install* {#tar-install}

@@ -6,6 +6,11 @@ keywords:
   - installation
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
+
 # Shyama Central Server Installation
 
 Shyama Server is the only component in Gyeeta which will interact with all other components.
@@ -57,6 +62,50 @@ sudo bash /tmp/install-gyeeta-shyama.sh /tmp/shyama.json
 ```
 
 The install script SHA256 can be checked before installing. The SHA256 of the install script is available at [SHA256 file](https://gyeeta.io/packages/install-gyeeta-shyama.sh.sum)
+
+#### Stopping/Starting/Uninstalling the Shyama Server
+
+```bash title="Command to stop the Shyama Server"
+
+sudo systemctl stop gyeeta-shyama
+
+```
+
+```bash title="Command to start the Shyama Server"
+
+sudo systemctl start gyeeta-shyama
+
+```
+
+**Command to uninstall Shyama Server**
+
+
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-shyama; sudo apt-get remove gyeeta-shyama
+</CodeBlock>
+</TabItem>
+
+<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-shyama; sudo yum erase gyeeta-shyama
+</CodeBlock>
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-shyama; sudo zypper remove gyeeta-shyama
+</CodeBlock>
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-shyama; sudo dnf remove gyeeta-shyama
+</CodeBlock>
+</TabItem>
+
+</Tabs>
 
 
 ### *Kubernetes Helm Chart* {#helm-chart}
@@ -151,6 +200,50 @@ sudo systemctl start gyeeta-shyama
 sudo systemctl enable gyeeta-shyama
 
 ```
+
+#### Stopping/Starting/Uninstalling the Shyama Server
+
+```bash title="Command to stop the Shyama Server"
+
+sudo systemctl stop gyeeta-shyama
+
+```
+
+```bash title="Command to start the Shyama Server"
+
+sudo systemctl start gyeeta-shyama
+
+```
+
+**Command to uninstall Shyama Server**
+
+
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-shyama; sudo apt-get remove gyeeta-shyama
+</CodeBlock>
+</TabItem>
+
+<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-shyama; sudo yum erase gyeeta-shyama
+</CodeBlock>
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-shyama; sudo zypper remove gyeeta-shyama
+</CodeBlock>
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-shyama; sudo dnf remove gyeeta-shyama
+</CodeBlock>
+</TabItem>
+
+</Tabs>
 
 
 ### *Manual Tar Package install* {#tar-install}

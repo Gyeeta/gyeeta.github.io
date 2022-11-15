@@ -7,6 +7,11 @@ keywords:
   - installation
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
+
 # Node Webserver Installation
 
 ## Network Connectivity Requirements {#network}
@@ -53,6 +58,50 @@ sudo bash /tmp/install-gyeeta-nodewebserver.sh /tmp/nodewebserver.env
 ```
 
 The install script SHA256 can be checked before installing. The SHA256 of the install script is available at [SHA256 file](https://gyeeta.io/packages/install-gyeeta-nodewebserver.sh.sum)
+
+#### Stopping/Starting/Uninstalling the Node Webserver
+
+```bash title="Command to stop the Node Webserver"
+
+sudo systemctl stop gyeeta-nodewebserver
+
+```
+
+```bash title="Command to start the Node Webserver"
+
+sudo systemctl start gyeeta-nodewebserver
+
+```
+
+**Command to uninstall Node Webserver**
+
+
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-nodewebserver; sudo apt-get remove gyeeta-nodewebserver
+</CodeBlock>
+</TabItem>
+
+<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-nodewebserver; sudo yum erase gyeeta-nodewebserver
+</CodeBlock>
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-nodewebserver; sudo zypper remove gyeeta-nodewebserver
+</CodeBlock>
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-nodewebserver; sudo dnf remove gyeeta-nodewebserver
+</CodeBlock>
+</TabItem>
+
+</Tabs>
 
 
 ### *Kubernetes Helm Chart* {#helm-chart}
@@ -148,6 +197,50 @@ sudo systemctl start gyeeta-nodewebserver
 sudo systemctl enable gyeeta-nodewebserver
 
 ```
+#### Stopping/Starting/Uninstalling the Node Webserver
+
+```bash title="Command to stop the Node Webserver"
+
+sudo systemctl stop gyeeta-nodewebserver
+
+```
+
+```bash title="Command to start the Node Webserver"
+
+sudo systemctl start gyeeta-nodewebserver
+
+```
+
+**Command to uninstall Node Webserver**
+
+
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-nodewebserver; sudo apt-get remove gyeeta-nodewebserver
+</CodeBlock>
+</TabItem>
+
+<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-nodewebserver; sudo yum erase gyeeta-nodewebserver
+</CodeBlock>
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-nodewebserver; sudo zypper remove gyeeta-nodewebserver
+</CodeBlock>
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-nodewebserver; sudo dnf remove gyeeta-nodewebserver
+</CodeBlock>
+</TabItem>
+
+</Tabs>
+
 
 
 ### *Manual Tar Package install* {#tar-install}

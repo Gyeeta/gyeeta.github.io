@@ -24,7 +24,7 @@ The components that will be installed on a single host as part of this script ar
 - [Node Webserver](../architecture#node-webserver)
 - [Alert Action Agent](../architecture#alert-action-agent)
 
-Users will then need to install Partha Agents on all hosts which need to be monitored.
+Users will then need to install [Partha Agents](../architecture#host-monitor-agent-partha) on all hosts which need to be monitored.
 
 The TLDR Quick Install will not install any Failover (High Availability) Components and if required, users will need
 to install the Failover instances separately as per the [Failover Handling](./failover) link.

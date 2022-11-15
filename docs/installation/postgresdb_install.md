@@ -3,6 +3,11 @@ title: PostgresDB Installation
 description: Gyeeta PostgresDB Installation
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
+
 # Gyeeta PostgresDB Installation
 
 Gyeeta Shyama and Madhava servers use PostgresDB as a data store.
@@ -77,6 +82,52 @@ sudo bash /tmp/install-gyeeta-postgresdb.sh /opt/gyeeta/postgresdb/data gyeetadb
 ```
 
 The install script SHA256 can be checked before installing. The SHA256 of the install script is available at [SHA256 file](https://gyeeta.io/packages/install-gyeeta-postgresdb.sh.sum)
+
+#### Stopping/Starting/Uninstalling the Postgres DB
+
+```bash title="Command to stop the Postgres DB"
+
+sudo systemctl stop gyeeta-postgresdb
+
+```
+
+```bash title="Command to start the Postgres DB"
+
+sudo systemctl start gyeeta-postgresdb
+
+```
+
+**Command to uninstall Gyeeta PostgresDB**
+
+
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-postgresdb; sudo apt-get remove gyeeta-postgresdb
+</CodeBlock>
+</TabItem>
+
+<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-postgresdb; sudo yum erase gyeeta-postgresdb
+</CodeBlock>
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-postgresdb; sudo zypper remove gyeeta-postgresdb
+</CodeBlock>
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-postgresdb; sudo dnf remove gyeeta-postgresdb
+</CodeBlock>
+</TabItem>
+
+</Tabs>
+
+
 
 ### *Running as a Docker container* {#docker}
 
@@ -172,6 +223,51 @@ sudo systemctl start gyeeta-postgresdb
 sudo systemctl enable gyeeta-postgresdb
 
 ```
+
+#### Stopping/Starting/Uninstalling the Postgres DB
+
+```bash title="Command to stop the Postgres DB"
+
+sudo systemctl stop gyeeta-postgresdb
+
+```
+
+```bash title="Command to start the Postgres DB"
+
+sudo systemctl start gyeeta-postgresdb
+
+```
+
+**Command to uninstall Gyeeta PostgresDB**
+
+
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-postgresdb; sudo apt-get remove gyeeta-postgresdb
+</CodeBlock>
+</TabItem>
+
+<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-postgresdb; sudo yum erase gyeeta-postgresdb
+</CodeBlock>
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-postgresdb; sudo zypper remove gyeeta-postgresdb
+</CodeBlock>
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-postgresdb; sudo dnf remove gyeeta-postgresdb
+</CodeBlock>
+</TabItem>
+
+</Tabs>
+
 
 
 ### *Manual Tar Package install* {#tar-install}
