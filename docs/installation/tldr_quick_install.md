@@ -6,6 +6,11 @@ keywords:
   - installation
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
+
 # TL;DR Quick Server Installation
 
 Gyeeta provides a single command TLDR Quick Install method to install all Server Components with no other 
@@ -99,4 +104,232 @@ with 16 cores and 64 GB RAM can monitor upto *500 monitored hosts*.
 
 In case more number of Monitored Hosts are expected, other instances of Madhava need to be installed either on same host or some other
 host.
+
+
+## Commands for Stopping/Starting/Uninstalling the Quick Install components
+
+### Postgres DB
+
+```bash title="Command to stop the Postgres DB"
+
+sudo systemctl stop gyeeta-postgresdb
+
+```
+
+```bash title="Command to start the Postgres DB"
+
+sudo systemctl start gyeeta-postgresdb
+
+```
+
+**Command to uninstall Gyeeta PostgresDB**
+
+
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-postgresdb; sudo apt-get remove gyeeta-postgresdb
+</CodeBlock>
+</TabItem>
+
+<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-postgresdb; sudo yum erase gyeeta-postgresdb
+</CodeBlock>
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-postgresdb; sudo zypper remove gyeeta-postgresdb
+</CodeBlock>
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-postgresdb; sudo dnf remove gyeeta-postgresdb
+</CodeBlock>
+</TabItem>
+
+</Tabs>
+
+
+### Shyama Server
+
+```bash title="Command to stop the Shyama Server"
+
+sudo systemctl stop gyeeta-shyama
+
+```
+
+```bash title="Command to start the Shyama Server"
+
+sudo systemctl start gyeeta-shyama
+
+```
+
+**Command to uninstall Shyama Server**
+
+
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-shyama; sudo apt-get remove gyeeta-shyama
+</CodeBlock>
+</TabItem>
+
+<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-shyama; sudo yum erase gyeeta-shyama
+</CodeBlock>
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-shyama; sudo zypper remove gyeeta-shyama
+</CodeBlock>
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-shyama; sudo dnf remove gyeeta-shyama
+</CodeBlock>
+</TabItem>
+
+</Tabs>
+
+
+### Madhava Server
+
+```bash title="Command to stop the Madhava Server"
+
+sudo systemctl stop gyeeta-madhava
+
+```
+
+```bash title="Command to start the Madhava Server"
+
+sudo systemctl start gyeeta-madhava
+
+```
+
+**Command to uninstall Madhava Server**
+
+
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-madhava; sudo apt-get remove gyeeta-madhava
+</CodeBlock>
+</TabItem>
+
+<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-madhava; sudo yum erase gyeeta-madhava
+</CodeBlock>
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-madhava; sudo zypper remove gyeeta-madhava
+</CodeBlock>
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-madhava; sudo dnf remove gyeeta-madhava
+</CodeBlock>
+</TabItem>
+
+</Tabs>
+
+
+### Node Webserver
+
+```bash title="Command to stop the Node Webserver"
+
+sudo systemctl stop gyeeta-nodewebserver
+
+```
+
+```bash title="Command to start the Node Webserver"
+
+sudo systemctl start gyeeta-nodewebserver
+
+```
+
+**Command to uninstall Node Webserver**
+
+
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-nodewebserver; sudo apt-get remove gyeeta-nodewebserver
+</CodeBlock>
+</TabItem>
+
+<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-nodewebserver; sudo yum erase gyeeta-nodewebserver
+</CodeBlock>
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-nodewebserver; sudo zypper remove gyeeta-nodewebserver
+</CodeBlock>
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-nodewebserver; sudo dnf remove gyeeta-nodewebserver
+</CodeBlock>
+</TabItem>
+
+</Tabs>
+
+
+### Alert Agent
+
+```bash title="Command to stop the Alert Agent"
+
+sudo systemctl stop gyeeta-alertaction
+
+```
+
+```bash title="Command to start the Alert Agent"
+
+sudo systemctl start gyeeta-alertaction
+
+```
+
+**Command to uninstall Alert Agent**
+
+
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-alertaction; sudo apt-get remove gyeeta-alertaction
+</CodeBlock>
+</TabItem>
+
+<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-alertaction; sudo yum erase gyeeta-alertaction
+</CodeBlock>
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-alertaction; sudo zypper remove gyeeta-alertaction
+</CodeBlock>
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+<CodeBlock language="sh">
+sudo systemctl disable gyeeta-alertaction; sudo dnf remove gyeeta-alertaction
+</CodeBlock>
+</TabItem>
+
+</Tabs>
+
 
