@@ -31,16 +31,21 @@ slug: /
 ## Why Gyeeta?
 
 - Few Free and Open source tools are available which will non-intrusively monitor infrastructure and services with minimal overhead and 
-  without manual configuration.
+  without manual configuration. 
+
+- Gyeeta is completely non-intrusive and uses a combination of eBPF and Kernel Statistics. No Application changes are needed. Gyeeta can monitor 
+  both HTTP and non-HTTP based services and can provide statistics such as Queries/sec, Response Times, Network Throughputs, Service Network 
+  Flows for any service (even proprietary or TLS encrypted).
+
+- Gyeeta does not connect to any application. Gyeeta does not insert any probes, taps or instruments any 
+  application nor does it use any tracing such as OpenTracing. This makes Gyeeta completely non-intrusive and does not require any 
+  configuration to monitor any service.
 
 - Commercial SaaS tools exist with varying degrees of Metrics and Observability capabilities but are expensive both in terms of cost 
   and Host CPU, Memory and IO resources.
 
 - Gyeeta is meant to be a lightweight tool which can be deployed on thousands of hosts with minimal configuration. Gyeeta being a Free 
-  and 100% Open source tool, users can deploy Gyeeta on all their data centers or Cloud Environments without worrying about Monitoring costs.
-
-- Gyeeta is completely non-intrusive and uses a combination of eBPF and Kernel Statistics. No Application changes are needed. Gyeeta can monitor 
-  both HTTP and non-HTTP based applications without Tracing or inserting probes.
+  and 100% Open source tool, users can deploy Gyeeta on all of their data centers or Cloud Environments without worrying about Monitoring costs.
 
 - Gyeeta works on all Linux Kernels released since 2016 (Linux Kernels 4.4 or higher).
 
