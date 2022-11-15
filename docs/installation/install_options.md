@@ -68,6 +68,11 @@ To setup Gyeeta, users need to install the following minimal components :
 5. One instance of Node Webserver
 6. One instance of Alert Action Agent responsible for executing Alert Actions (Notifications)
 
+The image below shows the high level overview of how the different components interact with each other :
+
+![Gyeeta Architecture](/img/gyeeta_arch.jpg)
+
+
 ### Number of Madhava Servers needed {#num-madhava}
 
 The number of Madhava Intermediate servers that are needed depends on the max number of monitored hosts and Network Locality of 

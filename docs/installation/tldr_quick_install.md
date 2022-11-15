@@ -19,10 +19,10 @@ configuration requirements. This provides a very quick way to install the Gyeeta
 The components that will be installed on a single host as part of this script are :
 
 - One instance of Postgres DB which will be shared between Shyama and Madhava servers
-- Shyama Central Server
-- One instance of Madhava Intermediate Server
-- Node Webserver
-- Alert Action Agent
+- [Shyama Central Server](../architecture#central-server-shyama)
+- One instance of [Madhava Intermediate Server](../architecture#intermediate-server-madhava)
+- [Node Webserver](../architecture#node-webserver)
+- [Alert Action Agent](../architecture#alert-action-agent)
 
 Users will then need to install Partha Agents on all hosts which need to be monitored.
 
