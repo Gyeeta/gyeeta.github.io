@@ -21,6 +21,10 @@ The components that will be installed on a single host as part of this script ar
 
 Users will then need to install Partha Agents on all hosts which need to be monitored.
 
+The TLDR Quick Install will not install any Failover (High Availability) Components and if required, users will need
+to install the Failover instances separately as per the [Failover Handling](./failover) link.
+
+
 ## Inputs needed for TLDR Quick Install script
 
 - Postgres DB Data directory path which should have adequate Free Disk Space (minimum 10 GB)

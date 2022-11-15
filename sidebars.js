@@ -80,13 +80,13 @@ const sidebars = {
 			},
 			{
 				type: 'doc',
-				id: 'installation/k8s_helm',
-				label: 'Kubernetes Helm Charts',
+				id: 'installation/failover',
+				label: 'Failover (HA) Handling',
 			},
 			{
 				type: 'doc',
-				id: 'installation/failover',
-				label: 'Failover (HA) Handling',
+				id: 'installation/k8s_helm',
+				label: 'Kubernetes Helm Charts',
 			},
 
 		],
