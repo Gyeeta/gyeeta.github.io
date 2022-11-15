@@ -106,7 +106,7 @@ In case more number of Monitored Hosts are expected, other instances of Madhava 
 host.
 
 
-## Commands for Stopping/Starting/Uninstalling the Quick Install components
+## Stopping/Starting/Uninstalling the Quick Install components
 
 ### Postgres DB
 
