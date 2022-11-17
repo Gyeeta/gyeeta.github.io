@@ -82,4 +82,9 @@ Users can also query Dashboards for Historical time durations data.
 Another workflow could be to use the *Search* mechanism to search for specific cases. For example, search for a CPU Limited (Throttled) process
 with more than 10 CPU Delay instances in last 5 minutes, or search for a newly started service with HTTP Server errors. 
 
+A sample workflow is also provided in the video below :
+
+
+<iframe width="500px" height="300px" src="https://www.youtube.com/embed/SubYfXe1mk4?rel=0" title="Gyeeta YouTube video player" frameBorder="0" hd="1" allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
 

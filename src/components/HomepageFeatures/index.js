@@ -67,11 +67,30 @@ export default function HomepageFeatures() {
 	  display: 'flex',
 	  flexWrap: 'wrap',
 	  justifyContent : 'center',
-	  alignItems : 'end',
+	  alignItems : 'center',
+	  width : '100%',
 	  minWidth : 500,
 	  minHeight : 350,
 	  margin : 10,
       }} >
+
+      <div
+	     style={{
+		  display: 'flex',
+		  flexWrap: 'wrap',
+		  justifyContent : 'center',
+		  alignItems : 'center',
+		  minWidth : 500,
+		  minHeight : 350,
+		  margin : 100,
+	     }}	  
+      >
+        <div className="row">
+          {FeatureList.map((props, idx) => (
+            <Feature key={idx} {...props} />
+          ))}
+        </div>
+      </div>
 
       <div 
       style={{  
@@ -83,24 +102,19 @@ export default function HomepageFeatures() {
 	  display: 'flex',
 	  flexWrap: 'wrap',
 	  justifyContent : 'center',
-	  alignItems : 'end',
-	  maxWidth : 300,
+	  alignItems : 'center',
+	  width : '30%',
+	  maxWidth : 500,
+	  minWidth : 450,
 	  minHeight : 320,
 	  margin : 30,
 	}} >	    
       <div style={{ marginLeft : 10, marginBottom : 20, display : 'flex', flexWrap : 'wrap', justifyContent : 'center' }}>
-      <span style={{ fontSize : 20, color : '#16113f' }}><strong><em> Monitor your Infrastructure, </em></strong></span>
-      <span style={{ fontSize : 20, color : '#16113f' }}><strong><em>Services and Processes.</em></strong></span>
+      <span style={{ fontSize : 20, color : '#bcdfd7', background : '#1b2635db', }}><strong><em> Monitor all your Infrastructure at no cost !! </em></strong></span>
       </div>
       </div>
 
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
-      </div>
+
     </div>  
     </section>
   );
