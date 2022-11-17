@@ -28,7 +28,7 @@ Firewall rules must allow inbound access to the Madhava server on the configured
 Different Install Options exist :
 
 - [Install using Shell Script](#shell-script)
-- [Kubernetes Helm Chart](#helm-chart)
+- [Install using Kubernetes Helm Chart](#helm-chart)
 - [Running as a Docker container](#docker)
 - [Install using native rpm or deb packages](#rpm-deb)
 - [Manual Tar Package install](#tar-install)
@@ -107,7 +107,7 @@ sudo systemctl disable gyeeta-madhava; sudo dnf remove gyeeta-madhava
 </Tabs>
 
 
-### *Kubernetes Helm Chart* {#helm-chart}
+### *Install using Kubernetes Helm Chart* {#helm-chart}
 
 Kubernetes 1.18 or higher is needed along with Helm v3.
 

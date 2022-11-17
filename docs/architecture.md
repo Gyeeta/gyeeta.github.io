@@ -20,16 +20,15 @@ Currently, *Gyeeta* is available for `x86_64`processors only and Linux Kernel ve
 
 *Gyeeta* consists of the following components :
 
-- Host Monitor Agent (named [`partha`](#host-monitor-agent-partha)) to be installed on each of the monitored hosts
+- Host Monitor Agent (named [`partha`](#host-monitor-agent-partha)) to be installed on each of the hosts which needs to be monitored
 
-- A Central Server (named [`shyama`](#central-server-shyama)) which is both a Global Aggregator and Alert Manager
+- A Central Server (named [`shyama`](#central-server-shyama)) which is both a Aggregating Server and Alert Manager
 
-- One or more Intermediate Servers (named [`madhava`](#intermediate-server-madhava)) handling statistics from
-the multiple monitored `partha` hosts
+- One or more Intermediate Servers (named [`madhava`](#intermediate-server-madhava)) handling statistics from multiple monitored hosts (`partha`)
 
 - A [NodeJS Webserver](#webserver) which interacts with the `shyama` and `madhava` servers 
 
-- An [Alert Action Agent](#alert-action-agent) which interacts with `shyama` and executes the Alert Trigger Actions (Notifications)
+- An [Alert Agent](#alert-action-agent) which interacts with `shyama` and executes the Alert Trigger Actions (Notifications)
 
 - One or more [Postgres DBs](#postgres-database) to be used as the datastore for `shyama` and `madhava` servers
 
@@ -47,9 +46,10 @@ processes/sec, or tens of thousands of queries/sec, all with under 10% single co
 
 ## *Partha* Host Monitor Agent {#host-monitor-agent-partha}
 
-The Gyeeta Host Monitor Agent (named `partha`) is a lightweight priviliged process using eBPF to monitor the activities on a host.
-It needs to be installed on every host that is to be monitored and preferably started at init (startup) so that all process
+The Gyeeta Host Monitor Agent (named `partha`) needs to be installed on every host that is to be monitored and preferably started at init (startup) so that all process
 activity can be monitored. 
+
+The `partha` application is a lightweight priviliged process using eBPF and Kernel Statistics to monitor all activities on each monitored host.
 
 **Features :**
 
@@ -77,7 +77,7 @@ monitored hosts and all `madhava` instances.
 
 **Features :**
 
-- Assigns appropriate [`madhava`](#intermediate-server-madhava) intermediate servers to individual monitored hosts (`partha`) based on 
+- Assigns appropriate [`madhava`](#intermediate-server-madhava) intermediate servers to each of the monitored hosts (`partha`) based on 
 Network adjacency and availability.
 - Acts as the Alert Manager and co-ordinates Alert Trigger Actions with the [Alert Agent](#alert-action-agent)
 - Coordinates with the one or more `madhava` to resolve Network Flow Dependencies
@@ -102,13 +102,13 @@ depends on the number of monitored hosts and Network Connectivity (adjacency) re
 
 **Features :**
 
-- Single `madhava` instance can handle upto 500 Hosts (`partha`) interaction and monitoring
+- Single `madhava` instance can handle upto 500 Hosts (`partha`) interaction and monitoring depending on the `madhava` host CPU and RAM specs
 - Coordinates with `shyama` and other `madhava` instances to resolve Network Flow Dependencies
 - Uses [Postgres DB](#postgres-database) as the datastore to store the data pertaining to the monitored hosts
 - Communicates with the [Webserver](#webserver) for web query responses
 - Optional Redundancy in Active Passive modes with one active and one or more passive `madhava` instances
 
-It is recommended that at least one `madhava` server be installed in each Monitored Host Network zone to limit inter-zone or 
+It is recommended that at least one `madhava` server be installed in each active Network zone to limit inter-zone or 
 inter-region Network egress costs.
 
 *Learn more from links below* :

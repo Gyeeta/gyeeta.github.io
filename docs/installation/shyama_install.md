@@ -30,7 +30,7 @@ Firewall rules must allow inbound access to the Shyama server on the configured 
 Different Install Options exist :
 
 - [Install using Shell Script](#shell-script)
-- [Kubernetes Helm Chart](#helm-chart)
+- [Install using Kubernetes Helm Chart](#helm-chart)
 - [Running as a Docker container](#docker)
 - [Install using native rpm or deb packages](#rpm-deb)
 - [Manual Tar Package install](#tar-install)
@@ -108,7 +108,7 @@ sudo systemctl disable gyeeta-shyama; sudo dnf remove gyeeta-shyama
 </Tabs>
 
 
-### *Kubernetes Helm Chart* {#helm-chart}
+### *Install using Kubernetes Helm Chart* {#helm-chart}
 
 Kubernetes 1.18 or higher is needed along with Helm v3.
 
@@ -270,4 +270,39 @@ Shyama server can be setup for Multi Node High Availablity by installing 2 or mo
 which interact with the same instance of Postgres DB in Active-Passive mode.
 
 Please refer to [Failover](./failover) for further details.
+
+## Shyama Runtime CLI arguments
+
+In addition to the Shyama config file or config environment variables, users can pass command line arguments (CLI)
+to Shyama which will take precedence over any other config file or environment variable. 
+
+Some of the important CLI Options :
+
+- `--cfg_main_json <Path to Shyama Config JSON>` 
+
+  This option provides a way to override the default Shyama config files and will take precedence over any env variable
+
+- `--cfg_alertdefs_json <Path to Alert Definitions JSON file>`
+
+  This option provides a way to set all Alert Definitions using a predefined Alert Definition JSON array. Any existing
+  Alert Definitions will be ignored and only the definitions defined in the JSON file will be considered.
+
+- `--cfg_actions_json <Path to Alert Actions (Notifications) JSON file>`
+
+  This option provides a way to set all Alert Actions using a predefined Alert Actions JSON array. Any existing
+  Alert Actions will be ignored and only the actions defined in the JSON file will be considered.
+
+- `--cfg_inhibits_json <Path to Alert Inhibits JSON file>`
+
+  This option provides a way to set all [Alert Inhibits](../alerts/alertoverview#inhibition) using a predefined Alert Inhibitions JSON array. 
+  Any existing Alert Inhibits will be ignored and only the inhibitions defined in the JSON file will be considered.
+
+- `--cfg_silences_json <Path to Alert Silences JSON file>`
+
+  This option provides a way to set all [Alert Silences](../alerts/alertoverview#silencing) using a predefined Alert Silences JSON array. 
+  Any existing Alert Silences will be ignored and only the silences defined in the JSON file will be considered.
+
+- `--nolog`
+
+  This option if specified, the Shyama process will not send its logs to a file and instead send all logs to `stdout` or `stderr` streams.
 

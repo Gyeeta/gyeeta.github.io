@@ -40,7 +40,7 @@ function HomepageHeader() {
 		  marginTop : 30,
 		  background : '#1b2635db',
 		}} >	    
-	<img style={{ borderRadius : "50%" }} src="/img/logo.png" alt="Gyeeta Logo" width="50" height="50" />
+	<img style={{ borderRadius : "50%" }} src="/img/logo.png" alt="Gyeeta" width="50" height="50" />
 	<span style={{ marginRight : 10 }}> </span>
 	<span style={{ fontSize : 50, color : '#d48585' }}><strong><em>G</em></strong></span><span style={{ fontSize : 40, color : '#8288b0' }}><strong><em>yeeta</em></strong></span>
 	</div>
@@ -52,8 +52,8 @@ function HomepageHeader() {
 	      <div style={{ marginTop : 20 }} />
 	        <a href="/docs">
 		<picture>
-		<source srcSet="https://pkg.gyeeta.workers.dev/Gyeeta720p.gif" media="(min-width: 1000px)" width="900px" height="500" />
-		<img src="https://pkg.gyeeta.workers.dev/Gyeeta720p.gif" alt="Gyeeta Overview"  width="500px" height="350px" />
+		<source srcSet="https://pkg.gyeeta.workers.dev/gyeeta480p.gif" media="(min-width: 1024px)" width="900px" height="500" />
+		<img src="https://pkg.gyeeta.workers.dev/gyeeta480p.gif" alt="Gyeeta Overview"  width="500px" height="325px" />
 		</picture>	      
 		</a>
 
