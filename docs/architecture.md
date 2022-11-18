@@ -11,10 +11,7 @@ keywords:
 
 *Gyeeta* is an Observability product utilizing [eBPF](https://ebpf.io/) and Linux kernel statistics.
 
-*Gyeeta* is free, 100% open source (GPLv3) product. 
-
-Currently, *Gyeeta* is available for `x86_64`processors only and Linux Kernel versions 4.4.0 and higher.
-
+*Gyeeta* is a free and 100% [Open Source](https://github.com/gyeeta/gyeeta) (GPLv3) product. 
 
 ## Components in Gyeeta
 
@@ -22,13 +19,13 @@ Currently, *Gyeeta* is available for `x86_64`processors only and Linux Kernel ve
 
 - Host Monitor Agent (named [`partha`](#host-monitor-agent-partha)) to be installed on each of the hosts which needs to be monitored
 
-- A Central Server (named [`shyama`](#central-server-shyama)) which is both a Aggregating Server and Alert Manager
+- A Central Server (named [`shyama`](#central-server-shyama)) which serves as both an Aggregating Server and an Alert Manager
 
-- One or more Intermediate Servers (named [`madhava`](#intermediate-server-madhava)) handling statistics from multiple monitored hosts (`partha`)
+- One or more Intermediate Servers (named [`madhava`](#intermediate-server-madhava)) analyzing metrics from multiple monitored hosts (`partha`)
 
-- A [NodeJS Webserver](#webserver) which interacts with the `shyama` and `madhava` servers 
+- A [NodeJS Webserver](#webserver) which handles Web UI and REST API queries
 
-- An [Alert Agent](#alert-action-agent) which interacts with `shyama` and executes the Alert Trigger Actions (Notifications)
+- An [Alert Agent](#alert-action-agent) which interacts with `shyama` AlertManager and executes the Alert Trigger Actions (Notifications)
 
 - One or more [Postgres DBs](#postgres-database) to be used as the datastore for `shyama` and `madhava` servers
 
@@ -38,11 +35,7 @@ The image below shows the high level overview of how the different components in
 
 ### Highly Scalable
 
-*Gyeeta* supports monitoring of tens of thousands of hosts using a single `shyama` instance and multiple `madhava` 
-instances. 
-
-The Host Agent `partha` can monitor heavy loads such as hosts with thousands of connections, hundreds of
-processes/sec, or tens of thousands of queries/sec, all with under 10% single core CPU utilzation.
+*Gyeeta* supports monitoring of tens of thousands of hosts using a single `shyama` instance and multiple `madhava` instances. 
 
 ## *Partha* Host Monitor Agent {#host-monitor-agent-partha}
 
@@ -50,6 +43,7 @@ The Gyeeta Host Monitor Agent (named `partha`) needs to be installed on every ho
 activity can be monitored. 
 
 The `partha` application is a lightweight priviliged process using eBPF and Kernel Statistics to monitor all activities on each monitored host.
+It can monitor hosts with thousands of connections, hundreds of processes/sec, or tens of thousands of queries/sec, all with under 10% single core CPU utilzation.
 
 **Features :**
 
@@ -71,9 +65,11 @@ The `partha` application is a lightweight priviliged process using eBPF and Kern
 
 ## *Shyama* Central Server {#central-server-shyama}
 
-The `shyama` Central Server is the only component which interacts with all other components. A single `shyama` instance is needed to be
-installed on any Linux host with minimal CPU and RAM requirements. The `shyama` instance needs to have Network Connectivity with all
-monitored hosts and all `madhava` instances.
+The `shyama` Central Server serves as both an Aggregating Server and an Alert Manager and is the only component which interacts with all 
+other components. 
+
+A single `shyama` instance needs to be installed on any Linux host with minimal CPU and RAM requirements. The `shyama` 
+instance needs to have Network Connectivity with all monitored hosts and all `madhava` instances.
 
 **Features :**
 
@@ -97,15 +93,17 @@ inter-region network communication if the `shyama` instance is in a separate reg
 
 ## *Madhava* Intermediate Server {#intermediate-server-madhava}
 
-The `madhava` Intermediate Server interacts with `partha`, `shyama` and the webserver. The number of `madhava` instances to be installed
-depends on the number of monitored hosts and Network Connectivity (adjacency) requirements.
+The `madhava` Intermediate Server analyzes the monitored Host Statistics and interacts with `partha` Host Agents, `shyama` Central Server, other
+`madhava` server instances and the Webserver. 
+
+The number of `madhava` instances to be installed depends on the number of monitored hosts and Network Connectivity (adjacency) requirements.
 
 **Features :**
 
 - Single `madhava` instance can handle upto 500 Hosts (`partha`) interaction and monitoring depending on the `madhava` host CPU and RAM specs
 - Coordinates with `shyama` and other `madhava` instances to resolve Network Flow Dependencies
 - Uses [Postgres DB](#postgres-database) as the datastore to store the data pertaining to the monitored hosts
-- Communicates with the [Webserver](#webserver) for web query responses
+- Communicates with the [Webserver](#webserver) for query responses
 - Optional Redundancy in Active Passive modes with one active and one or more passive `madhava` instances
 
 It is recommended that at least one `madhava` server be installed in each active Network zone to limit inter-zone or 
@@ -131,8 +129,9 @@ It is recommended to use a Postgres DB in the same Network Region/Zone as the `m
 
 ## NodeJS Webserver {#node-webserver}
 
-The `nodejs` based webserver authenticates user queries and then forwards them to the `shyama` and `madhava` servers. A single instance of Webserver is needed
-to be installed on a host with Network Connectivity to `shyama` and all `madhava` instances.
+The `nodejs` based webserver handles Web UI and REST queries and forwards them to the `shyama` and `madhava` servers. 
+
+A single instance of Webserver needs to be installed on a host with Network Connectivity to `shyama` and all `madhava` instances.
 
 **Features :**
 
@@ -153,9 +152,10 @@ based Authentication and Authorization using OIDC / OAuth2 is planned for a late
 
 ## Alert Action Agent {#alert-action-agent}
 
-The Alert Action Agent is involved in executing the Alert Actions (Notifications) as per the configured Alert rules. A single instance of the Alert agent is needed
-to be installed on a host with Network Connectivity to `shyama`. If the Alert Action needs Network connectivity to an external service such as Slack or Pagerduty,
-the Alert Action Host must have external Network Connectivity as well.
+The Alert Action Agent is involved in executing the Alert Actions (Notifications) as per the configured Alert rules. 
+
+A single instance of the Alert agent needs to be installed on a host with Network Connectivity to `shyama`. If the Alert Action needs 
+Network connectivity to an external service such as Slack or Pagerduty, the Alert Action Host must have Internet Connectivity as well.
 
 **Features :**
 

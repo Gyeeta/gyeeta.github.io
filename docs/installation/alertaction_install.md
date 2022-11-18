@@ -84,7 +84,7 @@ sudo systemctl disable gyeeta-alertaction; sudo apt-get remove gyeeta-alertactio
 </CodeBlock>
 </TabItem>
 
-<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<TabItem value="rhel" label="RHEL / Rocky Linux / Amazon Linux">
 <CodeBlock language="sh">
 sudo systemctl disable gyeeta-alertaction; sudo yum erase gyeeta-alertaction
 </CodeBlock>
@@ -108,7 +108,7 @@ sudo systemctl disable gyeeta-alertaction; sudo dnf remove gyeeta-alertaction
 
 ### *Install using Kubernetes Helm Chart* {#helm-chart}
 
-Kubernetes 1.18 or higher is needed along with Helm v3.
+Kubernetes 1.19 or higher is needed along with Helm v3.
 
 Refer to [Gyeeta Helm Charts](./k8s_helm) for a detailed explanation on installing different
 Gyeeta components in Kubernetes.
@@ -118,6 +118,7 @@ A short explanation is shown below :
 ```bash
 
 helm repo add gyeeta https://gyeeta.io/helmcharts
+helm repo update
 helm show values gyeeta/alertaction > /tmp/alertaction.yaml
 
 # Thereafter you can edit the /tmp/alertaction.yaml file if you need to change any option. 
@@ -145,44 +146,61 @@ docker run -td --rm --name gyeetaAlertAgent --read-only --user 1001:1001 --env C
 
 Gyeeta native rpm or deb packages are available. The install is to be followed by Alert Agent configuration.
 
-#### Debian/Ubuntu based deb package install
+```mdx-code-block
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+```
 
 ```bash
-
 curl https://pkg.gyeeta.workers.dev/pgp-key.public | sudo gpg --yes --dearmor --output /usr/share/keyrings/gyeeta-keyring.gpg
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/gyeeta-keyring.gpg] https://pkg.gyeeta.workers.dev/apt-repo stable main" | sudo tee /etc/apt/sources.list.d/gyeeta.list
 sudo apt-get update
 sudo apt-get install -y gyeeta-alertaction
-
 ```
 
-#### Yum or dnf based rpm Installs
+```mdx-code-block
+</TabItem>
 
-For RHEL, Amazon Linux, CentOS, Rocky Linux, Fedora based distributions.
+<TabItem value="rhel" label="RHEL / Rocky Linux / Amazon Linux">
+```
 
 ```bash
-
 sudo rpm --import https://pkg.gyeeta.workers.dev/pgp-key.public
 sudo curl -s -o /etc/yum.repos.d/gyeeta.repo https://pkg.gyeeta.workers.dev/rpm-repo/gyeeta.repo
-
-if command -v yum > /dev/null; then 
-	sudo yum -y update
-	sudo yum install -y gyeeta-alertaction
-else
-	sudo dnf -y update
-	sudo dnf install -y gyeeta-alertaction
-fi	
-
+sudo yum -y update
+sudo yum install -y gyeeta-alertaction
 ```
 
-#### OpenSUSE / SUSE Linux based rpm Installs
+```mdx-code-block
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+```
 
 ```bash
-
 sudo rpm --import https://pkg.gyeeta.workers.dev/pgp-key.public
 sudo curl -s -o /etc/zypp/repos.d/gyeeta.repo https://pkg.gyeeta.workers.dev/rpm-repo/gyeeta.repo
 sudo zypper -q -n install gyeeta-alertaction
+```
 
+```mdx-code-block
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+```
+
+```bash
+sudo rpm --import https://pkg.gyeeta.workers.dev/pgp-key.public
+sudo curl -s -o /etc/yum.repos.d/gyeeta.repo https://pkg.gyeeta.workers.dev/rpm-repo/gyeeta.repo
+sudo dnf -y update
+sudo dnf install -y gyeeta-alertaction
+```
+
+
+```mdx-code-block
+</TabItem>
+
+</Tabs>
 ```
 
 
@@ -224,7 +242,7 @@ sudo systemctl disable gyeeta-alertaction; sudo apt-get remove gyeeta-alertactio
 </CodeBlock>
 </TabItem>
 
-<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<TabItem value="rhel" label="RHEL / Rocky Linux / Amazon Linux">
 <CodeBlock language="sh">
 sudo systemctl disable gyeeta-alertaction; sudo yum erase gyeeta-alertaction
 </CodeBlock>
@@ -255,7 +273,7 @@ can be used to install.
 
 mkdir ~/gyeeta
 cd ~/gyeeta
-curl -L https://github.com/Gyeeta/alertaction/releases/download/v0.1.0/alertaction.tar.gz | tar xzf -
+curl -L https://github.com/gyeeta/alertaction/releases/download/$( curl https://api.github.com/repos/gyeeta/alertaction/releases/latest -s | grep tag_name | awk -F\" '{print $4}' )/alertaction.tar.gz | tar xzf -
 cd ./alertaction
 
 # Thereafter edit the .env Alert Agent config file and then start the Alert Agent as

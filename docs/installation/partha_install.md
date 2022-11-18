@@ -20,12 +20,12 @@ The Agent is a lightweight process and uses max 10% of one CPU core and less tha
 
 ## Host Requirements to install partha
 
-The agent `partha` can be installed on Linux hosts with minimum kernel version 4.4. 
+### Minimum Linux Kernel and CPU Requirements
 
-### CPU Architectures Supported 
+The `partha` Host Agent requires a Linux Kernel with minimum kernel version of 4.4.
 
-Gyeeta currently supports only *x86_64* processors. Also, only *Intel/AMD* processors released after 2012 are supported as
-Gyeeta is compiled with avx instruction support.
+`partha` currently supports only *x86_64* processors. Also, only *Intel/AMD* processors released after 2012 are supported as
+`partha` is compiled with avx instruction support.
 
 ### Requirement of Kernel Headers {#kernel-headers}
 
@@ -49,7 +49,7 @@ sudo apt update && sudo apt-get -y install linux-headers-$(uname -r)
 </CodeBlock>
 </TabItem>
 
-<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<TabItem value="rhel" label="RHEL / Rocky Linux / Amazon Linux">
 <CodeBlock language="sh">
 sudo yum -y install kernel-devel-$(uname -r)
 </CodeBlock>
@@ -158,7 +158,7 @@ sudo systemctl disable gyeeta-partha; sudo apt-get remove gyeeta-partha
 </CodeBlock>
 </TabItem>
 
-<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<TabItem value="rhel" label="RHEL / Rocky Linux / Amazon Linux">
 <CodeBlock language="sh">
 sudo systemctl disable gyeeta-partha; sudo yum erase gyeeta-partha
 </CodeBlock>
@@ -182,7 +182,7 @@ sudo systemctl disable gyeeta-partha; sudo dnf remove gyeeta-partha
 
 ### *Install using Kubernetes Helm Chart* {#helm-chart}
 
-Kubernetes 1.18 or higher is needed along with Helm v3.
+Kubernetes 1.19 or higher is needed along with Helm v3.
 
 Refer to [Gyeeta Helm Charts](./k8s_helm) for a detailed explanation on installing different
 Gyeeta components in Kubernetes.
@@ -192,6 +192,7 @@ A short explanation is shown below :
 ```bash
 
 helm repo add gyeeta https://gyeeta.io/helmcharts
+helm repo update
 helm show values gyeeta/partha > /tmp/partha.yaml
 
 # Thereafter you can edit the /tmp/partha.yaml file if you need to change any option. 
@@ -233,45 +234,64 @@ docker run -td --rm --name partha --read-only --privileged --env CFG_JSON_FILE=/
 
 Gyeeta native rpm or deb packages are available. The install is to be followed by Partha configuration.
 
-#### Debian/Ubuntu based deb package install
+
+```mdx-code-block
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+```
 
 ```bash
-
 curl https://pkg.gyeeta.workers.dev/pgp-key.public | sudo gpg --yes --dearmor --output /usr/share/keyrings/gyeeta-keyring.gpg
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/gyeeta-keyring.gpg] https://pkg.gyeeta.workers.dev/apt-repo stable main" | sudo tee /etc/apt/sources.list.d/gyeeta.list
 sudo apt-get update
 sudo apt-get install -y gyeeta-partha
-
 ```
 
-#### Yum or dnf based rpm Installs
+```mdx-code-block
+</TabItem>
 
-For RHEL, Amazon Linux, CentOS, Rocky Linux, Fedora based distributions.
+<TabItem value="rhel" label="RHEL / Rocky Linux / Amazon Linux">
+```
 
 ```bash
-
 sudo rpm --import https://pkg.gyeeta.workers.dev/pgp-key.public
 sudo curl -s -o /etc/yum.repos.d/gyeeta.repo https://pkg.gyeeta.workers.dev/rpm-repo/gyeeta.repo
-
-if command -v yum > /dev/null; then 
-	sudo yum -y update
-	sudo yum install -y gyeeta-partha
-else
-	sudo dnf -y update
-	sudo dnf install -y gyeeta-partha
-fi	
-
+sudo yum -y update
+sudo yum install -y gyeeta-partha
 ```
 
-#### OpenSUSE / SUSE Linux based rpm Installs
+```mdx-code-block
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+```
 
 ```bash
-
 sudo rpm --import https://pkg.gyeeta.workers.dev/pgp-key.public
 sudo curl -s -o /etc/zypp/repos.d/gyeeta.repo https://pkg.gyeeta.workers.dev/rpm-repo/gyeeta.repo
 sudo zypper -q -n install gyeeta-partha
-
 ```
+
+```mdx-code-block
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+```
+
+```bash
+sudo rpm --import https://pkg.gyeeta.workers.dev/pgp-key.public
+sudo curl -s -o /etc/yum.repos.d/gyeeta.repo https://pkg.gyeeta.workers.dev/rpm-repo/gyeeta.repo
+sudo dnf -y update
+sudo dnf install -y gyeeta-partha
+```
+
+
+```mdx-code-block
+</TabItem>
+
+</Tabs>
+```
+
 
 :::note
 
@@ -318,7 +338,7 @@ sudo systemctl disable gyeeta-partha; sudo apt-get remove gyeeta-partha
 </CodeBlock>
 </TabItem>
 
-<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<TabItem value="rhel" label="RHEL / Rocky Linux / Amazon Linux">
 <CodeBlock language="sh">
 sudo systemctl disable gyeeta-partha; sudo yum erase gyeeta-partha
 </CodeBlock>
@@ -355,7 +375,7 @@ Before running the Manual Tar install, users need to install the Kernel Headers 
 
 mkdir ~/gyeeta
 cd ~/gyeeta
-curl -L https://github.com/Gyeeta/gyeeta/releases/download/v0.1.0/partha.tar.gz | tar xzf -
+curl -L https://github.com/gyeeta/gyeeta/releases/download/$( curl https://api.github.com/repos/gyeeta/gyeeta/releases/latest -s | grep tag_name | awk -F\" '{print $4}' )/partha.tar.gz | tar xzf -
 cd ./partha
 
 # Set Partha capabilities : needs sudo

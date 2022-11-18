@@ -7,7 +7,7 @@ keywords:
 
 # Gyeeta Install Planning and Options
 
-Users are advised to read the [Gyeeta Architecture](../architecture) link before reading this section.
+Readers are advised to read the [Gyeeta Architecture](../architecture) page before reading this section.
 
 ## Install Options for Gyeeta components {#install-options}
 
@@ -181,14 +181,22 @@ More info about the Install Steps, Disk space needed and CPU, Memory requirement
 
 The number of the Madhava servers should be decided and accordingly installed.
 
+The Madhava servers need to be able to connect to the Shyama Central Server and other Madhava server instances.
+Each Partha Host Agent will connect to its Shyama assigned Madhava Server and so monitored hosts need to be
+able to connect to the Madhava servers.
+
+Also, the Webserver will connect to each Madhava server instance for Query resultsets.
+
 More info about the Madhava Server Install Steps can be found at [Madhava Install](./madhava_install) link.
 
 
 *** Installing Partha Host Monitor Agent on all hosts to be monitored ***
 
 The Partha Host Agent needs to be installed on each of the monitored hosts. The Partha Agent needs to be able 
-to the Shyama Central Server who will then assign the nearest Madhava Intermediate server and then all further
+to connect to the Shyama Central Server who will then assign the nearest Madhava Intermediate server and then all further
 communication of the Partha agent will be with the Madhava server.
+
+No incoming connections will be made to any Partha agent.
 
 More info about the Partha Host Agent Install Steps can be found at [Partha Install](./partha_install) link.
 
@@ -197,6 +205,8 @@ More info about the Partha Host Agent Install Steps can be found at [Partha Inst
 
 The Nodejs Webserver needs to be installed on a host which can connect to the Shyama Central Server and all Madhava 
 Intermediate servers.
+
+Users will connect to the Node Webserver for the Web UI and REST API querying.
 
 More info about the Node Webserver Install Steps can be found at [Node Webserver Install](./nodewebserver_install) link.
 

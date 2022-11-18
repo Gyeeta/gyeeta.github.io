@@ -33,7 +33,7 @@ for better Redundancy.
 
 Shyama Server Redundancy is provided by sharing the Postgres DB amongst the Active-Passive Shyama instances.
 
-For this, all the Active-Passive Shyama instaces will need to have some of the Config Options shared across all instances.
+For this, all the Active-Passive Shyama instances will need to have some of the Config Options shared across all instances.
 Namely, the following Config fields need to be same across the Active-Passive Shyama instances :
 
 - `shyama_name` json field or `CFG_SHYAMA_NAME` env
@@ -55,7 +55,7 @@ The Failover can take upto 3 minutes time duration.
 
 Madhava Server Redundancy is provided by sharing the Postgres DB amongst the Active-Passive Madhava instances.
 
-For this, all the Active-Passive Madhava instaces will need to have some of the Config Options shared across all instances.
+For this, all the Active-Passive Madhava instances will need to have some of the Config Options shared across all instances.
 Namely, the following Config fields need to be same across the Active-Passive Madhava instances :
 
 - `shyama_hosts` json field or `CFG_SHYAMA_HOSTS` env
@@ -78,7 +78,7 @@ The Failover can take upto 3 minutes time duration.
 
 Node Webserver Redundancy can be provided by installing multiple instances of the Webserver in an Active-Active mode.
 
-For this, all the Active-Active Webserver instaces will need to have some of the Config Options shared across all instances.
+For this, all the Active-Active Webserver instances will need to have some of the Config Options shared across all instances.
 
 - `CFG_SHYAMA_HOSTS`
 - `CFG_SHYAMA_PORTS`
@@ -99,7 +99,7 @@ access the Web UI or use for REST APIs.
 
 Alert Agent Redundancy can be provided by installing multiple instances of the Alert Agent in an Active-Active mode.
 
-For this, all the Active-Active Webserver instaces will need to have some of the Config Options shared across all instances.
+For this, all the Active-Active Webserver instances will need to have some of the Config Options shared across all instances.
 
 - `CFG_SHYAMA_HOSTS`
 - `CFG_SHYAMA_PORTS`

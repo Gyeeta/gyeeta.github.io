@@ -107,7 +107,7 @@ sudo systemctl disable gyeeta-postgresdb; sudo apt-get remove gyeeta-postgresdb
 </CodeBlock>
 </TabItem>
 
-<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<TabItem value="rhel" label="RHEL / Rocky Linux / Amazon Linux">
 <CodeBlock language="sh">
 sudo systemctl disable gyeeta-postgresdb; sudo yum erase gyeeta-postgresdb
 </CodeBlock>
@@ -164,44 +164,61 @@ docker run -td --rm --name gyeetaPostgres --read-only --user 1001:1001 -p 10040:
 
 Gyeeta native rpm or deb packages are available. The install is to be followed by DB initialization and configuration.
 
-#### Debian/Ubuntu based deb package install
+```mdx-code-block
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+```
 
 ```bash
-
 curl https://pkg.gyeeta.workers.dev/pgp-key.public | sudo gpg --yes --dearmor --output /usr/share/keyrings/gyeeta-keyring.gpg
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/gyeeta-keyring.gpg] https://pkg.gyeeta.workers.dev/apt-repo stable main" | sudo tee /etc/apt/sources.list.d/gyeeta.list
 sudo apt-get update
 sudo apt-get install -y gyeeta-postgresdb
-
 ```
 
-#### Yum or dnf based rpm Installs
+```mdx-code-block
+</TabItem>
 
-For RHEL, Amazon Linux, CentOS, Rocky Linux, Fedora based distributions.
+<TabItem value="rhel" label="RHEL / Rocky Linux / Amazon Linux">
+```
 
 ```bash
-
 sudo rpm --import https://pkg.gyeeta.workers.dev/pgp-key.public
 sudo curl -s -o /etc/yum.repos.d/gyeeta.repo https://pkg.gyeeta.workers.dev/rpm-repo/gyeeta.repo
-
-if command -v yum > /dev/null; then 
-	sudo yum -y update
-	sudo yum install -y gyeeta-postgresdb
-else
-	sudo dnf -y update
-	sudo dnf install -y gyeeta-postgresdb
-fi	
-
+sudo yum -y update
+sudo yum install -y gyeeta-postgresdb
 ```
 
-#### OpenSUSE / SUSE Linux based rpm Installs
+```mdx-code-block
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+```
 
 ```bash
-
 sudo rpm --import https://pkg.gyeeta.workers.dev/pgp-key.public
 sudo curl -s -o /etc/zypp/repos.d/gyeeta.repo https://pkg.gyeeta.workers.dev/rpm-repo/gyeeta.repo
 sudo zypper -q -n install gyeeta-postgresdb
+```
 
+```mdx-code-block
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+```
+
+```bash
+sudo rpm --import https://pkg.gyeeta.workers.dev/pgp-key.public
+sudo curl -s -o /etc/yum.repos.d/gyeeta.repo https://pkg.gyeeta.workers.dev/rpm-repo/gyeeta.repo
+sudo dnf -y update
+sudo dnf install -y gyeeta-postgresdb
+```
+
+
+```mdx-code-block
+</TabItem>
+
+</Tabs>
 ```
 
 
@@ -248,7 +265,7 @@ sudo systemctl disable gyeeta-postgresdb; sudo apt-get remove gyeeta-postgresdb
 </CodeBlock>
 </TabItem>
 
-<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<TabItem value="rhel" label="RHEL / Rocky Linux / Amazon Linux">
 <CodeBlock language="sh">
 sudo systemctl disable gyeeta-postgresdb; sudo yum erase gyeeta-postgresdb
 </CodeBlock>
@@ -279,7 +296,7 @@ can be used to install.
 
 mkdir ~/gyeeta
 cd ~/gyeeta
-curl -L https://github.com/Gyeeta/postgresdb/releases/download/v0.1.0/postgresdb.tar.gz | tar xzf -
+curl -L https://github.com/gyeeta/postgresdb/releases/download/$( curl https://api.github.com/repos/gyeeta/postgresdb/releases/latest -s | grep tag_name | awk -F\" '{print $4}' )/postgresdb.tar.gz | tar xzf -
 cd ./postgresdb
 
 # Thereafter configure the DB

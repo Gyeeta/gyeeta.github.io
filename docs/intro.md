@@ -7,7 +7,7 @@ slug: /
 
 # Introduction
 
-***Gyeeta*** is a non intrusive, *100% Open Source (GPLv3)* and *Free* Infrastructure, Services and Process Level monitor (*Linux* only).  
+***Gyeeta*** is a non intrusive, *100% [Open Source](https://github.com/gyeeta/gyeeta) (GPLv3)* and *Free* Infrastructure, Services and Process Level monitor (*Linux* only).  
 
 ## Salient Features
 
@@ -44,8 +44,9 @@ slug: /
 - Commercial SaaS tools exist with varying degrees of Metrics and Observability capabilities but are expensive both in terms of cost 
   and Host CPU, Memory and IO resources.
 
-- Gyeeta is meant to be a lightweight tool which can be deployed on thousands of hosts with minimal configuration. Gyeeta being a Free 
-  and 100% Open source tool, users can deploy Gyeeta on all of their data centers or Cloud Environments without worrying about Monitoring costs.
+- Gyeeta is meant to be a lightweight tool which can be deployed on thousands of hosts with minimal configuration. Gyeeta being a free, 
+  optimized (C++ based) and 100% Open source tool, users can deploy Gyeeta on all of their data centers or Cloud Environments without 
+  worrying about Observability expenses.
 
 - Gyeeta works on all Linux Kernels released since 2016 (Linux Kernels 4.4 or higher).
 

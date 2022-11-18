@@ -1,10 +1,10 @@
 ---
 id: overview
-title: Overview & Limitations
-description: Overview/ Limitations of Gyeeta Monitoring
+title: Monitoring Features & Limitations
+description: Monitoring Features & Limitations
 ---
 
-# Monitoring Overview & Limitations
+# Monitoring Features & Limitations
 
 ## Monitoring using eBPF and Kernel Statistics {#ebpf-kernel}
 

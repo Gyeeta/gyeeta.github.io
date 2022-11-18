@@ -95,7 +95,7 @@ const sidebars = {
 	{
 		type: 'doc',
 		id: 'monitor/overview',
-		label: 'Monitoring Overview & Limitations',
+		label: 'Monitoring Features & Limitations',
 	},
 	{
 		type: 'doc',

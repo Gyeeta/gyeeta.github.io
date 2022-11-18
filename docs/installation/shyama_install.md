@@ -87,7 +87,7 @@ sudo systemctl disable gyeeta-shyama; sudo apt-get remove gyeeta-shyama
 </CodeBlock>
 </TabItem>
 
-<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<TabItem value="rhel" label="RHEL / Rocky Linux / Amazon Linux">
 <CodeBlock language="sh">
 sudo systemctl disable gyeeta-shyama; sudo yum erase gyeeta-shyama
 </CodeBlock>
@@ -110,7 +110,7 @@ sudo systemctl disable gyeeta-shyama; sudo dnf remove gyeeta-shyama
 
 ### *Install using Kubernetes Helm Chart* {#helm-chart}
 
-Kubernetes 1.18 or higher is needed along with Helm v3.
+Kubernetes 1.19 or higher is needed along with Helm v3.
 
 Refer to [Gyeeta Helm Charts](./k8s_helm) for a detailed explanation on installing different
 Gyeeta components in Kubernetes.
@@ -120,6 +120,7 @@ A short explanation is shown below :
 ```bash
 
 helm repo add gyeeta https://gyeeta.io/helmcharts
+helm repo update
 helm show values gyeeta/shyama > /tmp/shyama.yaml
 
 # Thereafter you can edit the /tmp/shyama.yaml file if you need to change any option. 
@@ -147,44 +148,61 @@ docker run --rm -td --name shyama --read-only --user 1001:1001 -p 10037:10037 --
 
 Gyeeta native rpm or deb packages are available. The install is to be followed by Shyama configuration.
 
-#### Debian/Ubuntu based deb package install
+```mdx-code-block
+<Tabs>
+<TabItem value="UbuntuDebian" label="Ubuntu / Debian" default>
+```
 
 ```bash
-
 curl https://pkg.gyeeta.workers.dev/pgp-key.public | sudo gpg --yes --dearmor --output /usr/share/keyrings/gyeeta-keyring.gpg
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/gyeeta-keyring.gpg] https://pkg.gyeeta.workers.dev/apt-repo stable main" | sudo tee /etc/apt/sources.list.d/gyeeta.list
 sudo apt-get update
 sudo apt-get install -y gyeeta-shyama
-
 ```
 
-#### Yum or dnf based rpm Installs
+```mdx-code-block
+</TabItem>
 
-For RHEL, Amazon Linux, CentOS, Rocky Linux, Fedora based distributions.
+<TabItem value="rhel" label="RHEL / Rocky Linux / Amazon Linux">
+```
 
 ```bash
-
 sudo rpm --import https://pkg.gyeeta.workers.dev/pgp-key.public
 sudo curl -s -o /etc/yum.repos.d/gyeeta.repo https://pkg.gyeeta.workers.dev/rpm-repo/gyeeta.repo
-
-if command -v yum > /dev/null; then 
-	sudo yum -y update
-	sudo yum install -y gyeeta-shyama
-else
-	sudo dnf -y update
-	sudo dnf install -y gyeeta-shyama
-fi	
-
+sudo yum -y update
+sudo yum install -y gyeeta-shyama
 ```
 
-#### OpenSUSE / SUSE Linux based rpm Installs
+```mdx-code-block
+</TabItem>
+
+<TabItem value="suse" label="SuSE / OpenSuSE">
+```
 
 ```bash
-
 sudo rpm --import https://pkg.gyeeta.workers.dev/pgp-key.public
 sudo curl -s -o /etc/zypp/repos.d/gyeeta.repo https://pkg.gyeeta.workers.dev/rpm-repo/gyeeta.repo
 sudo zypper -q -n install gyeeta-shyama
+```
 
+```mdx-code-block
+</TabItem>
+
+<TabItem value="fedora" label="Fedora Linux">
+```
+
+```bash
+sudo rpm --import https://pkg.gyeeta.workers.dev/pgp-key.public
+sudo curl -s -o /etc/yum.repos.d/gyeeta.repo https://pkg.gyeeta.workers.dev/rpm-repo/gyeeta.repo
+sudo dnf -y update
+sudo dnf install -y gyeeta-shyama
+```
+
+
+```mdx-code-block
+</TabItem>
+
+</Tabs>
 ```
 
 
@@ -225,7 +243,7 @@ sudo systemctl disable gyeeta-shyama; sudo apt-get remove gyeeta-shyama
 </CodeBlock>
 </TabItem>
 
-<TabItem value="rhel" label="RHEL / CentOS / Amazon Linux">
+<TabItem value="rhel" label="RHEL / Rocky Linux / Amazon Linux">
 <CodeBlock language="sh">
 sudo systemctl disable gyeeta-shyama; sudo yum erase gyeeta-shyama
 </CodeBlock>
@@ -255,7 +273,7 @@ can be used to install.
 
 mkdir ~/gyeeta
 cd ~/gyeeta
-curl -L https://github.com/Gyeeta/gyeeta/releases/download/v0.1.0/shyama.tar.gz | tar xzf -
+curl -L https://github.com/gyeeta/gyeeta/releases/download/$( curl https://api.github.com/repos/gyeeta/gyeeta/releases/latest -s | grep tag_name | awk -F\" '{print $4}' )/shyama.tar.gz | tar xzf -
 cd ./shyama
 
 # Thereafter create the cfg/shyama_main.json Shyama config file and then start the Shyama server as

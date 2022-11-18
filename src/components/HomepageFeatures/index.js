@@ -110,7 +110,7 @@ export default function HomepageFeatures() {
 	  margin : 30,
 	}} >	    
       <div style={{ marginLeft : 10, marginBottom : 20, display : 'flex', flexWrap : 'wrap', justifyContent : 'center' }}>
-      <span style={{ fontSize : 20, color : '#bcdfd7', background : '#1b2635db', }}><strong><em> Monitor all your Infrastructure at no cost !! </em></strong></span>
+      <span style={{ fontSize : 20, color : '#bcdfd7', background : '#1b2635db', }}><strong><em> Observability for your Infrastructure at no cost! </em></strong></span>
       </div>
       </div>
 
