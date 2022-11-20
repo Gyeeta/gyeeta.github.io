@@ -9,7 +9,7 @@ keywords:
 
 # Shyama Kubernetes Helm Chart
 
-[Shyama Central Server](../architecture#central-server-shyama) can be installed in [Kubernetes](https://kubernetes.io) Cluster environments using 
+[Shyama Central Server](../../architecture#central-server-shyama) can be installed in [Kubernetes](https://kubernetes.io) Cluster environments using 
 [Helm Charts](https://helm.sh).
 
 The Shyama server is installed as a Statefulset along with an optional Postgres DB as a side container
