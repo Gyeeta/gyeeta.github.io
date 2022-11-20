@@ -79,9 +79,9 @@ Example usages :
 [ 10037, 10037 ] : Here 2 instances of Shyama are running in Active Passive mode.
 
 
-## Is Kubernetes {#is-kubernetes}
+## Is Kubernetes? {#is-kubernetes}
 
-This boolean field indicates whether the Host to be monotored is part of a Kubernetes Cluster. This
+This boolean field indicates whether the Host to be monitored is part of a Kubernetes Cluster. This
 field is used to extract the Kubernetes Pod Name tags for the Host Processes.
 
 For Helm Chart installs, this parameter is set to `true` by default. For other install options, the
@@ -94,6 +94,7 @@ This field is optional and can contain values of either `true` or `false`.
 ## Service Response Sampling Percent {#sampling-percent}
 
 The Partha Agent will collect Queries/sec (QPS) and Response Time (Latency) for each TCP Listener (Service).
+
 This field indicates what percent of the Queries should be checked for calculating the statistics.
 
 The default value is 100 (100% or No sampling). Specifying a value of 0 will disable all Service QPS and Response statistics.
@@ -106,12 +107,12 @@ This field is optional and can contain integer values from 0 to 100.
 ## Cloud Operator Type {#cloud-type}
 
 This field indicates the Cloud Operator this Host is running on. This is needed to get the Network Region and Zone which will be used 
-by the Shyama server to allocate a nearby Madhava server for this host. Also, the Host Instance ID will also be obtained for a
-supported Cloud OPerator Type.
+by the Shyama server to allocate a Network Adjacent Madhava server for this host. Also, the Host Instance ID will also be obtained for a
+supported Cloud Type.
 
-Currently supported Cloud Operator Metadata collection are : aws, gcp and azure. 
+Currently supported Clouds for metadata are : aws, gcp and azure. 
 
-For other Cloud Operators or in case of own data centers, this field should be empty. In such cases, users can explicitly 
+For other Cloud Operators or in case of own data centers, this field should nt be specified. In such cases, users can explicitly 
 specify the Network Region and Zone in the fields mentioned below [Region Name](#region-name) and [Zone Name](#zone-name)
 so that the Shyama server will assign a nearby Madhava server.
 
@@ -124,6 +125,8 @@ This field is optional.
 This field must be used only if the preceding [Cloud Operator type](#cloud-type) is empty. This field
 indicates the Network Region Name this host is operating under. 
 
+In case both the Cloud Type and this config field are specified, this field will take precedence over the Cloud Metadata.
+
 The JSON field is `region_name` and environment variable is `CFG_REGION_NAME`.
 
 This field is optional.
@@ -132,6 +135,8 @@ This field is optional.
 
 This field must be used only if the preceding [Cloud Operator type](#cloud-type) is empty. This field
 indicates the Network Zone Name this host is operating under. 
+
+In case both the Cloud Type and this config field are specified, this field will take precedence over the Cloud Metadata.
 
 The JSON field is `zone_name` and environment variable is `CFG_ZONE_NAME`.
 

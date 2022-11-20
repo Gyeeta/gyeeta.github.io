@@ -16,6 +16,14 @@ import CodeBlock from '@theme/CodeBlock';
 Gyeeta provides a single command TLDR Quick Install method to install all Server Components with no other 
 configuration requirements. This provides a very quick way to install the Gyeeta server components on a single host.
 
+:::info
+
+The TL;DR script will install the native deb/rpm packages and only work on Linux distributions supporting these
+native package formats. For other environments, users will need to use other install methods such as Docker containers,
+Kubernetes Helm Charts or manual tarball extraction.
+
+:::
+
 The components that will be installed on a single host as part of this script are :
 
 - One instance of Postgres DB which will be shared between Shyama and Madhava servers
@@ -45,6 +53,8 @@ curl -o /tmp/install-gyeeta-all-quick.sh -s https://gyeeta.io/packages/install-g
 
 ```
 
+Please substitute the appropriate DB dir path, DB `postgres` user password needed and Web UI `admin` user password in
+the above command before running it in your environment.
 
 Note in the above command, the DB Data dir specified (`/opt/gyeeta/postgresdb/data`) will be created if it does not exist. 
 
@@ -110,6 +120,8 @@ host.
 
 ### Postgres DB
 
+The `gyeeta-postgresdb` component is installed at `/opt/gyeeta/postgresdb`.
+
 ```bash title="Command to stop the Postgres DB"
 
 sudo systemctl stop gyeeta-postgresdb
@@ -154,6 +166,12 @@ sudo systemctl disable gyeeta-postgresdb; sudo dnf remove gyeeta-postgresdb
 
 
 ### Shyama Server
+
+The `gyeeta-shyama` component is installed at `/opt/gyeeta/shyama`. The Shyama logs can be 
+accessed at `/opt/gyeeta/shyama/log/shyama.log`.
+
+To change the Shyama settings, users can edit the `/opt/gyeeta/shyama/cfg/shyama_main.json` config file.
+
 
 ```bash title="Command to stop the Shyama Server"
 
@@ -200,6 +218,12 @@ sudo systemctl disable gyeeta-shyama; sudo dnf remove gyeeta-shyama
 
 ### Madhava Server
 
+The `gyeeta-madhava` component is installed at `/opt/gyeeta/madhava`. The Madhava logs can be 
+accessed at `/opt/gyeeta/madhava/log/madhava.log`.
+
+To change the Madhava settings, users can edit the `/opt/gyeeta/madhava/cfg/madhava_main.json` config file.
+
+
 ```bash title="Command to stop the Madhava Server"
 
 sudo systemctl stop gyeeta-madhava
@@ -245,6 +269,11 @@ sudo systemctl disable gyeeta-madhava; sudo dnf remove gyeeta-madhava
 
 ### Node Webserver
 
+The `gyeeta-nodewebserver` component is installed at `/opt/gyeeta/nodewebserver`. 
+
+To change the Webserver settings, users can edit the `/opt/gyeeta/nodewebserver/.env` env file.
+
+
 ```bash title="Command to stop the Node Webserver"
 
 sudo systemctl stop gyeeta-nodewebserver
@@ -289,6 +318,10 @@ sudo systemctl disable gyeeta-nodewebserver; sudo dnf remove gyeeta-nodewebserve
 
 
 ### Alert Agent
+
+The `gyeeta-alertaction` component is installed at `/opt/gyeeta/alertaction`. 
+
+To change the Alert Agent settings, users can edit the `/opt/gyeeta/alertaction/.env` env file.
 
 ```bash title="Command to stop the Alert Agent"
 

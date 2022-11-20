@@ -44,6 +44,7 @@ Namely, the following Config fields need to be same across the Active-Passive Sh
 - `postgres_user` json field or `CFG_POSTGRES_USER` env
 - `postgres_password` json field or `CFG_POSTGRES_PASSWORD` env
 
+In addition to the config fields above, any [CLI arguments](./shyama_install#cli-args) passed to all Shyama Instances needs to be same for all instances.
 
 The Passive Shyama instances will monitor the Active Shyama status and on detecting a Failure condition,
 one of the Passive Shyama instances will then take over as the next Active Instance.
@@ -93,6 +94,13 @@ For this, all the Active-Active Webserver instances will need to have some of th
 
 As the Webserver instances are running in Active-Active mode, users can connect to any of the Webserver instances to
 access the Web UI or use for REST APIs.
+
+:::tip
+
+Although any of the Webserver instances can be used for querying, it is recommended that users query from a single
+Webserver instance for better querying performance as Resultset caching is not shared across Webserver instances.
+
+:::
 
 
 ## Alert Agent Redundancy {#alertaction-redundancy}

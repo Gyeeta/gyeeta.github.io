@@ -143,7 +143,8 @@ This field is mandatory.
 
 ## Postgres User {#postgres-user}
 
-This indicates the Postgres Username to be used by this Madhava instance.
+This indicates the Postgres Username to be used by this Madhava instance. In most cases,
+this value would be `postgres`.
 
 The JSON field is `postgres_user` and environment variable is `CFG_POSTGRES_USER`.
 

@@ -94,7 +94,8 @@ This field is mandatory.
 
 ## Postgres User {#postgres-user}
 
-This indicates the Postgres Username to be used by this Shyama instance.
+This indicates the Postgres Username to be used by this Shyama instance. In most cases,
+this value would be `postgres`.
 
 The JSON field is `postgres_user` and environment variable is `CFG_POSTGRES_USER`.
 

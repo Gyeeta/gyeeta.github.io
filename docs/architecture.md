@@ -116,7 +116,7 @@ inter-region Network egress costs.
 [**Madhava Server Installation**](./installation/madhava_install)  
 
 
-## Postgres Database {#postgres-database}
+## *Postgres* Database {#postgres-database}
 
 [PostgreSQL](https://www.postgresql.org/) is used as the datastore for `shyama` and `madhava` servers. Upto 3 `madhava` servers can share the same Postgres 
 instance as the datastore. As the number of madhava instances increase the requirement for additional Postgres instances will arise.
@@ -127,7 +127,7 @@ It is recommended to use a Postgres DB in the same Network Region/Zone as the `m
 
 [**Postgres DB Installation**](./installation/postgresdb_install)
 
-## NodeJS Webserver {#node-webserver}
+## *Node* Webserver {#node-webserver}
 
 The `nodejs` based webserver handles Web UI and REST queries and forwards them to the `shyama` and `madhava` servers. 
 

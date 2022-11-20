@@ -289,7 +289,7 @@ which interact with the same instance of Postgres DB in Active-Passive mode.
 
 Please refer to [Failover](./failover) for further details.
 
-## Shyama Runtime CLI arguments
+## Shyama Runtime CLI arguments {#cli-args}
 
 In addition to the Shyama config file or config environment variables, users can pass command line arguments (CLI)
 to Shyama which will take precedence over any other config file or environment variable. 

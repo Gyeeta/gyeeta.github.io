@@ -20,9 +20,6 @@ const config = {
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -45,8 +42,8 @@ const config = {
           editUrl: 'https://github.com/gyeeta.github.io/tree/main/',
 	  feedOptions: {
             type: 'rss',
-	    title: 'Gyeeta Blog Posts',
-	    description: 'A Blog describing features, use cases of Gyeeta and monitoring in general',
+	    title: 'Gyeeta Observability Blog',
+	    description: 'A Blog describing features, use cases of Gyeeta Observability and monitoring in general',
 	    copyright: 'Exact Solutions, Inc.',
 	    language: 'en-US',
           }		  
@@ -67,7 +64,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       colorMode: {
-        defaultMode: 'light',
+        defaultMode: 'dark',
         disableSwitch: false,
         respectPrefersColorScheme: true,
       },	    
@@ -109,7 +106,7 @@ const config = {
             items: [
               {
                 label: 'Github Discussions',
-                href: 'https://github.com/Gyeeta/gyeeta/discussions',
+                href: 'https://github.com/gyeeta/gyeeta/discussions',
               },
               {
                 label: 'Stack Overflow',

@@ -31,32 +31,32 @@ const sidebars = {
 			{
 				type: 'doc',
 				id: 'installation/shyama_config',
-				label: 'shyama Server Configuration',
+				label: 'Shyama Server Configuration',
 			},
 			{
 				type: 'doc',
 				id: 'installation/shyama_install',
-				label: 'shyama Server Installation',
+				label: 'Shyama Server Installation',
 			},
 			{
 				type: 'doc',
 				id: 'installation/madhava_config',
-				label: 'madhava Server Configuration',
+				label: 'Madhava Server Configuration',
 			},
 			{
 				type: 'doc',
 				id: 'installation/madhava_install',
-				label: 'madhava Server Installation',
+				label: 'Madhava Server Installation',
 			},
 			{
 				type: 'doc',
 				id: 'installation/partha_config',
-				label: 'partha Agent Configuration',
+				label: 'Partha Host Agent Configuration',
 			},
 			{
 				type: 'doc',
 				id: 'installation/partha_install',
-				label: 'partha Agent Installation',
+				label: 'Partha Host Agent Installation',
 			},
 			{
 				type: 'doc',
@@ -84,9 +84,19 @@ const sidebars = {
 				label: 'Failover (HA) Handling',
 			},
 			{
-				type: 'doc',
-				id: 'installation/k8s_helm',
+				type: 'category',
 				label: 'Kubernetes Helm Charts',
+				link: {
+					type: 'doc',
+					id: 'installation/k8s_helm/k8s_helm',
+				},
+				items: [
+					'installation/k8s_helm/shyama_helm',
+					'installation/k8s_helm/madhava_helm',
+					'installation/k8s_helm/partha_helm',
+					'installation/k8s_helm/nodewebserver_helm',
+					'installation/k8s_helm/alertaction_helm',
+				],
 			},
 
 		],

@@ -35,10 +35,6 @@ package is installed on the hosts to be monitored as otherwise `partha` will not
 On Google Container Optimized OS (COS), the `partha` container will itself download the currently running Kernel's Headers and so,
 the Kernel Package is not needed.
 
-If `partha` is run as a container, a configurable option is provided whereby the `partha` container itself will install the relevant Kernel Headers 
-package to the base host if enabled, but this option is currently beta.
-
-
 **Command to install Kernel Headers :**
 
 
@@ -69,7 +65,16 @@ sudo dnf install -y kernel-devel-$(uname -r)
 
 </Tabs>
 
-### Host Agent priviliged usage
+:::info
+
+In case the Kernel Headers package is not found using the commands above, please try updating the package list for example using 
+sudo apt update / sudo yum distro-sync / sudo dnf distro-sync and retrying the commands.
+
+In rare cases, a host reboot may be needed.
+
+:::
+
+### Partha Host Agent priviliged process
 
 The Host Agent `partha` needs to be run as a priviliged process with `sys_admin`, `net_admin` and other Linux capabilities as it utilizes 
 eBPF and other monitoring methods. 
