@@ -31,6 +31,8 @@ This field is mandatory.
 Each Shyama server is associated with its unique name. This name is also the DB name
 to be used in PostgresDB.
 
+The field value must begin with the keyword `shyama` (For example, `shyama1`).
+
 The JSON field name is `shyama_name` and corresponding environment variable is `CFG_SHYAMA_NAME`.
 
 This field is mandatory and max shyama name length is 64 bytes. 

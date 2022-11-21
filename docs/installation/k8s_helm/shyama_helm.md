@@ -51,7 +51,7 @@ helm uninstall shyama1
 
 ## Shyama Chart Parameters {#shyama-parameters}
 
-The default Parameter config can be obtained using the command :
+The default Chart config can be obtained using the command :
 
 ```bash
 helm show values gyeeta/shyama > /tmp/shyama.yaml
@@ -82,6 +82,7 @@ No parameter is mandatory and users can skip setting any values (use the default
 | `shyama_config.db` `.postgres_port` | Postgres DB Port to connect to. If `postgres.enabled` is true, then specify as `10040` | `Number` | `10040` |
 | `shyama_config.db` `.external_postgres_user` | Postgres Username. Specify only if external postgres DB to be used (`postgresdb.enabled` is false)| `String` | `""` |
 | `shyama_config.db` `.external_postgres_password` | Postgres User Password. Specify only if external postgres DB to be used (`postgresdb.enabled` is false)| `String` | `""` |
+| `shyama_config.db` `.storage_days` | Number of days of data storage in DB (max 60) | `Number` | `3` |
 | `shyama_config.service.type` | Shyama Kubernetes Service type (Specify either ClusterIP or NodePort) | `String` | `ClusterIP` |
 | `shyama_config.service.port` | Shyama Kubernetes Service port | `Number` | `10037` |
 | `shyama_config.service` `.nodePort` | Shyama Kubernetes Node port. Specify if `type` set to `NodePort`. Choose port between 30000-32767 | `Number` | `""` |
@@ -126,7 +127,7 @@ The main Postgres Container parameters are mentioned below.
 
 :::info
 
-Once this chart is deployed, it is not possible to change the Postgres DB access credentials, such as usernames or passwords, using Helm. 
+Once this chart is deployed, it is not possible to change the Postgres DB access credentials, such as username or password, using Helm. 
 To change these after deployment, delete any persistent volumes (PVs) used by the chart and re-deploy it, or connect to DB externally and manually set the params.
 
 :::
@@ -138,6 +139,8 @@ To change these after deployment, delete any persistent volumes (PVs) used by th
 | `nameOverride` | Set a new name if you want to override the release name used | `String` | `""` |
 | `fullnameOverride` | Set a new name if you want to override the fullname used | `String` | `""` |
 | `clusterDomain` | Default Kubernetes cluster domain | `String` | `cluster.local` |
+| `resources.requests` | Shyama Container Resource Requests | `Object` | `{}` |
+| `resources.limits` | Shyama Container Resource Limits | `Object` | `{}` |
 | `hostAliases` | Shyama pod host aliases for `/etc/hosts` | `Array` | `[]` |
 | `readinessEnabled` | Enable Readiness Probe | `Boolean` | `true` |
 | `podSecurityPolicy` | Enable PodSecurityPolicy (only for K8s versions < 1.25) | `Boolean` | `false` |
@@ -151,3 +154,17 @@ To change these after deployment, delete any persistent volumes (PVs) used by th
 | `serviceAccount.create` | Create ServiceAccount | `Boolean` | `false` |
 
 
+:::info
+
+If `shyama_config.logtofile` is set to `true`, then the Shyama process logs will be sent to `/hostdata/log/shyama.log`.
+Users can analyze the logs by running the command :
+
+```bash
+
+# Get the Shyama pod name and fill in SHYAMAPOD env
+
+kubectl exec -it $SHYAMAPOD -- more /hostdata/log/shyama.log
+
+```
+
+:::

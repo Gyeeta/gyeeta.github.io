@@ -32,6 +32,8 @@ This field is mandatory.
 Each Madhava server is associated with its unique name. This name is also the DB name
 to be used in PostgresDB.
 
+The field value must begin with the keyword `madhava` (For example, `madhava1`).
+
 The JSON field name is `madhava_name` and corresponding environment variable is `CFG_MADHAVA_NAME`.
 
 This field is mandatory and max madhava name length is 64 bytes. 
