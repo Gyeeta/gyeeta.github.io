@@ -110,8 +110,7 @@ sudo systemctl disable gyeeta-alertaction; sudo dnf remove gyeeta-alertaction
 
 Kubernetes 1.19 or higher is needed along with Helm v3.
 
-Refer to [Gyeeta Helm Charts](./k8s_helm) for a detailed explanation on installing different
-Gyeeta components in Kubernetes.
+Refer to [Alert Agent Helm Chart](./k8s_helm/alertaction_helm) for a detailed explanation on installing to Kubernetes.
 
 A short explanation is shown below :
 

@@ -49,13 +49,11 @@ function HomepageHeader() {
 	<span style={{ fontSize : 20, margin : 30, color : '#bcdfd7', background : '#1b2635db', }}><strong>{siteConfig.tagline}</strong></span>
 	<div style={{ marginTop : 20 }} />
 
-	      <div style={{ marginTop : 20 }} />
+	      <div style={{ marginTop : 20, marginLeft : 30, marginRight : 30, display : 'inline-block', maxWidth: '900px', maxHeight: '500px' }} >
 	        <a href="/docs">
-		<picture>
-		<source srcSet="https://pkg.gyeeta.workers.dev/gyeeta480p.gif" media="(min-width: 1024px)" width="900px" height="500" />
-		<img src="https://pkg.gyeeta.workers.dev/gyeeta480p.gif" alt="Gyeeta Overview"  width="500px" height="325px" />
-		</picture>	      
+		<img src="https://pkg.gyeeta.workers.dev/gyeeta480p.gif" alt="Gyeeta Overview" />
 		</a>
+	      </div>
 
 	      <div style={{ marginTop : 10, marginBottom : 30 }} />
 

@@ -108,8 +108,7 @@ sudo systemctl disable gyeeta-nodewebserver; sudo dnf remove gyeeta-nodewebserve
 
 Kubernetes 1.19 or higher is needed along with Helm v3.
 
-Refer to [Gyeeta Helm Charts](./k8s_helm) for a detailed explanation on installing different
-Gyeeta components in Kubernetes.
+Refer to [Node Webserver Helm Chart](./k8s_helm/nodewebserver_helm) for a detailed explanation on installing to Kubernetes.
 
 A short explanation is shown below :
 

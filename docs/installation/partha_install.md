@@ -189,8 +189,7 @@ sudo systemctl disable gyeeta-partha; sudo dnf remove gyeeta-partha
 
 Kubernetes 1.19 or higher is needed along with Helm v3.
 
-Refer to [Gyeeta Helm Charts](./k8s_helm) for a detailed explanation on installing different
-Gyeeta components in Kubernetes.
+Refer to [Partha Helm Chart](./k8s_helm/partha_helm) for a detailed explanation on installing Partha Agents in Kubernetes.
 
 A short explanation is shown below :
 

@@ -112,8 +112,7 @@ sudo systemctl disable gyeeta-shyama; sudo dnf remove gyeeta-shyama
 
 Kubernetes 1.19 or higher is needed along with Helm v3.
 
-Refer to [Gyeeta Helm Charts](./k8s_helm) for a detailed explanation on installing different
-Gyeeta components in Kubernetes.
+Refer to [Shyama Helm Chart](./k8s_helm/shyama_helm) for a detailed explanation on installing Shyama Server in Kubernetes.
 
 A short explanation is shown below :
 

@@ -111,8 +111,7 @@ sudo systemctl disable gyeeta-madhava; sudo dnf remove gyeeta-madhava
 
 Kubernetes 1.19 or higher is needed along with Helm v3.
 
-Refer to [Gyeeta Helm Charts](./k8s_helm) for a detailed explanation on installing different
-Gyeeta components in Kubernetes.
+Refer to [Madhava Helm Chart](./k8s_helm/madhava_helm) for a detailed explanation on installing Madhava servers in Kubernetes.
 
 A short explanation is shown below :
 
