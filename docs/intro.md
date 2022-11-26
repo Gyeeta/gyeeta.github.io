@@ -15,7 +15,7 @@ slug: /
 - Completely Open Source including Agent and Server components. Free to use *forever*.
 - Completely non-intrusive monitoring using a combination of [eBPF](https://ebpf.io/) and Kernel Statistics.
 - All Data In-House (On Prem). No external data transfer. 
-- Monitor Kubernetes and other Cloud Native Cluster orchestrators.
+- Monitor Kubernetes or any other Cluster orchestrators.
 
 ## Key Observability Capabilities
 

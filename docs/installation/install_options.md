@@ -56,6 +56,7 @@ Gyeeta components support only hosts with Linux Kernel 4.4 or higher (Linux 4.4 
 
 Other Linux distributions based on Debian/Ubuntu or RHEL are supported as long as the base Linux Kernel is 4.4+
 
+Container Platforms such as Kubernetes or Docker Swarm are also supported using Helm Charts or Docker containers.
 
 ## Planning the Gyeeta Deployment
 
