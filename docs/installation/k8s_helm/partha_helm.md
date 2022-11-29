@@ -18,6 +18,19 @@ The Partha Host Agent is installed as a Daemonset as it needs to be installed on
 
 - Kubernetes 1.19+
 - Helm 3.2.0+
+- Linux kernel version 4.4+
+
+### Requirement of Kernel Headers
+
+The Partha Agent container requires *Kernel Headers* package to be installed on the base host for eBPF support. 
+
+This requirement is not applicable on Google Container Optimized OS (COS) (used in GKE environments), as the partha container will itself download 
+the currently running Kernel's Headers.
+
+The Partha Helm Chart includes a parameter `partha_config.install_kern_headers` which, if enabled, the Partha container itself will try installing
+the Kernel Headers package to the base OS. The parameter is disabled by default as on enabling this, the container may make changes to the base OS.
+
+Please refer to [Kernel Headers Installation](../partha_install#kernel-headers) for instructions on installing Kernel Headers directly on the base OS.
 
 ## Install Instructions
 
@@ -61,7 +74,7 @@ For Kubernetes versions 1.25+, users may need to enable the `priviliged` Partha 
 priviliged pods are set to be rejected.
 
 
-## Partha Chart Parameters {#partha-parameters}
+## Partha Chart Parameters
 
 The default Chart config can be obtained using the command :
 
@@ -95,7 +108,7 @@ The Helm chart install will fail if these parameters are not provided. Explanati
 | `partha_config` `.response_sampling_percent` | Percent of workload to be analyzed for Response and QPS Calculations | `Number` | `100` |
 | `partha_config.capture_errcode` | Capture HTTP Error codes | `Boolean` | `true` |
 | `partha_config.logtofile` | Process Log sent to file instead of stdout/stderr. If true will use the `emptyDir` mount point for logging | `Boolean` | `true` |
-| `partha_config` `.install_kern_headers` | Install Kernel Headers on hosts without Kernel Headers (beta) and valid only for Debian, Ubuntu, and Redhat/Amazon Linux | `Boolean` | `false` |
+| `partha_config` `.install_kern_headers` | Install Kernel Headers on hosts without Kernel Headers | `Boolean` | `false` |
 
 ### Other parameters
 
@@ -119,12 +132,8 @@ If `partha_config.logtofile` is set to `true`, then the Partha process logs will
 Users can analyze the logs by running the command :
 
 ```bash
-
 # Get the Partha pod name and fill in PARTHAPOD env
-
 kubectl exec -it $PARTHAPOD -- more /hostdata/log/partha.log
-
 ```
-
 :::
 
