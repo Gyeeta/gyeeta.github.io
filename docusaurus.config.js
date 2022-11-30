@@ -70,9 +70,11 @@ const config = {
       },	    
       navbar: {
         title: 'Gyeeta',
+	style: 'primary',
         logo: {
           alt: 'Gyeeta Logo',
-          src: 'img/logo.png',
+          src: 'img/gyeeta.png',
+	  style: { borderRadius : '50%' },
         },
         items: [
           {
@@ -134,9 +136,9 @@ const config = {
         ],
       logo: {
         alt: 'Gyeeta Logo',
-        src: 'img/logo.png',
-        width: 72,
-        height: 72,
+        src: 'img/gyeeta.png',
+        width: 96,
+        height: 96,
       },	
         copyright: `Copyright © ${new Date().getFullYear()} Exact Solutions, Inc.`,
       },

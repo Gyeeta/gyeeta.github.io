@@ -40,7 +40,7 @@ function HomepageHeader() {
 		  marginTop : 30,
 		  background : '#1b2635db',
 		}} >	    
-	<img style={{ borderRadius : "50%" }} src="/img/logo.png" alt="Gyeeta" width="50" height="50" />
+	<img style={{ borderRadius : "50%" }} src="/img/gyeeta.png" alt="Gyeeta" width="60" height="60" />
 	<span style={{ marginRight : 10 }}> </span>
 	<span style={{ fontSize : 50, color : '#d48585' }}><strong><em>G</em></strong></span><span style={{ fontSize : 40, color : '#8288b0' }}><strong><em>yeeta</em></strong></span>
 	</div>
