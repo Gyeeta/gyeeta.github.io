@@ -16,8 +16,9 @@ The Partha Host Agent is installed as a Daemonset as it needs to be installed on
 
 ## Prerequisites
 
-- Kubernetes 1.19+
-- Helm 3.2.0+
+- Kubernetes version 1.19+
+- kubectl command version 1.19+
+- Helm version 3.2.0+
 - Linux kernel version 4.4+
 
 ### Requirement of Kernel Headers
@@ -32,35 +33,6 @@ the Kernel Headers package to the base OS. The parameter is disabled by default 
 
 Please refer to [Kernel Headers Installation](../partha_install#kernel-headers) for instructions on installing Kernel Headers directly on the base OS.
 
-## Install Instructions
-
-The steps to install the Partha Helm chart are :
-
-- Add Gyeeta Repo to Helm
-- Fetch and edit the values.yaml for the Partha chart
-- Install the Partha chart with the edited values
-
-```bash
-
-helm repo add gyeeta https://gyeeta.io/helmcharts
-helm repo update
-helm show values gyeeta/partha > /tmp/partha.yaml
-
-# Thereafter you can edit the /tmp/partha.yaml file if you need to change any option. 
-# After editing the /tmp/partha.yaml, install the Partha Helm chart using :
-
-helm install --namespace gyeeta --create-namespace partha1  gyeeta/partha -f /tmp/partha.yaml
-
-```
-
-## Uninstalling the Chart
-
-To uninstall the Partha deployment say `partha1` as per command above :
-
-```bash
-helm uninstall partha1
-```
-
 ## Security Requirements
 
 The Partha container will need to run as a `priviliged` container as it needs Linux Capabilities beyond the standard capabilities
@@ -71,7 +43,52 @@ namespaces.
 
 For Kubernetes versions 1.25+, users may need to enable the `priviliged` Partha container by enabling the 
 [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission) for the Partha pod Namespace if
-priviliged pods are set to be rejected.
+priviliged pods are set to be rejected. 
+
+The command to enable this is shown below. This creates the `gyeeta` namespace and allows priviliged containers.
+
+```bash
+# Label namespace gyeeta so as to allow privileged containers
+kubectl create ns gyeeta 2> /dev/null || :
+kubectl label --overwrite ns gyeeta \
+		pod-security.kubernetes.io/enforce=privileged \
+		pod-security.kubernetes.io/enforce-version=latest
+```
+
+## Install Instructions
+
+The steps to install the Partha Helm chart are :
+
+- Add Gyeeta Repo to Helm
+- Label namespace gyeeta so as to allow privileged containers
+- Fetch and edit the values.yaml for the Partha chart
+- Install the Partha chart with the edited values
+
+```bash
+helm repo add gyeeta https://gyeeta.io/helmcharts
+helm repo update
+
+# Label namespace gyeeta so as to allow privileged containers
+kubectl create ns gyeeta 2> /dev/null || :
+kubectl label --overwrite ns gyeeta \
+		pod-security.kubernetes.io/enforce=privileged \
+		pod-security.kubernetes.io/enforce-version=latest
+
+helm show values gyeeta/partha > /tmp/partha.yaml
+
+# Please edit the /tmp/partha.yaml file specifying minimum of partha_config.cluster_name, partha_config.shyama_hosts and partha_config.shyama_ports
+# After editing the /tmp/partha.yaml, install the Partha Helm chart using :
+
+helm install --namespace gyeeta --create-namespace partha1  gyeeta/partha -f /tmp/partha.yaml
+```
+
+## Uninstalling the Chart
+
+To uninstall the Partha deployment say `partha1` as per command above :
+
+```bash
+helm uninstall partha1
+```
 
 
 ## Partha Chart Parameters

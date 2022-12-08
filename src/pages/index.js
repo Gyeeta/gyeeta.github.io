@@ -42,8 +42,10 @@ function HomepageHeader() {
 		}} >	    
 	<img style={{ borderRadius : "50%" }} src="/img/gyeeta.png" alt="Gyeeta" width="60" height="60" />
 	<span style={{ marginRight : 10 }}> </span>
-	<span style={{ fontSize : 50, color : '#d48585' }}><strong><em>G</em></strong></span><span style={{ fontSize : 40, color : '#8288b0' }}><strong><em>yeeta</em></strong></span>
+	<span style={{ fontSize : 50, color : '#d4a785' }}><strong><em>G</em></strong></span><span style={{ fontSize : 40, color : '#8288b0' }}><strong><em>yeeta</em></strong></span>
 	</div>
+
+	<div style={{ marginTop : 20 }}><span style={{ fontSize : 20, margin : 20, color : '#d4a785', background : '#1b2635db', }}><strong><em>Know thy systems, Free thy self!</em></strong></span> </div>
 
 	<div style={{ marginTop : 20 }} />
 	<span style={{ fontSize : 20, margin : 30, color : '#bcdfd7', background : '#1b2635db', }}><strong>{siteConfig.tagline}</strong></span>
