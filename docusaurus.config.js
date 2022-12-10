@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Gyeeta',
   tagline: "A Non-Intrusive, Free and 100% Open Source Observability Product for your Infrastructure, Services and Processes",
-  url: 'https://gyeeta.github.io',
+  url: 'https://gyeeta.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
