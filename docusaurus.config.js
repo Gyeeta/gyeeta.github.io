@@ -33,13 +33,13 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/gyeeta.github.io/tree/main/',
+          editUrl: 'https://github.com/gyeeta/gyeeta.github.io/tree/main/',
           showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/gyeeta.github.io/tree/main/',
+          editUrl: 'https://github.com/gyeeta/gyeeta.github.io/tree/main/',
 	  feedOptions: {
             type: 'rss',
 	    title: 'Gyeeta Observability Blog',

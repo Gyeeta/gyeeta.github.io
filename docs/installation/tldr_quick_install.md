@@ -22,6 +22,8 @@ The TL;DR script will install the native deb/rpm packages and only work on Linux
 native package formats. For other environments, users will need to use other install methods such as Docker containers,
 Kubernetes Helm Charts or manual tarball extraction.
 
+This script also requires Internet access so that the required packages can be downloaded.
+
 :::
 
 The components that will be installed on a single host as part of this script are :
