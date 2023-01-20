@@ -60,7 +60,7 @@ Gyeeta monitors the following main metric categories (subsystems) :
 
 - ***Network Flows*** which includes coalescing flows across hosts and mapping Clients to Servers (Service maps)
 
-- ***Host State*** which includes monitoring Host CPU, Memory, host level Service and Process aggregations
+- ***Host State*** which includes monitoring Host CPU, Memory, Host level Service and Process aggregations and Delay Statistics
 
 - ***Cluster State*** which includes Cluster level Service, Process and Host aggregations
 

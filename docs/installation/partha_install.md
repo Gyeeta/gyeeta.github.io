@@ -27,15 +27,25 @@ The `partha` Host Agent requires a Linux Kernel with minimum kernel version of 4
 `partha` currently supports only *x86_64* processors. Also, only *Intel/AMD* processors released after 2012 are supported as
 `partha` is compiled with avx instruction support.
 
-### Requirement of Kernel Headers {#kernel-headers}
+### Requirement of Kernel Headers for older kernels {#kernel-headers}
 
-The `partha` agent needs Kernel Headers package to be installed for eBPF support. Users need to ensure that the Kernel Headers 
+The `partha` agent needs Kernel Headers package to be installed on older kernels for eBPF support. Users need to ensure that the Kernel Headers 
 package is installed on the hosts to be monitored as otherwise `partha` will not run. 
+
+#### Older Distributions where Kernel Headers package required 
+
+- Ubuntu 18, 19, 20
+- Debian 10, 11
+- RHEL / CentOS 8.x, Rocky Linux 8.x
+- Amazon Linux 1 and 2
+- Fedora Linux 35 and below
+
+Newer Distributions include eBPF CO-RE BTF (BPF Type Format) Support and do not require *Kernel Headers* for eBPF based applications.
 
 On Google Container Optimized OS (COS), the `partha` container will itself download the currently running Kernel's Headers and so,
 the Kernel Package is not needed.
 
-**Command to install Kernel Headers :**
+**Command to install Kernel Headers (needed for older Distributions only) :**
 
 
 <Tabs>
@@ -205,9 +215,10 @@ helm show values gyeeta/partha > /tmp/partha.yaml
 helm install --namespace gyeeta --create-namespace partha1  gyeeta/partha -f /tmp/partha.yaml
 
 ```
-:::note
+:::info
 
-Users are required to first install the Linux Kernel Headers before running the Partha Helm Chart. Please refer to [Kernel Headers](#kernel-headers).
+On Older Linux Distributions, users are required to first install the Linux Kernel Headers before running the Partha Helm Chart. 
+Please refer to [Kernel Headers](#kernel-headers).
 
 :::
 

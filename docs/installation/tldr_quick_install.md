@@ -48,15 +48,15 @@ to install the Failover instances separately as per the [Failover Handling](./fa
 
 ## Command to run the TLDR Quick Install Script
 
-```bash
+```bash title="Sample Command for TLDR Quick Install"
 
 curl -o /tmp/install-gyeeta-all-quick.sh -s https://gyeeta.io/packages/install-gyeeta-all-quick.sh && \
 	sudo bash /tmp/install-gyeeta-all-quick.sh /opt/gyeeta/postgresdb/data dbPassword adminPassword
 
 ```
 
-Please substitute the appropriate DB dir path, DB `postgres` user password needed and Web UI `admin` user password in
-the above command before running it in your environment.
+*Please substitute the appropriate DB dir path, DB `postgres` user password needed and Web UI `admin` user password in
+the above command before running it in your environment.*
 
 Note in the above command, the DB Data dir specified (`/opt/gyeeta/postgresdb/data`) will be created if it does not exist. 
 

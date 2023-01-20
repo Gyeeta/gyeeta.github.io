@@ -8,7 +8,7 @@ description: Host Level Dashboards and Monitors
 
 ## Host Dashboard
 
-The Host Dashboard lists out all the currently active Hosts and shows their current state.
+The Host Dashboard lists out all the currently active Hosts and shows their current state and various other statistics.
 
 ![Host Dashboard](/img/hostdash.png)
 
@@ -17,6 +17,9 @@ of Services and Processes that are in `Bad` or `Severe` state and depending on C
 
 This enables a quick evaluation of how all the hosts globally are performing and for any hosts with issues, further drilldown
 enables users to determine the processes or services of issue within that host.
+
+The Host Dashboard also lists the Host level Contention (Delay) statistics for CPU, Memory and Disk IO. This allows a very quick
+way to figure out the hosts which are facing heavy CPU, Memory or IO contention or pressure.
 
 The Host Dashboard is updated every 15 sec. 
 
@@ -33,6 +36,8 @@ REST APIs using /v1/hoststate route.
 The Host Monitor is used to graphically monitor the state of a specific Host either in real time or for historical time periods.
 
 ![Host State Monitor](/img/hostmon.png)
+
+![Host State Monitor 2](/img/hostmon2.png)
 
 Using the Host monitor, users can drilldown charts after selecting the period of interest and get the precise Service/Processes which have issues.
 The Host Monitor is updated every 5 sec.

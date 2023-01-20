@@ -21,7 +21,7 @@ slug: /
 
 1. Service Level Statistics such as Queries/sec, Response Times (Latency) and HTTP Errors (if HTTP based) with no manual inputs or integrations.
    Monitors binary / proprietary network protocol or non HTTP Service statistics as well.
-2. Detect Process Level *CPU starvation, Virtual Memory or IO Bottlenecks*. 
+2. Detect Host and Process Level *CPU starvation, Virtual Memory or IO Bottlenecks*. 
 3. Service Maps, Process and Host level Network Flows with info on all Services and Processes.
 4. Query Global Aggregated Statistics from multiple hosts and servers using a single query either from Web UI or REST APIs.
 5. Self Learning Algorithms that can detect Anomalies, Contention or Degradation without any manual inputs. 

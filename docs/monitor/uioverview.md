@@ -77,6 +77,9 @@ Please refer to the Video of the UI Overview shown above for an example of this 
 Another possible workflow is to monitor a specific Service or a Process performance. For example, to monitor the performance of a config change.
 In such cases, users should access the Service or Process State Monitor.
 
+Users can also start with the *Global Host Dashboard* and check for Hosts with CPU, Memory or IO bottlenecks (Delays) and then drill-down
+to find the processes with the respective bottlenecks.
+
 Users can also query Dashboards for Historical time durations data.
 
 Another workflow could be to use the *Search* mechanism to search for specific cases. For example, search for a CPU Limited (Throttled) process
