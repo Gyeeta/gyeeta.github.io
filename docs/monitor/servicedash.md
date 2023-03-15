@@ -67,14 +67,14 @@ are shown in the Network Flows. This implies that only a subset of connections w
 
 :::
 
-## Service Deployment Groups
+## Service Groups Dashboard
 
-The Service Deployment Groups Dashboard lists out all the services which Gyeeta assumes are related and form a Clustered Service. The Clustered Services
-may be related as a `ReplicaSet` in Kubernetes.
+The Service Groups Dashboard lists out all the services which Gyeeta assumes are related and form a Clustered Service. The Clustered Services
+may be related as a `ReplicaSet` in Kubernetes. Please refer to [Service Groups](./termsused#service-group) for more details.
 
-![Service Deployment Groups](/img/servicegrp.png)
+![Service Groups](/img/servicegrp.png)
 
-Gyeeta auto detects Clustered Services based on 2 categories :
+Gyeeta auto detects Service Groups based on 2 categories :
 
 - Interconnected Services
 - Virtual IP/Port based Services
@@ -84,12 +84,21 @@ Gyeeta auto detects Clustered Services based on 2 categories :
 Services within the same `cluster` and with the same name or related services which interconnect with each other in a mesh network are classified by Gyeeta 
 as _Interconnected Service Groups_.  Gyeeta assumes these services interact with each other in a stateful manner and can track their performance as a Clustered Group.
 
+Referring to the snapshot of the Service Group dashboard shown above, clicking on the *Get Service State Summary* link, users can get the breakups of the 
+individual Service Statistics as well as Cumulative Statistics across all instances within that Service Group as shown below :
+
+![Interconnected Service Stats](/img/svcintergrp1.png)
+
+
 ### Virtual IP Based Service Groups
 
 Services within the same `cluster` and with the same [Virtual IP and Port](./termsused#virtual-ip-port) are classified by Gyeeta as being in a 
-_Virtual IP Based Service Group_. This is analogous to Kubernetes `Service IP` endpoints. 
+_Virtual IP Based Service Group_. This is analogous to Kubernetes `Service IP` endpoints. Only services with 2 or more instances having same
+Virtual IP/Ports and within same `cluster` will be classified as a Service Group.
 
-:::note
+Users can get Cumulative Statistics across all services within the Service Group as well as individual Service level statistics.
+
+:::info
 
 Gyeeta does not communicate with Cluster Orchestrators such as Kubernetes directly. This creates an issue as Clustered Services such as a `ReplicaSet` may
 be missed. Future releases of Gyeeta may have an optional component which will verify the Deployment Groups.

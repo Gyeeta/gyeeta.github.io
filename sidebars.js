@@ -114,7 +114,7 @@ const sidebars = {
 	},			
 	{
 		type: 'category',
-		label: 'Querying Architecture',
+		label: 'Query Analysis',
 		link: {
 			type: 'generated-index',
 		},
@@ -122,6 +122,7 @@ const sidebars = {
 			'querying/queryoverview',
 			'querying/datatypes',
 			'querying/aggregation',
+			'querying/stateclassify',
 			'querying/groupprocess',
 			'querying/netflows',
 			'querying/k8s',

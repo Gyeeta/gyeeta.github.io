@@ -314,14 +314,33 @@ proxying.
 <div class="card">
 <div class="card__header">
 
+## Service Group {#service-group}
+
+</div>
+
+<div class="card__body">
+<p>
+A Service Group in Gyeeta refers to 2 or more services which are assumed by Gyeeta to be related and part of a possible Cluster. 
+For example, a set of <code>nginx</code> instances listening on same Virtual IP/Port would be considered as a Service Group. Gyeeta does not connect 
+to any Cluster Orchestrator (such as <i>Kubernetes API server</i>) and instead tries to itself identify Service Groups based on a few conditions such as
+two services being in the same Cluster, having same name and interconnected to each other or having same Virtual IP/Ports.
+</p>
+</div>
+</div>
+<div style={{ marginTop : 20 }}> </div>
+
+
+<div class="card">
+<div class="card__header">
+
 ## Virtual IP Service Group
 
 </div>
 
 <div class="card__body">
 <p>
-A Virtual Service Service Group in Gyeeta refers to 2 or more services which have the same executable name and same Cluster Names and which have the same 
-Virtual IP and Virtual Port. Gyeeta assumes these services act as a Service Cluster.
+A Virtual IP Service Group in Gyeeta refers to 2 or more services which have the same executable name and same Cluster Names and which have the same 
+Virtual IP and Virtual Port. Gyeeta assumes these services act as a Service Group.
 </p>
 </div>
 </div>
@@ -338,7 +357,7 @@ Virtual IP and Virtual Port. Gyeeta assumes these services act as a Service Clus
 <div class="card__body">
 <p>
 An Interconnected Service Group in Gyeeta refers to 2 or more services which have the same executable name and same Cluster Names and which are 
-connected to one another in a mesh style network. Gyeeta assumes these services act as a Service Cluster.
+connected to one another in a <i>mesh</i> style network. Gyeeta assumes these services act as a Service Group.
 </p>
 </div>
 </div>
