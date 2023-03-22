@@ -9,9 +9,7 @@ keywords:
 
 # Gyeeta Architecture
 
-*Gyeeta* is an Observability product utilizing [eBPF](https://ebpf.io/) and Linux kernel statistics.
-
-*Gyeeta* is a free and 100% [Open Source](https://github.com/gyeeta/gyeeta) (GPLv3) product. 
+*Gyeeta* is a free, [Open Source](https://github.com/gyeeta/gyeeta) Observability tool utilizing [eBPF](https://ebpf.io/) and Linux kernel statistics.
 
 ## Components in Gyeeta
 

@@ -23,10 +23,11 @@ The URL and login/password for accessing the Demo Server :
 
 **Password** : _gyeeta_
 
-## Web UI Examples and Explanation
 
-Users can refer to [Web UI Documentation](./monitor/uioverview) for details on how to access the various UI pages.
+## Resources explaining the Web UI
 
-Additionally, [Youtube Videos](https://youtube.com/@gyeeta) can be referred as well.
+Users can refer to [Web UI Documentation](./monitor/uioverview) for details about the various UI features.
+
+Additionally, [Youtube Videos](https://youtube.com/@gyeeta) can be referred to as well.
 
 

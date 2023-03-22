@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Gyeeta',
-  tagline: "A Non-Intrusive, Free and 100% Open Source Observability Product for your Infrastructure, Services and Processes",
+  tagline: "A Non-Intrusive, Free and 100% Open Source Observability Tool for your Infrastructure, Services and Processes",
   url: 'https://gyeeta.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',

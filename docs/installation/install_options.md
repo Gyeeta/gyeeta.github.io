@@ -60,6 +60,13 @@ Container Platforms such as Kubernetes or Docker Swarm are also supported using 
 
 ## Planning the Gyeeta Deployment
 
+:::tip
+
+For smaller environments (with upto 150 hosts to be monitored), users can quickly install all Server 
+components on a single host with at least 4 cores and 16 GB RAM using the [TLDR Quick Server Install](./tldr_quick_install)
+
+:::
+
 To setup Gyeeta, users need to install the following minimal components :
 
 1. One or more instances of PostgresDB Servers for both Shyama and Madhava servers
@@ -113,10 +120,9 @@ Hosts.
 The Alert Agent needs to connect to the Shyama Server only. If external Alert Actions (Notifications) are setup such as a Slack or
 Pagerduty Notification, the Alert Agent will need to access the Internet in such cases.
 
-## TL;DR Quick Single Command Install
+## TL;DR Quick Single Command Install {#tldr-install}
 
-In case you need to quickly install and try out Gyeeta in your environment, please refer to
-[TLDR Quick Server Install](./tldr_quick_install) link.
+For smaller environments of upto 200 hosts, users can quickly install and try out Gyeeta using the [TLDR Quick Server Install](./tldr_quick_install).
 
 This will install all Server components (One Postgres DB, One Shyama, one Madhava, Node Webserver) and Alert Agent on a single host 
 using a single command. Users will then need to install additional Partha Agents on all hosts which need to be monitored.

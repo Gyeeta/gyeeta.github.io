@@ -67,7 +67,7 @@ The install script SHA256 can be checked before installing. The SHA256 of the in
 [SHA256 file](https://gyeeta.io/packages/install-gyeeta-all-quick.sh.sum).
 
 
-:::note
+:::info
 
 The above command will not install the Partha Host Agent. Users need to run the Partha Installs using
 any of the supported [Partha Install mechanisms](./partha_install).
@@ -125,15 +125,11 @@ host.
 The `gyeeta-postgresdb` component is installed at `/opt/gyeeta/postgresdb`.
 
 ```bash title="Command to stop the Postgres DB"
-
 sudo systemctl stop gyeeta-postgresdb
-
 ```
 
 ```bash title="Command to start the Postgres DB"
-
 sudo systemctl start gyeeta-postgresdb
-
 ```
 
 **Command to uninstall Gyeeta PostgresDB**
@@ -176,15 +172,11 @@ To change the Shyama settings, users can edit the `/opt/gyeeta/shyama/cfg/shyama
 
 
 ```bash title="Command to stop the Shyama Server"
-
 sudo systemctl stop gyeeta-shyama
-
 ```
 
 ```bash title="Command to start the Shyama Server"
-
 sudo systemctl start gyeeta-shyama
-
 ```
 
 **Command to uninstall Shyama Server**
@@ -227,15 +219,11 @@ To change the Madhava settings, users can edit the `/opt/gyeeta/madhava/cfg/madh
 
 
 ```bash title="Command to stop the Madhava Server"
-
 sudo systemctl stop gyeeta-madhava
-
 ```
 
 ```bash title="Command to start the Madhava Server"
-
 sudo systemctl start gyeeta-madhava
-
 ```
 
 **Command to uninstall Madhava Server**
@@ -273,19 +261,14 @@ sudo systemctl disable gyeeta-madhava; sudo dnf remove gyeeta-madhava
 
 The `gyeeta-nodewebserver` component is installed at `/opt/gyeeta/nodewebserver`. 
 
-To change the Webserver settings, users can edit the `/opt/gyeeta/nodewebserver/.env` env file.
-
+To change the Webserver settings such as the Webserver port or admin password, users can edit the `/opt/gyeeta/nodewebserver/.env` env file.
 
 ```bash title="Command to stop the Node Webserver"
-
 sudo systemctl stop gyeeta-nodewebserver
-
 ```
 
 ```bash title="Command to start the Node Webserver"
-
 sudo systemctl start gyeeta-nodewebserver
-
 ```
 
 **Command to uninstall Node Webserver**
@@ -326,15 +309,11 @@ The `gyeeta-alertaction` component is installed at `/opt/gyeeta/alertaction`.
 To change the Alert Agent settings, users can edit the `/opt/gyeeta/alertaction/.env` env file.
 
 ```bash title="Command to stop the Alert Agent"
-
 sudo systemctl stop gyeeta-alertaction
-
 ```
 
 ```bash title="Command to start the Alert Agent"
-
 sudo systemctl start gyeeta-alertaction
-
 ```
 
 **Command to uninstall Alert Agent**
