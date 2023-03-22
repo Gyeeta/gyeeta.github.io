@@ -4,7 +4,7 @@
         <title>Gyeeta Observability Blog</title>
         <link>https://gyeeta.io/blog</link>
         <description>A Blog describing features, use cases of Gyeeta Observability and monitoring in general</description>
-        <lastBuildDate>Thu, 10 Nov 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 23 Mar 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en-US</language>
@@ -13,17 +13,14 @@
             <title><![CDATA[Introducing Gyeeta]]></title>
             <link>https://gyeeta.io/blog/introducing-gyeeta</link>
             <guid>introducing-gyeeta</guid>
-            <pubDate>Thu, 10 Nov 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[We are very happy to introduce Gyeeta]]></description>
-            <content:encoded><![CDATA[<p>We are very happy to introduce <a href="https://github.com/gyeeta" target="_blank" rel="noopener noreferrer">Gyeeta</a>
-to help with meeting your organization's Observability and Monitoring needs.</p><p>We felt there was a need for a product like Gyeeta for the following reasons :</p><ul><li><p>Few tools exist currently in the Free and Open source Observability space which can be quickly deployed
+            <pubDate>Thu, 23 Mar 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Hello Everyone,]]></description>
+            <content:encoded><![CDATA[<p>Hello Everyone,</p><p>We are excited to announce the public release of <a href="https://gyeeta.io" target="_blank" rel="noopener noreferrer">Gyeeta</a>.</p><p>Gyeeta is a free, eBPF based Open Source (GPLv3) Observability tool which provides the following capabilities :</p><ul><li>Service Level Statistics such as Queries/sec (Requests/sec), Response Times (Latency) and HTTP Errors (if HTTP based) with no manual inputs or integrations. Monitors binary / proprietary network protocol or non HTTP Service statistics as well.</li><li>Service Maps, Process and Host level Network Flows with info on all Services and Processes.</li><li>Detection of Host and Process Level CPU starvation, Virtual Memory or IO Bottlenecks. </li><li>Monitor all applications without any instrumentation or tapping irrespective of the programming language used.</li><li>Self Learning Algorithms that can detect Anomalies, Contention or Degradation without any manual inputs. </li><li>Advanced Cluster, Service or Process Level Alerts using a powerful Web UI or REST APIs.</li><li>All Data In-House (On Prem). Not a SaaS tool. </li><li>All Linux Kernels released since 2016 supported (Linux Kernels v4.4.x or higher).</li></ul><p>Gyeeta is optimized (C++ based) for minimal CPU and Memory requirements. </p><p>We felt there was a need for a product like Gyeeta for the following reasons :</p><ul><li><p>Few tools exist currently in the Free and Open source Observability space which can be quickly deployed
 without application changes and without any manual configuration.</p></li><li><p>Commercial SaaS tools exist which utilize a combination of APM, Tracing, Kernel Monitors, eBPF
 to provide a rich variety of metrics but these products are expensive both in terms of costs as
-well as Host CPU, Memory and IO usage and require manual configuration in many cases as well.</p></li></ul><p>We felt there was the need for a product which was Free, Open source and which organizations could
-use to monitor their Infrastructure 24x7 non-intrusively, with minimal overhead and without any
-application changes and which would not need any manual configuration.</p><p>This requires a tool which would be very lightweight in terms of resource usage and importantly,
-provide quick Alerts or Search results to detect any anomaly or degradation.</p><p>We hope you try Gyeeta in your environment and find it a useful product.</p>]]></content:encoded>
+well as Host CPU, Memory and IO usage and require manual configuration in many cases as well.</p></li></ul><p>We hope you try Gyeeta in your environment and find it a useful tool.</p><p><strong>Some snapshots of Gyeeta Web UI :</strong></p><p><img loading="lazy" alt="Service State Monitor" src="/assets/images/servicemon-6a5c80bbc608ad8bc773fee490c4020f.png" width="1371" height="946" class="img_ev3q"></p><p><img loading="lazy" alt="Process Network Flow Dashboard" src="/assets/images/procflow-5746f0441a9c9387bb7d5369032321e4.png" width="1920" height="944" class="img_ev3q"></p><p><img loading="lazy" alt="Process States" src="/assets/images/procstate1-fa92ff9be33c0b88b6fef5feac97401f.png" width="1920" height="611" class="img_ev3q"></p><p><strong>Important links related to Gyeeta :</strong></p><p>Website : <a href="https://gyeeta.io" target="_blank" rel="noopener noreferrer">https://gyeeta.io</a></p><p>Github Source : <a href="https://github.com/Gyeeta/gyeeta" target="_blank" rel="noopener noreferrer">https://github.com/Gyeeta/gyeeta</a></p><p>Documentation : <a href="https://gyeeta.io/docs" target="_blank" rel="noopener noreferrer">https://gyeeta.io/docs</a></p><p>Live Web UI Demo : <a href="https://gyeeta.io/docs/livedemo" target="_blank" rel="noopener noreferrer">Live Demo</a></p><p>Youtube Channel : <a href="https://youtube.com/@gyeeta" target="_blank" rel="noopener noreferrer">Gyeeta on Youtube</a></p>]]></content:encoded>
             <category>introduction</category>
+            <category>announcement</category>
             <category>welcome</category>
         </item>
     </channel>
