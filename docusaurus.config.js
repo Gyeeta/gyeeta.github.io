@@ -84,6 +84,7 @@ const config = {
             label: 'Docs',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/docs/livedemo', label: 'Live Demo', position: 'left'},
           {
             href: 'https://github.com/gyeeta/gyeeta',
             label: 'GitHub',

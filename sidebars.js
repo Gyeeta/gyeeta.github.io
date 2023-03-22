@@ -144,6 +144,7 @@ const sidebars = {
 		],  
 	},			
 	'searchshow',
+	'livedemo',
 	{
 		type: 'category',
 		label: 'Alerts Guide',

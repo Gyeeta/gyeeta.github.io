@@ -60,7 +60,9 @@ function HomepageHeader() {
 	      <div style={{ marginTop : 10, marginBottom : 30 }} />
 
 	      <div style={{ minWidth : 500, marginBottom : 50 }}>
-	      <a className="button button--primary button--block" href="/docs"><span style={{ fontSize : 16 }}>Learn More</span></a>
+	      <a className="button button--primary button--block" href="/docs"><span style={{ fontSize : 16 }}>Documentation</span></a>
+	      <span style={{ marginLeft : 30 }} />
+	      <a className="button button--primary button--block" href="/docs/livedemo"><span style={{ fontSize : 16 }}>Live Demo</span></a>
 	      </div>
 
 	</>

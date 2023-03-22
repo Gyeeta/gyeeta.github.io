@@ -48,8 +48,8 @@ Gyeeta components support only hosts with Linux Kernel 4.4 or higher (Linux 4.4 
 | Ubuntu | 16 & higher |
 | Debian | 9 & higher |
 | RHEL, CentOS, Rocky Linux, Oracle Linux | 8 & higher |
-| Amazon Linux 2 | All Versions |
-| Amazon Linux | Year 2017+ |
+| Amazon Linux 2023 | All Versions |
+| Amazon Linux 1 and 2 | All Versions |
 | Google Container OS (COS) | Linux Kernel 4.14 & Higher |
 | Fedora | 28 & higher |
 | OpenSUSE, SUSE Linux | 15 & higher |
