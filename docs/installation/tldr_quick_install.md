@@ -102,6 +102,19 @@ the hostname needs to be a cluster wide valid hostname.
 If Alert Actions (Notifications) need to access an external Server on the Internet, say a PagerDuty or Slack server, then Internet
 access will be needed from this Install Host as well.
 
+## Connecting to the Gyeeta Webserver using a browser
+
+After the TL;DR install script runs successfully, users can access the Web UI by pointing their browsers to 
+
+`http://<Hostname or IP of TLDR server>:10039`
+
+The login username to be used is `admin` and the password would be the password specified while running the TLDR script. In the above
+sample command, `adminPassword` was the password specified.
+
+Gyeeta Node Webserver is by default an HTTP server and listening on default port 10039. Users can configure the Web Server to use HTTPS by providing
+the TLS certificates, or change the HTTP port by editing the `/opt/gyeeta/nodewebserver/.env` config and restarting gyeeta-nodewebserver. 
+
+
 ## Max Number of Monitored Hosts
 
 The TLDR Quick Install script only installs a single instance of Madhava Intermediate Server. This implies that the maximum number of 

@@ -24,6 +24,9 @@ The URL and login/password for accessing the Demo Server :
 **Password** : _gyeeta_
 
 
+The _demo_ user is assigned `ReadOnly` access rights.
+
+
 ## Resources explaining the Web UI
 
 Users can refer to [Web UI Documentation](./monitor/uioverview) for details about the various UI features.

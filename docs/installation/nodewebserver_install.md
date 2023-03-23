@@ -59,6 +59,7 @@ sudo bash /tmp/install-gyeeta-nodewebserver.sh /tmp/nodewebserver.env
 
 The install script SHA256 can be checked before installing. The SHA256 of the install script is available at [SHA256 file](https://gyeeta.io/packages/install-gyeeta-nodewebserver.sh.sum)
 
+
 #### Stopping/Starting/Uninstalling the Node Webserver
 
 ```bash title="Command to stop the Node Webserver"
@@ -276,6 +277,18 @@ cd ./nodewebserver
 ./runwebserver.sh start
 
 ```
+
+## Connecting to the Webserver using a browser
+
+After the installation runs successfully, users can access the Web UI by pointing their browsers to 
+
+`http://<Hostname or IP of Webserver host>:<Webserver Listener port>`
+
+The login name/password to be used to authenticate users can be any of the configured ones specified in the 
+`CFG_USERPASSFILE` file in nodewebserver `.env` file or if `CFG_ADMINPASSWORD` is specified in which case the username would be `admin`.
+
+The Node Webserver is by default an HTTP server. Users can configure the Web Server to use HTTPS by providing the TLS certificates, 
+or change the HTTP port by editing the `.env` config and restarting gyeeta-nodewebserver. 
 
 
 ## Node Webserver Failover / Redundancy
