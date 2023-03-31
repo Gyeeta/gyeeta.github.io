@@ -154,6 +154,17 @@ const config = {
       mermaid: {
          theme: {light: 'neutral', dark: 'forest'},
       },      
+      algolia: {
+        // The application ID provided by Algolia
+        appId: 'H69ABL3WR3',
+
+        // Public API key: it is safe to commit it
+        apiKey: 'bb3d7a72d226a819bfea5e871e365440',
+
+        indexName: 'gyeeta',
+
+				debug: false,
+      },      
     }),
 };
 
