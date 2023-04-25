@@ -131,8 +131,8 @@ Hostname or Domain Name of the gyeeta-nodewebserver component.
 :::info
 
 At Shyama Config time, it is likely that the Node Webserver may not have been installed and
-in such cases, this field should contain the likely Hostname of the host where the 
-node webserver is to be installed or localhost if no other hosts available. 
+in such cases, this field can be skipped in which case the Webserver host will be set as
+localhost. 
 
 In case of changes, the Shyama config can be updated and restarted.
 
@@ -140,7 +140,7 @@ In case of changes, the Shyama config can be updated and restarted.
 
 The JSON field is `webserver_url` and environment variable is `CFG_WEBSERVER_URL`.
 
-This field is mandatory. Sample Usage : http://192.168.0.1:10039
+This field is optional. Sample Usage : http://192.168.0.1:10039
 
 ## Minimum Madhava Instances {#min-madhava}
 

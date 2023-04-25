@@ -45,7 +45,7 @@ Gyeeta components support only hosts with Linux Kernel 4.4 or higher (Linux 4.4 
 
 | OS Distribution | Supported Versions |
 | :-------------: | :-------------: |
-| Ubuntu | 16 & higher |
+| Ubuntu | 18 & higher |
 | Debian | 9 & higher |
 | RHEL, CentOS, Rocky Linux, Oracle Linux | 8 & higher |
 | Amazon Linux 2023 | All Versions |
@@ -87,8 +87,8 @@ The number of Madhava Intermediate servers that are needed depends on the max nu
 the monitored hosts with the Madhava servers.
 
 The maximum number of monitored hosts a single Madhava server instance can handle depends on the Madhava host CPU and RAM specs and
-can range from *50 monitored hosts* for a small Madhava host with 2 CPU cores and 4 GB RAM to *500 monitored hosts* for a server with 16 cores
-and 64 GB RAM.
+can range from *50 monitored hosts* for a small Madhava host with 2 CPU cores and 4 GB RAM to *400 monitored hosts* for a server with 16 cores
+and 32 GB RAM.
 
 Also, it is recommended that the monitored hosts and the Madhava server reside in the same Network Zone for better performance
 and to reduce Network egress costs.
@@ -99,9 +99,12 @@ availability.
 A maximum of 3 Madhava servers can share a single Postgres DB instance. This implies that as the number of Madhava servers
 increases, the number of Postgres DB instances will also increase.
 
+Multiple Madhava servers can also be installed on a single Host, if needed. This requires the Madhava servers to either
+installed as Docker containers or using tarball extracts.
+
 ### Network Connectivity & Firewall Considerations
 
-The Partha Monitor Agent does not open any TCP port. No incoming connections will be made to any Partha agent. The Partha agent will
+The Partha Host Agent does not open any TCP port. No incoming connections will be made to any Partha agent. The Partha agent will
 need to connect externally to the Shyama server and Shyama assigned Madhava servers though.
 
 The Shyama server, the Madhava Intermediate servers and the Node Webserver are all connected to each other in a mesh style

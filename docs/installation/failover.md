@@ -18,7 +18,8 @@ Gyeeta supports Failover Handling (High Availability) for its Server components 
 
 - Alert Action Agent (Active-Active mode)
 
-For Postgres DB Failover, we recommend using a Shared Disk Failover as by default, Replication is disabled.
+For Postgres DB Failover, we recommend using a Shared Disk Failover or setting up Logical Replication (which is
+disabled by default).
 
 :::info
 
