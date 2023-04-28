@@ -37,14 +37,13 @@ For example, for the snapshot shown above, the Web UI will execute the following
 2. Next *svcprocmap* API is called for the Service requested. This will fetch all Grouped Processes for the Service requested.
 3. Thereafter, for all the Grouped Processes of that Service, *clientconn* APIs are called to get the complete set of outbound connections.
 
-## Limitations in Network Flow Analysis
+## Network Flow Analysis across hosts
 
-For connections spanning multiple hosts, Gyeeta will require Network Connections to be at least 30 sec for the Client Application and Service
-endpoint analysis. Short Lived connections (less than 30 sec) across hosts will have only one endpoint identified. This limitation is only for
-connections across hosts. Connections within the same host have no such limitation.
+Gyeeta will correlate all Network Flows even spanning multiple hosts almost instantaneously. For connections spanning multiple hosts, 
+Gyeeta will take up 45 sec to correlate the entire Network Flow. All Network connections are analyzed, including short lived 
+connections.
 
-For example, consider a Client Application *App1* connecting to a remote host Service say *Svc1*. If the connection from *App1* to *Svc1* lasts
-less than 30 sec, then the *clientconn* record will have the application *App1* statistics but with the Service listed as 'Unresolved'.
-Similarly, the *activeconn* record for *Svc1* will have all the *Svc1* connection statistics, but the Client application will be listed as 'Unresolved'.
+If one of the endpoints of a Network Connection originates from a host which is not monitored using Partha Host Agent, Gyeeta will
+report the endpoint as `Unknown`.
 
 

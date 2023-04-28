@@ -13,7 +13,7 @@ Readers are advised to read the [Gyeeta Architecture](../architecture) page befo
 
 Gyeeta components can be installed using any of the following methods :
 
-- Bash Script based Installation and Configuration (Easiest install option)
+- Bash Script based Installation and Configuration (easiest install option)
 - Kubernetes Helm Chart
 - Docker Containers
 - rpm / deb based native packages for dnf/yum, apt-get or zypper
@@ -63,7 +63,7 @@ Container Platforms such as Kubernetes or Docker Swarm are also supported using 
 :::tip
 
 For smaller environments (with upto 150 hosts to be monitored), users can quickly install all Server 
-components on a single host with at least 4 cores and 16 GB RAM using the [TLDR Quick Server Install](./tldr_quick_install)
+components on a single host with at least 4 cores and 8 GB RAM using the [TLDR Quick Server Install](./tldr_quick_install)
 
 :::
 

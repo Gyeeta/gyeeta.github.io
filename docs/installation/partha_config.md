@@ -142,6 +142,22 @@ The JSON field is `zone_name` and environment variable is `CFG_ZONE_NAME`.
 
 This field is optional.
 
+## Enable Task Delays {#enable-task-delays}
+
+Newer Kernels (v5.14+) have Process (task) Delays disabled by default. Gyeeta uses Task Delays to detect process contention.
+
+This field indicates whether to enable Task Delays. Valid values for this field are 0, 1 and 2. 
+
+The default value is 1 (Enable Task Delays for newer processes). Specifying a value of 2 will auto enable Process Delays after next Kernel Boot. 
+
+Enabling Task Delays causes a minimal performance hit and so it is recommended to set this to 2 which will enable Process delays for all processes.
+Setting it to 1 will only enable Process Delays for Processes started thereafter. Specifying it as 0 will result in no changes to the host OS.
+
+The JSON field name is `enable_task_delays` and corresponding environment variable is `CFG_ENABLE_TASK_DELAYS`.
+
+This field is optional and can contain integer values 0, 1 or 2.
+
+
 ## Sample JSON Config file {#sample-json}
 
 A sample Partha JSON config file is provided below :
@@ -156,6 +172,7 @@ A sample Partha JSON config file is provided below :
 		"shyama_ports"				:	[ 10037 ],
 
 		"response_sampling_percent"	:	100,
+		"enable_task_delays"		:	2,
 		"is_kubernetes"				:	true
 	}
 

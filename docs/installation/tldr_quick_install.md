@@ -125,7 +125,7 @@ It is recommended that the TLDR Quick Install script be run on a host with adequ
 Hosts in your environment.
 
 A single Madhava instance can monitor upto *50 monitored hosts* for a smaller host with 2 CPU cores and 4 GB RAM whereas a host with
-with 16 cores and 64 GB RAM can monitor upto *500 monitored hosts*.
+with 16 cores and 64 GB RAM can monitor upto *400 monitored hosts*.
 
 In case more number of Monitored Hosts are expected, other instances of Madhava need to be installed either on same host or some other
 host.

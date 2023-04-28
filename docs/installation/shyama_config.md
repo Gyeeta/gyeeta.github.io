@@ -122,25 +122,15 @@ This field is optional and default is 3 days.
 ## Webserver URL {#webserver-url}
 
 This indicates the URL of the Gyeeta Webserver that external clients will use to connect. 
-This field is needed as Shyama uses this field to send Alert metadata to external Alert Handlers
-such as Pagerduty or Slack.
+This field enables the user to Acknowledge or Resolve Alerts using external Alert Notfication channels such as Pagerduty or Slack.
 
 In case there is no external Reverse Proxy Webserver to used, this will then indicate the 
 Hostname or Domain Name of the gyeeta-nodewebserver component. 
 
-:::info
-
-At Shyama Config time, it is likely that the Node Webserver may not have been installed and
-in such cases, this field can be skipped in which case the Webserver host will be set as
-localhost. 
-
-In case of changes, the Shyama config can be updated and restarted.
-
-:::
-
 The JSON field is `webserver_url` and environment variable is `CFG_WEBSERVER_URL`.
 
-This field is optional. Sample Usage : http://192.168.0.1:10039
+This field is optional and if not specified the Webserver hostname is set as localhost.
+Sample Usage : http://192.168.0.1:10039
 
 ## Minimum Madhava Instances {#min-madhava}
 
@@ -224,7 +214,5 @@ as dbPassword and with max history of 3 days.
 
 Shyama servers will start accepting Partha Host Agents only after at least 1 Madhava server has connected to this
 Shyama instance (`min_madhava`).
-
-External Web Clients will connect to Gyeeta Webserver at http://gyeetawebhost.local:10039 to access the Web UI.
 
 
