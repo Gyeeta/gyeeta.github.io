@@ -1,10 +1,10 @@
 ---
 id: overview
-title: Monitoring Features & Limitations
-description: Monitoring Features & Limitations
+title: Observability Features & Limitations
+description: Observability Features & Limitations
 ---
 
-# Monitoring Features & Limitations
+# Observability Features & Limitations
 
 ## Monitoring using eBPF and Kernel Statistics {#ebpf-kernel}
 

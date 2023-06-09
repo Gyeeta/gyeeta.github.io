@@ -7,7 +7,7 @@ slug: /
 
 # Introduction
 
-***Gyeeta*** is a non intrusive, *100% [Open Source](https://github.com/gyeeta/gyeeta) (GPLv3)* and *Free* Infrastructure, Services and Process Level monitor (*Linux* only).  
+***Gyeeta*** is a *100% [Open Source](https://github.com/gyeeta/gyeeta) (GPLv3)* and *Free* eBPF based Observability tool for Linux.  
 
 ## Salient Features
 

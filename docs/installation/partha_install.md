@@ -129,7 +129,8 @@ Users can download a shell script that takes care of the installation and config
 Before installing Partha, users need to create a JSON config file as per the [Partha Config](./partha_config).
 
 Also, although this install script will try installing the Kernel Headers, if not present, users are advised to first
-install the Linux Kernel Headers before running this script. Please refer to [Kernel Headers](#kernel-headers).
+install the Linux Kernel Headers before running this script if running on an older Linux distro. 
+Please refer to [Kernel Headers](#kernel-headers).
 
 :::
 
@@ -227,7 +228,8 @@ Please refer to [Kernel Headers](#kernel-headers).
 
 :::note
 
-Before running the Docker container, users need to install the Kernel Headers as per [Install Kernel Headers](#kernel-headers) link.
+Before running the Docker container, users running older Linux distributions need to install the Kernel Headers 
+as per [Install Kernel Headers](#kernel-headers) link.
 
 :::
 
@@ -310,8 +312,8 @@ sudo dnf install -y gyeeta-partha
 
 :::note
 
-Although this install package will try installing the Kernel Headers, if not present, users are advised to first
-install the Linux Kernel Headers before installing the package. Please refer to [Kernel Headers](#kernel-headers).
+Although this install package will try installing the Kernel Headers, if not present, users on older Linux distributions 
+are advised to first install the Linux Kernel Headers before installing the package. Please refer to [Kernel Headers](#kernel-headers).
 
 :::
 
@@ -381,7 +383,8 @@ can be used to install.
 
 :::note
 
-Before running the Manual Tar install, users need to install the Kernel Headers as per [Install Kernel Headers](#kernel-headers) link.
+Before running the Manual Tar install, users on older Linux distributions need to install the Kernel Headers 
+as per [Install Kernel Headers](#kernel-headers) link.
 
 :::
 
